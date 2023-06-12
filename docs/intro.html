@@ -114,13 +114,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./WORD.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Knit to a WORD file</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Knit to WORD</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./PDF.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">PDF</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Knit to PDF</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -140,8 +140,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#required-knowledge" id="toc-required-knowledge" class="nav-link active" data-scroll-target="#required-knowledge"><span class="header-section-number">1.1</span> Required knowledge</a></li>
-  <li><a href="#why-rmarkdown" id="toc-why-rmarkdown" class="nav-link" data-scroll-target="#why-rmarkdown"><span class="header-section-number">1.2</span> Why Rmarkdown</a></li>
-  <li><a href="#what-can-you-do-with-rmarkdown-word" id="toc-what-can-you-do-with-rmarkdown-word" class="nav-link" data-scroll-target="#what-can-you-do-with-rmarkdown-word"><span class="header-section-number">1.3</span> What can you do with Rmarkdown-WORD?</a></li>
+  <li><a href="#what-can-you-do-with-rmarkdown" id="toc-what-can-you-do-with-rmarkdown" class="nav-link" data-scroll-target="#what-can-you-do-with-rmarkdown"><span class="header-section-number">1.2</span> What can you do with Rmarkdown?</a></li>
+  <li><a href="#why-rmarkdown" id="toc-why-rmarkdown" class="nav-link" data-scroll-target="#why-rmarkdown"><span class="header-section-number">1.3</span> Why Rmarkdown</a></li>
   <li><a href="#word-or-pdf" id="toc-word-or-pdf" class="nav-link" data-scroll-target="#word-or-pdf"><span class="header-section-number">1.4</span> WORD or PDF?</a></li>
   </ul>
 </nav>
@@ -166,26 +166,25 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Learn how to use a combination of R packages to generate (mostly) publication-ready articles in WORD. This lecture slides assume basic knowledge on how to use Rmarkdow.</p>
+<p>This books aims at learning how to use a combination of R packages to generate (mostly) publication-ready articles in WORD and PDF.</p>
 <section id="required-knowledge" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="required-knowledge"><span class="header-section-number">1.1</span> Required knowledge</h2>
+<p>This book assumes you</p>
 <ul>
-<li>write mathematical equations using latex(-like) syntax</li>
-<li>how to use citation manager (you should know this anyway if you are a scholar)</li>
+<li>have basic understanding of how Rmarkdown works (<a href="https://bookdown.org/yihui/rmarkdown/basics.html">This</a> is an excellent introduction to Rmarkdown)</li>
+<li>know how to write mathematical equations using latex(-like) syntax</li>
+<li>know how to use a citation manager (you should know this anyway if you are a scholar) including but not limited to
+<ul>
+<li>Bibtex/Biblatex</li>
+<li>EndNote</li>
+</ul></li>
 </ul>
 </section>
-<section id="why-rmarkdown" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="why-rmarkdown"><span class="header-section-number">1.2</span> Why Rmarkdown</h2>
+<section id="what-can-you-do-with-rmarkdown" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="what-can-you-do-with-rmarkdown"><span class="header-section-number">1.2</span> What can you do with Rmarkdown?</h2>
+<p>In a single Rmarkdown file,</p>
 <ul>
-<li><p>No manual copying and pasting of tables and figures</p></li>
-<li><p>No manual formatting of tables and figures when they get updated in the course of your research projects</p></li>
-<li><p>No manual updating of data-driven numbers (e.g., coefficient estimates, summary numbers) in text</p></li>
-</ul>
-</section>
-<section id="what-can-you-do-with-rmarkdown-word" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="what-can-you-do-with-rmarkdown-word"><span class="header-section-number">1.3</span> What can you do with Rmarkdown-WORD?</h2>
-<ul>
-<li><p>include (run) R codes to</p>
+<li><p>include (and run) R codes to</p>
 <ul>
 <li>run statistical or modeling analysis<br>
 </li>
@@ -195,19 +194,51 @@ ul.task-list li input[type="checkbox"] {
 <li><p>refer to the R objects generated (data, tables, figures) to place them in the output WORD file</p></li>
 <li><p>cross-reference tables and figures using special syntaxes</p></li>
 <li><p>create citations and a reference list automatically using special syntaxes</p></li>
-<li><p>format citation and reference styles using <a href="https://citationstyles.org/">Citation Style Language</a></p></li>
-<li><p>use Latex math syntax to write equations</p></li>
-<li><p>use markdown syntax for formatting the output WORD file</p>
+<li><p>format citation and reference using <a href="https://citationstyles.org/">Citation Style Language</a></p></li>
+<li><p>use Latex(-like) math syntax to write equations (different for PDF and WORD)</p></li>
+<li><p>use markdown syntax for providing a basic structure to the output document</p>
 <ul>
-<li>headings</li>
+<li>headings (section, subsection, subsubsection)</li>
 <li>footnotes</li>
 </ul></li>
+<li><p>format the output document fully so you do not have to do any formatting in the output document (if you are writing to PDF, not WORD).</p></li>
 </ul>
+</section>
+<section id="why-rmarkdown" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="why-rmarkdown"><span class="header-section-number">1.3</span> Why Rmarkdown</h2>
+<p>Rmarkdown can let you avoid the following:</p>
+<ol type="1">
+<li>Manual copying and pasting of tables and figures</li>
+<li>Manual formatting of tables and figures<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>Manual updating of data-driven numbers (e.g., coefficient estimates, summary numbers) in text</li>
+</ol>
+<p><code>r lubridate::year(Sys.Date()) - 2007</code> years ago when I was a graduate student, Rmarkdown did not exist (the <code>sweave</code> package did exist). Fairly new to the academic world, I was doing what most of us were doing to create reports for econometrics courses or writing manuscripts.</p>
+<p>If I am using Latex,</p>
+<ul>
+<li>Run R codes and create tables (regression results, summary statistics, etc), write the tables to Latex files using R functions that let you do so</li>
+<li>Copy the Latex texts and paste them to the main Latex file</li>
+</ul>
+<p>If I am using WORD,</p>
+<ul>
+<li>Run R codes and create tables (regression results, summary statistics, etc) on R, take a screenshot of the tables on R, save them as pictures</li>
+<li>Run R codes and create plots on R, save the plots as pictures</li>
+<li>Import tables and figures manually to the WORD file</li>
+</ul>
+<p>These are extremely tedious. When something changes (underlying data, parameter, etc), then you need to start the process all over again every time. You are probebly well aware that these changes are rather common during the process of completing a project with the final goal being publising a paper.</p>
+<p>The arrival of the <code>knitr</code> and <code>Rmarkdown</code> packages have completely changed the game because you can now integrate narratives and R codes in a single file. When you <code>knit</code> (compile) the file, then you have everything you need in the output file in various formats (WORD, pdf, html).</p>
+<p>The Rmarkdown system is now mature enough that we can write an academic manuscript in both PDF and WORD (more clumsy, but acceptable). This book provides introduction of how to do so.</p>
 </section>
 <section id="word-or-pdf" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="word-or-pdf"><span class="header-section-number">1.4</span> WORD or PDF?</h2>
+<p>If I am a single author of the paper and your target journal accepts Latex file after acceptance, then I would go for PDF without hesitation. Writing to PDF is much easier when using the Rmarkdown system and Latex-driven PDF simply looks better than WORD. However, there are cases where you might want to or need to use WORD. First, there are many journals that accept only WORD files. Even if your target journal accepts PDF, your coauthors may demand that they have manuscripts in WORD so they can edit more easily. In summary, it really depends. One nice thing about using Rmarkdown is that you can go back and forth between PDF and WORD without too much effort.</p>
 
 
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>This is more of what R can do<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -452,7 +483,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./WORD.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Knit to a WORD file</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Knit to WORD</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

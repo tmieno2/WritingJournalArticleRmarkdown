@@ -7,13 +7,13 @@ library(officer)
 library(flextable)
 ```
 
-# Knit to a WORD file
+# Knit to WORD
 
 ## Preparation
 
 Before diving in, please do the followings:
 
-+ Go \[here\](https://www.dropbox.com/sh/l95j7vk8sxl2nnu/AAAwWMl8yO6Vbj0u_9zd_fv6a?dl=0) and download all the files including **sample_to_word.rmd**, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this Github repository ().
++ Go [here](https://www.dropbox.com/sh/l95j7vk8sxl2nnu/AAAwWMl8yO6Vbj0u_9zd_fv6a?dl=0) and download all the files including **sample_to_word.rmd**, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this [Github repository](https://github.com/tmieno2/WritingJournalArticleRmarkdown).
 
 + Knit **sample_to_word.Rmd** to produce **sample_to_word.docx**, which we refer to as the sample WORD file.
 
@@ -26,15 +26,19 @@ Before diving in, please do the followings:
   + `tidyverse`
   + `modelsummary`
 
-## Workflow of writing a journal article
+## Baisc workflow until publication
+
+If you are trying to decide whether to use the rmd-WORD system, you should be aware that it is very likely that you cannot just do everything in rmarkdown unlike wirting to PDF. Specifically, you will  almost certainly need to format your manuscript manually in WORD itself to satisfy the format requirements by the final desination of your manuscript. This is because rmarkdown provides very weak formatting capabilities. 
 
 Here are the proposed steps to generate a fully publication-ready article: 
 
-+ Write an Rmarkdown file and knit to a WORD file (the focus of this lecture)
-  * regular texts
-  * R codes for analysis, tables, figures
+1. Write an Rmarkdown file and knit to a WORD file (the focus of this lecture) without worrying about formatting your manuscript (Most jorunals do not require manuscript formatting until the manuscript is accepted. But, please do check yourself it is indeed the case)
+2. Submit your masnucript
+3. Revise and resubmit your manuscript 
+4. Repeat steps 2 and 3 until accepted (terminate the process if rejeccted)
+5. Format (partially through Rmarkdown, but mostly in WORD) your manuscript to the specific requirements by the journal
 
-+ Do final formatting jobs on the output WORD file (not discussed here) to the specific needs required by the final destination of the article
+Note that this process is recommended when you are knitting to PDF as well. It is just that it is more important to stick with it if you are using rmd-WORD system. 
 
 ## Structure of the rmarkdown file
 

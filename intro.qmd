@@ -1,23 +1,22 @@
 # Introduction
 
-Learn how to use a combination of R packages to generate (mostly) publication-ready articles in WORD. This lecture slides assume basic knowledge on how to use Rmarkdow.  
+This books aims at learning how to use a combination of R packages to generate (mostly) publication-ready articles in WORD and PDF.
 
 ## Required knowledge
 
-+ write mathematical equations using latex(-like) syntax
-+ how to use citation manager (you should know this anyway if you are a scholar) 
+This book assumes you
 
-## Why Rmarkdown
++ have basic understanding of how Rmarkdown works ([This](https://bookdown.org/yihui/rmarkdown/basics.html) is an excellent introduction to Rmarkdown)
++ know how to write mathematical equations using latex(-like) syntax 
++ know how to use a citation manager (you should know this anyway if you are a scholar) including but not limited to
+  + Bibtex/Biblatex
+  + EndNote
 
-+ No manual copying and pasting of tables and figures
+## What can you do with Rmarkdown?
 
-+ No manual formatting of tables and figures when they get updated in the course of your research projects
+In a single Rmarkdown file,
 
-+ No manual updating of data-driven numbers (e.g., coefficient estimates, summary numbers) in text
-
-## What can you do with Rmarkdown-WORD?
-
-+ include (run) R codes to
++ include (and run) R codes to
   * run statistical or modeling analysis  
   * create figures (e.g., the `ggplot2` package)
   * create tables (e.g., the `modelsummary` and `flextable` packages)
@@ -28,13 +27,43 @@ Learn how to use a combination of R packages to generate (mostly) publication-re
 
 + create citations and a reference list automatically using special syntaxes 
 
-+ format citation and reference styles using [Citation Style Language](https://citationstyles.org/)  
++ format citation and reference using [Citation Style Language](https://citationstyles.org/)  
 
-+ use Latex math syntax to write equations 
++ use Latex(-like) math syntax to write equations (different for PDF and WORD)
 
-+ use markdown syntax for formatting the output WORD file 
-  * headings
++ use markdown syntax for providing a basic structure to the output document
+  * headings (section, subsection, subsubsection)
   * footnotes
 
++ format the output document fully so you do not have to do any formatting in the output document (if you are writing to PDF, not WORD).
+
+## Why Rmarkdown
+
+Rmarkdown can let you avoid the following:
+
+1. Manual copying and pasting of tables and figures
+2. Manual formatting of tables and figures^[This is more of what R can do] 
+3. Manual updating of data-driven numbers (e.g., coefficient estimates, summary numbers) in text
+
+`r lubridate::year(Sys.Date()) - 2007` years ago when I was a graduate student, Rmarkdown did not exist (the `sweave` package did exist). Fairly new to the academic world, I was doing what most of us were doing to create reports for econometrics courses or writing manuscripts.
+
+If I am using Latex,
+
++ Run R codes and create tables (regression results, summary statistics, etc), write the tables to Latex files using R functions that let you do so
++ Copy the Latex texts and paste them to the main Latex file
+
+If I am using WORD,
+
++ Run R codes and create tables (regression results, summary statistics, etc) on R, take a screenshot of the tables on R, save them as pictures 
++ Run R codes and create plots on R, save the plots as pictures
++ Import tables and figures manually to the WORD file
+
+These are extremely tedious. When something changes (underlying data, parameter, etc), then you need to start the process all over again every time. You are probebly well aware that these changes are rather common during the process of completing a project with the final goal being publising a paper. 
+
+The arrival of the `knitr` and `Rmarkdown` packages have completely changed the game because you can now integrate narratives and R codes in a single file. When you `knit` (compile) the file, then you have everything you need in the output file in various formats (WORD, pdf, html). 
+
+The Rmarkdown system is now mature enough that we can write an academic manuscript in both PDF and WORD (more clumsy, but acceptable). This book provides introduction of how to do so.
 
 ## WORD or PDF?
+
+If I am a single author of the paper and your target journal accepts Latex file after acceptance, then I would go for PDF without hesitation. Writing to PDF is much easier when using the Rmarkdown system and Latex-driven PDF simply looks better than WORD. However, there are cases where you might want to or need to use WORD. First, there are many journals that accept only WORD files. Even if your target journal accepts PDF, your coauthors may demand that they have manuscripts in WORD so they can edit more easily. In summary, it really depends. One nice thing about using Rmarkdown is that you can go back and forth between PDF and WORD without too much effort.  
