@@ -1,0 +1,26 @@
+project:
+  type: book
+
+book:
+  title: "Writing Reproducible Journal Articles using Rmarkdown"
+  author: "Taro Mieno"
+  date: "`r Sys.Date()`"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - WORD.qmd
+    - PDF.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+# filters:
+#   - quarto
+#   - line-highlight
+editor: visual
+

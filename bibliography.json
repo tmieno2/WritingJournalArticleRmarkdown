@@ -1,0 +1,66 @@
+[
+  	{
+		"id": "schlenker2009nonlinear",
+		"type": "article-journal",
+		"container-title": "Proceedings of the National Academy of sciences",
+		"issue": "37",
+		"note": "ISBN: 0027-8424\npublisher: National Acad Sciences",
+		"page": "15594-15598",
+		"title": "Nonlinear temperature effects indicate severe damages to US crop yields under climate change",
+		"volume": "106",
+		"author": [
+			{
+				"family": "Schlenker",
+				"given": "Wolfram"
+			},
+			{
+				"family": "Roberts",
+				"given": "Michael J."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"2009"
+				]
+			]
+		}
+	},
+	{
+		"id": "mas1995microeconomic",
+		"type": "book",
+		"abstract": "Many instructors of microeconomic theory have been waiting for a text that provides balanced and in-depth analysis of the essentials of microeconomics. Masterfully combining the results of years of teaching microeconomics at Harvard University, Andreu Mas-Colell, Michael Whinston, and Jerry Green have filled that conspicuous vacancy with their groundbreaking text, Microeconomic Theory.The authors set out to create a solid organizational foundation upon which to build the effective teaching tool for microeconomic theory. The result presents unprecedented depth of coverage in all the essential topics, while allowing professors to \"tailor-make\" their course to suit personal priorities and style. Topics such as noncooperative game theory, information economics, mechanism design, and general equilibrium under uncertainty receive the attention that reflects their stature within the discipline. The authors devote an entire section to game theory alone, making it \"free-standing\" to allow instructors to return to it throughout the course when convenient. Discussion is clear, accessible, and engaging, enabling the student to gradually acquire confidence as well as proficiency. Extensive exercises within each chapter help students to hone their skills, while the text's appendix of terms, fully cross-referenced throughout the previous five sections, offers an accessible guideto the subject matter's terminology. Teachers of microeconomics need no longer rely upon scattered lecture notes to supplement their textbooks. Deftly written by three of the field's most influential scholars, Microeconomic Theory brings the readability, comprehensiveness, and versatility to the first-year graduate classroom that has long been missing.",
+		"edition": "Illustrated edition",
+		"event-place": "New York",
+		"ISBN": "978-0-19-507340-9",
+		"language": "English",
+		"number-of-pages": "1008",
+		"publisher": "Oxford University Press",
+		"publisher-place": "New York",
+		"source": "Amazon",
+		"title": "Microeconomic Theory",
+		"author": [
+			{
+				"family": "Mas-Colell",
+				"given": "Andreu"
+			},
+			{
+				"family": "Whinston",
+				"given": "Michael D."
+			},
+			{
+				"family": "Green",
+				"given": "Jerry R."
+			}
+		],
+		"issued": {
+			"date-parts": [
+				[
+					"1995",
+					6,
+					15
+				]
+			]
+		}
+	}
+]

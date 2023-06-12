@@ -1,0 +1,40 @@
+# Introduction
+
+Learn how to use a combination of R packages to generate (mostly) publication-ready articles in WORD. This lecture slides assume basic knowledge on how to use Rmarkdow.  
+
+## Required knowledge
+
++ write mathematical equations using latex(-like) syntax
++ how to use citation manager (you should know this anyway if you are a scholar) 
+
+## Why Rmarkdown
+
++ No manual copying and pasting of tables and figures
+
++ No manual formatting of tables and figures when they get updated in the course of your research projects
+
++ No manual updating of data-driven numbers (e.g., coefficient estimates, summary numbers) in text
+
+## What can you do with Rmarkdown-WORD?
+
++ include (run) R codes to
+  * run statistical or modeling analysis  
+  * create figures (e.g., the `ggplot2` package)
+  * create tables (e.g., the `modelsummary` and `flextable` packages)
+
++ refer to the R objects generated (data, tables, figures) to place them in the output WORD file 
+
++ cross-reference tables and figures using special syntaxes
+
++ create citations and a reference list automatically using special syntaxes 
+
++ format citation and reference styles using [Citation Style Language](https://citationstyles.org/)  
+
++ use Latex math syntax to write equations 
+
++ use markdown syntax for formatting the output WORD file 
+  * headings
+  * footnotes
+
+
+## WORD or PDF?

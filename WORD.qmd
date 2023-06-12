@@ -1,0 +1,510 @@
+```{r}
+#| include: false
+library(tidyverse)
+library(data.table)
+library(knitr)
+library(officer)
+library(flextable)
+```
+
+# Knit to a WORD file
+
+## Preparation
+
+Before diving in, please do the followings:
+
++ Go \[here\](https://www.dropbox.com/sh/l95j7vk8sxl2nnu/AAAwWMl8yO6Vbj0u_9zd_fv6a?dl=0) and download all the files including **sample_to_word.rmd**, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this Github repository ().
+
++ Knit **sample_to_word.Rmd** to produce **sample_to_word.docx**, which we refer to as the sample WORD file.
+
++ Install the following packages if you have not
+  + `officedown`
+  + `flextable`
+  + `officer`
+  + `knitr`
+  + `rmarkdown`
+  + `tidyverse`
+  + `modelsummary`
+
+## Workflow of writing a journal article
+
+Here are the proposed steps to generate a fully publication-ready article: 
+
++ Write an Rmarkdown file and knit to a WORD file (the focus of this lecture)
+  * regular texts
+  * R codes for analysis, tables, figures
+
++ Do final formatting jobs on the output WORD file (not discussed here) to the specific needs required by the final destination of the article
+
+## Structure of the rmarkdown file
+
+The ramrkdown file consits mainly of two components.
+
++ YAML header
++ Main body
+
+### YAML header
+
+YAML header comes at the very top of the rmarkdown file and it lets you specify things like
+
++ paper title
++ authors
++ date
++ abstract
+
+It also lets you specify various aspects of the output word file including
+
++ whether to include table of contents (`toc`)
++ the depth of table of contents (`toc_depth`)
++ whether to number sections or not (`number_sections`)
++ how to display plots and tables (`plots`, `tables`)
+  + alignment (`align`)
+  + prefix (`pre`), etc 
+
+This is also where you specify what files you use as bibliography, citation style, among other things. Important ones will be introduced later. 
+
+Here is an example YAML header, which you can see in `sample_to_word.rmd` file.
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/yaml-example.png")
+```
+
+More detailed explanation of out put options will be provided later individually when the relevant topics are discussed.
+
+### Main body
+
+This is where narratives and R codes are written.
+
+## Control of some elements in WORD through Rmarkdown 
+
+### Section, subsection, subsubsections
+
+You can use `#`, `##`, `###` at the beginning of the line to define sections, subsections, and subsubsections.
+
+```{r eval = F}
+# This becomes section title
+
+## This becomes subsection title
+
+### This becomes subsubsection title
+```
+
+:::{.callout-note}
++ Confirm that `# Materials and Methods` and `## Data` in **sample_to_word.rmd** turn into a section and subsection title in **sample_to_word.docx**.
++ Note also that the sections and subsections are automatically numbered because `number_sections: true` in the YAML header.
+:::
+
+---
+
+### Footnote
+
+You can add a footnote using `^[]` like this:
+
+```{r eval = F}
+regular texts^[this is a footnote]
+```
+
+Footnotes are automatically numbered.
+
+:::{.callout-note}
+See the **Conclusion** section of **sample_to_word.rmd** and **sample_to_word.docx**. 
+:::
+
+---
+
+### Line and page break
+
+You can create a line break by inserting the following.
+
+```markdown
+<br>
+```
+
+:::{.callout-tip}
++ If `<br>` is placed in the same line as the one after which you want a break, then it does not give you a line break. Rather, put `<br>` in the next line.
++ Confirm this by inspecting the Materials and Methods section of the sample rmd and word files.
+:::
+
+To break a page, use
+```{r, eval = F}
+`r run_pagebreak()`
+```
+
+:::{.callout-note}
+Confirm this by inspecting the end of the Introduction section of the sample rmd and word files.
+:::
+
+## Specifying the style of the output WORD file in detail
+
+Rmarkdown itself is very limited in its ability to specify the style of the output WORD file. Few exceptions are:
+
++ bold font: `**this becomes bold**` (or `__this becomes bold__`)
++ italic font: `*this becomes italic*` 
+
+:::{.callout-note}
+Confirm these by comparing the first sentence in the Introduction section of the sample rmd and WORD files.
+:::
+
+However, you can define the style of the output WORD file in detail using a style reference WORD file. This method can control virtually every aspect of WORD file styling. Some of the commonly customized elements among others are
+
++ font size
++ font family
++ line spacing
+
+To do this, you first create a style reference word file that follows the style and format you would like the output WORD file to have. Then, add the following to the YAML header under **output:** like below.
+
+```{md, eval = F}
+output:
+  reference_docx: word-style.docx
+```
+
+In our example project, **word_template.docx** is the reference file.
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/yaml-reference-docx.png")
+```
+
+Of course, only the style and format of the reference WORD file will be inherited to the output WORD file, but not its contents.
+
+:::{.callout-note}
++ Compared the style of **sample_to_word.docx** and "word_template.docx" and confirm they have the same font size and family for the narattive, sections, subsections, and subsubsection.
++ Uncomment `reference_docx: word_template.docx` in the YAML header, knit to a WORD file, and check the style of **sample_to_word.dcox** again
+:::
+
+You can change the style of the reference WORD style file and save the changes. Then, the style changes will be reflected in the output WORD file when the rmd file is knitted next time.
+
+:::{.callout-tip}
+To create a style file for your liking you may find [this Microsoft tutorial](https://support.microsoft.com/en-gb/office/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) and [this book chapter](https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html) in @xie2020r useful.
+:::
+
+
+## Citations and References
+
+### Set up
+
+First, create a reference file. Then, add the following to the YAML header (not under **output:**).
+
+```{r eval = F}
+bibliography: bibliography file name
+```
+
+There are various bibliography systems that can be used:
+
+```{r echo = F}
+data.frame(
+  format = c("CSL-JSON", "MODS", "BibLaTeX/BibTex", "RIS", "EndNote", "EndNote XML", "ISI", "MEDLINE", "Copac"),
+  extension = c(".json", ".mods", ".bib", ".ris", ".enl", ".xml", ".wos", ".medline", ".copac")
+) %>%
+  flextable() %>%
+  fontsize(size = 18, part = "all") %>%
+  autofit()
+```
+
+Then, add 
+```{r, eval = F}
+::: {#refs}
+:::
+```
+
+to the part of rmd where you want to put references. 
+
+In our example, we use a **bib** file and the bibliography file is named **bibliography.bib** and specified in the YAML header as below
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/yaml-bib.png")
+```
+
+:::{.callout-note}
++ See the sample rmd file to see how bibliography file is specified in the YAML header
++ Confirm that `{#refs}` enclosed by `:::`is placed in the Reference section of the sample rmd file and confirm that references are indeed added in the Reference section of the output word file
+:::
+
+---
+
+### Cite and create references
+
+To cite, use the following syntax:
+
++ `@reference_name` to print "author names (year)" in the output WORD file
++ `[@reference_name]` to print "(author names, year)" in the output WORD file 
++ `[@reference_name_1; @reference_name_2]` to print "(author names, year; author names, year)" in the output WORD file 
++ `[-@reference_name]` to print just year
+
+`reference_name` is the very first entry of a **.bib** file as in 
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/bib-example.png")
+```
+
+If you are using CSL json file, then it is the **id** of an entry as in 
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/bib-csl-example.png")
+```
+
+The cited items as automatically added to the reference following the specified style (see the next section).
+
+:::{.callout-note}
++ See the Introduction and Reference sections in the sample rmd and WORD files to confirm this rule.
++ Comment out `bibliography: bibliography.bib` and uncomment `bibliography: bibliography.csl`, knit again, and check citations and references are still there. This is just an illustration of using a different bibliography file (CSL json file). 
+:::
+
+---
+
+### Citation and Reference Style
+
+You can change the citation and reference style using [Citation Style Language](https://citationstyles.org/). Citattion style files have **.csl** extension.
+
+1. Obtain the csl file you would like to use from the [Zotero citation style repository](https://www.zotero.org/styles).
+
+2. Place the following in the YAML header (not under **output:**):
+
+```{r eval = F}
+csl: csl file name 
+```
+
+3. Then, when knitted, citations and references styles reflect what the style specified by the csl file  
+
+Currently, the csl style should be set to **qje.csl** (citation style language for The Quartely Journal of Economics) as below
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/yaml-csl.png")
+```
+
+Citation and references styles in the output WORD file follows the rules for the QJE.
+
+**Citation style** observed in the output WORD file (QJE)
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/citation-qje.png")
+```
+
+**Reference style** observed in the output WORD file (QJE)
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/reference-qje.png")
+```
+
+Now, comment `csl: qje.csl` and uncomment `csl: pnas.csl` so that the CSL for the Proceedings of the National Academy of Sciences (PNAS) is used, and then knit the sample rmd file. 
+
+You can now see that the citation style no longer respects the rules I mentioned above and also the reference style follows that of PNAS. This is because PNAS uses only numbers, but not author names or years.
+
+**Citation style** observed in the output WORD file (PNAS)
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/citation-pnas.png")
+```
+
+**Reference style** observed in the output WORD file (PNAS)
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/reference-pnas.png")
+```
+
+
+## Cross-referenced Tables
+
+1. Create a table using the `flextable` package (this is not the only option, and will be discussed later) 
+
+2. Add an R code chunk like this:
+
+````markdown
+`r ''````{r, tab.id = "table-id", tab.cap = "table-name"}
+table_ft
+```
+````
+
+* `table_ft` is a `flextable` object.
+* `table-name` is the caption of the table in the output WORD file
+* `table-id` is the table id you can use to cross-reference
+
+3. Use `\@ref(tab:table-id)` in the rmarkdown file to cross-reference the table (table numbering in the output WORD file is automatic)
+
+:::{.callout-important}
+You cannot use `_` in the table id (`-` is allowed). Cross-referencing would not work with if the table id includes `_`.
+:::
+
+:::{.callout-note}
++ See the Tables section of the sample rmd for the R codes to create a table using the `flextable` package and confirm that the table appears in the output WORD files
++ See the bottom of the Data subsection under the Materials and Methods section to confirm that cross-referencing is working.
+:::
+
+### Packages to create tables
+
+One of the disadvantages of writing to a WORD file is that some table-making R packages are not compatible with it. The `flextable` package is written by the same author of the `officedown` package, which we are using to write to a WORD file. So, naturally, a table object created by the `flextable` package (a `flextable` object) can be knitted into the output WORD without any hiccups as we saw earlier. A notable R package that does NOT work well with the output class of `officedown::rdocx_document` (which we are using) is the `gt` package. Tables created by the package is an object of class `gt`. Unfortunately, there is no function that lets you convert an `gt` object to a `flextable` object. 
+
+One of the recommended packages is the [`modelsummary`](https://vincentarelbundock.github.io/modelsummary/index.html) package (especially for those who often include regression results tables and summary statistics tables). It lets you create regression results tables via the `modelsummary()` function and summary statistics tables via the `datasummary()` function^[The [gtsummary](https://vincentarelbundock.github.io/modelsummary/index.html) package is also compatible. Use `as_flex_table()` to convert a `gtsummary` object to a `flextable` object.]. Both functions has an option called `output` and you can use `output = "flextable"` to generate tables as `flextable` objects, which can then be included in the output file easily. 
+
+Here are some example R codes of using the `modelsummary` package to create a regression results and summary statistics tables.
+
+**Regression** table
+
+```{r, eval = F}
+#--- regressions ---#
+lm_1 <- lm(mpg ~ hp + cyl, data = mtcars)
+lm_2 <- lm(mpg ~ hp + cyl + wt, data = mtcars)
+
+#--- create a regression results table ---#
+modelsummary::modelsummary(
+  list(lm_1, lm_2),
+  outpute = "flextable" #<<
+)
+```
+
+**Summary statistics** table
+
+```{r, eval = F}
+modelsummary::datasummary(
+  mtcars,
+  output = "flextable" #<<
+)
+```
+
+:::{.callout-note}
+See how the exactly the same codes above in the sample rmd file translates into the regression results and summary statistics tables in the output word file.
+:::
+
+## Cross-referenced Figures
+
+1. Create a figure
+
+2. Add an R code chunk like this:
+  * `figure_g` is a plot.
+  * `fig.cap = "caption"` adds `caption` as the caption of the figure 
+  * `figure-id` is the figure id used for cross-referencing
+
+````markdown
+`r ''````{r, fig.id = "figure-id", fig.cap = "caption"}
+figure_g 
+```
+````
+
+3. Use `\@ref(fig:figure-id)` in the rmarkdown file to cross-reference the figure (figure numbering in the output WORD file is automatic)
+
+:::{.callout-important}
+You cannot use `_` in the table id (`-` is allowed). Cross-referencing would not work with if the table id includes `_`.
+:::
+
+---
+
+Here is the rmd-WORD comparison of the part we discussed in this section.
+
+**rmd**
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/figure-rmd.png")
+```
+
+**WORD**
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/figure-word.png")
+```
+
+## Mathematical equations
+
+You can use Latex-like math syntax to write mathematical equations. For equation numbering and cross-referencing to work as discussed here, make sure that you use `bookdown::word_document2` for the `base_format` in the YAML header as below.
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/yaml-math.png")
+```
+
+
+### Math equation 
+
+Math for WORD output is much limited compared to writing to a PDF file using Latex (when knitting to a PDF file, Rmarkdown uses Latex to render math equations). This is because Latex is **NOT** involved in converting Latex-like math syntax to math equations when knitted to WORD. Instead, pandoc is doing the conversion job. So, it is not surprising that not all the Latex math capabilities can be utilized when knitting to a WORD file. With that said, most of the syntaxes that you will need are the same between Rmd-to-WORD and Latex. You can use the equation (for single line of math) and align (more than equal to one equations) environments with successful cross-referencing.
+
+---
+
+**equation** environment
+
+To use an equation environment, first write math and then put `(\#eq:equation-id)` at the end (but before `\end{equation}`) to give an equation id to the equation. You can use `\@ref(eq:equation-id)` to cross-reference the equation. 
+
+````markdown
+\begin{equation}
+Math
+(\#eq:equation-id)
+\end{equation}
+````
+
+For example,
+
+```markdown
+$$
+\begin{equation}
+\bar{y} = \sum_{i=1}^n y_i
+(\#eq:eq-1)
+\end{equation}
+$$
+```
+
+should print like below in the output WORD file.
+
+$$
+\begin{equation}
+\bar{y} = \sum_{i=1}^n y_i
+\end{equation}
+$$
+
+---
+
+**align** environment
+
+This works just like **equation** environment. To use an align environment, first write line(s) of math and then put `(\#eq:equation-id)` at the end (but before `\end{align}`) to give an equation id to the equation. You can use `\@ref(eq:equation-id)` to cross-reference the equation. 
+
+````markdown
+\begin{align}
+Math\\ 
+Math
+(\#eq:equation-id)
+\end{align}
+````
+
+For example,
+
+```markdown
+$$
+\begin{align}
+ AR(p): Y_i &= c + \epsilon_i + \phi_i Y_{i-1} \dots \\
+ Y_{i} &= c + \phi_i Y_{i-1} \dots
+\end{align}
+$$
+```
+
+should print like below in the output WORD file.
+
+$$
+\begin{align}
+ AR(p): Y_i &= c + \epsilon_i + \phi_i Y_{i-1} \dots \\
+ Y_{i} &= c + \phi_i Y_{i-1} \dots
+\end{align}
+$$
+
+:::{.callout-note}
+See the bottom of the Statistical Model subsection under the Materials and Methods section of the sample rmd and output WORD files to confirm the equations are numbered and cross-referencing of the equations are done correctly.
+:::
+
+### In-line math
+
+To write a mathematical expresion in line, you can enclose math expressions by $ like below.
+
+````markdown
+Our model is written as $Y_z = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z$.
+````
+
+This should appear like below in the output WORD file.
+
+Our model is written as $Y_z = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z$.
+
+:::{.callout-note}
+See the bottom of the Statistical Model subsection under the Materials and Methods section of the sample rmd and output WORD files to confirm that `$\beta_1$` is sucessfully rendered as $\beta_1$ in line in the output WORD file.
+:::
+
+---
+
+Here is the rmd-WORD comparison of the part we discussed in this section.
+
+**rmd**
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/math-rmd.png")
+```
+
+**WORD**
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/math-word.png")
+```
