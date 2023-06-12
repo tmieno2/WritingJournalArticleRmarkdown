@@ -4,3 +4,4 @@ ResourceFolder/*
 .vscode/*
 .quarto/*
 sample_to_word.docx
+/.quarto/

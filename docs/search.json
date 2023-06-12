@@ -49,6 +49,13 @@
     "text": "2.1 Preparation\nBefore diving in, please do the followings:\n\nGo [here](https://www.dropbox.com/sh/l95j7vk8sxl2nnu/AAAwWMl8yO6Vbj0u_9zd_fv6a?dl=0) and download all the files including sample_to_word.rmd, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this Github repository ().\nKnit sample_to_word.Rmd to produce sample_to_word.docx, which we refer to as the sample WORD file.\nInstall the following packages if you have not\n\nofficedown\nflextable\nofficer\nknitr\nrmarkdown\ntidyverse\nmodelsummary"
   },
   {
+    "objectID": "WORD.html#workflow-of-writing-a-journal-article",
+    "href": "WORD.html#workflow-of-writing-a-journal-article",
+    "title": "2  Knit to a WORD file",
+    "section": "2.2 Workflow of writing a journal article",
+    "text": "2.2 Workflow of writing a journal article\nHere are the proposed steps to generate a fully publication-ready article:\n\nWrite an Rmarkdown file and knit to a WORD file (the focus of this lecture)\n\nregular texts\nR codes for analysis, tables, figures\n\nDo final formatting jobs on the output WORD file (not discussed here) to the specific needs required by the final destination of the article"
+  },
+  {
     "objectID": "WORD.html#structure-of-the-rmarkdown-file",
     "href": "WORD.html#structure-of-the-rmarkdown-file",
     "title": "2  Knit to a WORD file",
@@ -103,12 +110,5 @@
     "title": "2  Knit to a WORD file",
     "section": "",
     "text": "The gtsummary package is also compatible. Use as_flex_table() to convert a gtsummary object to a flextable object.↩︎"
-  },
-  {
-    "objectID": "WORD.html#workflow-of-writing-a-journal-article",
-    "href": "WORD.html#workflow-of-writing-a-journal-article",
-    "title": "2  Knit to a WORD file",
-    "section": "2.2 Workflow of writing a journal article",
-    "text": "2.2 Workflow of writing a journal article\nHere are the proposed steps to generate a fully publication-ready article:\n\nWrite an Rmarkdown file and knit to a WORD file (the focus of this lecture)\n\nregular texts\nR codes for analysis, tables, figures\n\nDo final formatting jobs on the output WORD file (not discussed here) to the specific needs required by the final destination of the article"
   }
 ]
