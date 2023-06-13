@@ -1,9 +1,9 @@
 ## Welcome {.unnumbered}
 
-This book provides an introduction to machine learning methods for economists with a strong focus on causal machine learning methods. It is still under development and it still has a long way to go before it is completed. One thing that may distinguish this book from the books on machine learning methods on the market is that it attempts to be illustrative and easy to understand for those who are not familiar with machine learning methods. This is done by providing step-by-step R codes to enhance understanding of various algorithms. This, however, does not mean that anybody can read the book and understand the materials. It is desirable that you have gone through 1st-year Ph.D. econometrics sequence (or equivalent). 
+This book covers how to write journal articles using Rmarkdown to either WORD or PDF. 
 
 ## License {.unnumbered}
 
-This website is (and will always be) **free to use**, and is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) License.
+This book is (and will always be) **free to use**, and is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) License.
 
 

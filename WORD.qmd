@@ -177,9 +177,54 @@ Of course, only the style and format of the reference WORD file will be inherite
 You can change the style of the reference WORD style file and save the changes. Then, the style changes will be reflected in the output WORD file when the rmd file is knitted next time.
 
 :::{.callout-tip}
-To create a style file for your liking you may find [this Microsoft tutorial](https://support.microsoft.com/en-gb/office/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) and [this book chapter](https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html) in @xie2020r useful.
+To create a style file for your liking you may find [this Microsoft tutorial](https://support.microsoft.com/en-gb/office/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) and [this book chapter](https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html) in @xie2020r useful. 
 :::
 
+### Style change example
+
+This section gives you a quick look at what it may look to be changing the style of a reference WORD file. We use **word_template.docx** for this demonstration. First, open the document on WORD and open the Styles Pane (If you are using Mac, it should be at the right upper corner of the document). Then you should see something like below. 
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/style-change-1.png")
+```
+
+Then, put your cursor on anywhere in line 2 as below and you should see that the current style is changed to "1 Heading 1", which is the name of the class (style type) the texts in line 2 belong to.
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/style-change-2.png")
+```
+
+Now, put your cursor at the black triangle and you should see available options including "Modify Style..."
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/style-change-3.png")
+```
+
+Once you click on it, you should see a pop-up window like below.
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/style-change-4.png")
+```
+
+Here, you can change font family, font size, among other things. In this demonstration, let's get rid of automatic section number. To do so, click on the "Format" button at the lower left corner of the window. Then, you should see this.
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/style-change-5.png")
+```
+
+Pick "Numbering," click on "None," and hit "OK." 
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/style-change-6.png")
+```
+
+Hit "OK" again in the previous pop-up window, then you should see this.
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/style-change-7.png")
+```
+
+Notice that section numbering is now gone. Now, knit the sample rmd file and confirm that the output WORD file indeed lost section numbers (subsection numbers still remain because you did not modify that part in the reference docx.).
 
 ## Citations and References
 
