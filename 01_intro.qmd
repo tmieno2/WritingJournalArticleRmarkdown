@@ -45,20 +45,19 @@ Rmarkdown let you avoid the following:
 2. Manual formatting of tables and figures^[This is more of what R can do] 
 3. Manual updating of data-driven numbers (e.g., coefficient estimates, summary numbers) in text
 
-`r lubridate::year(Sys.Date()) - 2007` years ago when I was a graduate student, Rmarkdown did not exist (the `sweave` package did exist). Fairly new to the academic world, I was doing what most of us were doing to create reports for econometrics courses or writing manuscripts.
+```{r}
+#| include: false
+year_since_grad <- lubridate::year(Sys.Date()) - 2007
+```
 
-If I am using Latex,
-
-+ Run R codes and create tables (regression results, summary statistics, etc), write the tables to Latex files using R functions that let you do so
-+ Copy the Latex texts and paste them to the main Latex file
-
-If I am using WORD,
+`r year_since_grad` years ago when I was a graduate student, Rmarkdown did not exist (the `sweave` package did exist). Fairly new to the academic world, I was using R to create reports for econometrics courses or writing manuscripts before I learned how to use Latex.
 
 + Run R codes and create tables (regression results, summary statistics, etc) on R, take a screenshot of the tables on R, save them as pictures 
 + Run R codes and create plots on R, save the plots as pictures
 + Import tables and figures manually to the WORD file
++ Format tables manually on WORD
 
-These are extremely tedious. When something changes (underlying data, parameter, etc), then you need to start the process all over again every time. You are probebly well aware that these changes are rather common during the process of completing a project with the final goal being publising a paper. 
+These are extremely tedious and time-consuming. When something changes (underlying data, parameter, etc), then you need to start the process all over again every time. You are probebly well aware that these changes are rather common during the process of completing a project with the final goal being publising a paper. 
 
 The arrival of the `knitr` and `Rmarkdown` packages have completely changed the game because you can now integrate narratives and R codes in a single file. When you `knit` (compile) the file, then you have everything you need in the output file in various formats (WORD, pdf, html). 
 
@@ -66,11 +65,12 @@ The Rmarkdown system is now mature enough that we can write an academic manuscri
 
 ## WORD or PDF?
 
-If I am a single author of the paper and your target journal accepts Latex file after acceptance, then I would go for PDF without hesitation. Writing to PDF is much easier when using the Rmarkdown system and Latex-driven PDF simply looks better than WORD. However, there are cases where you might want to or need to use WORD. First, there are many journals that accept only WORD files. Even if your target journal accepts PDF, your coauthors may demand that they have manuscripts in WORD so they can edit more easily. In summary, it really depends. One nice thing about using Rmarkdown is that you can go back and forth between PDF and WORD without too much effort.
+If I am a single author of the paper and your target journal accepts Latex file after acceptance, then I would go for PDF especially when there is a template that you can take to format the output pdf file to the journal you are targeting. However, there are cases where you might want to or need to use WORD. First, there are many journals that accept only WORD files. Even if your target journal accepts PDF, your coauthors may demand that they have manuscripts in WORD so they can edit more easily. 
 
+<!-- 
 ## Flowchart
 
 PDF or WORD? 
   - PDF 
     - rticles
-  - WORD (rmarkdown)
+  - WORD (rmarkdown) -->

@@ -7,7 +7,7 @@ library(officer)
 library(flextable)
 ```
 
-# Knit to WORD {#sec-word}
+# WORD {#sec-word}
 
 ## Preparation
 
@@ -26,6 +26,12 @@ Before diving in, please do the followings:
   + `tidyverse`
   + `modelsummary`
 
+
+:::{.callout-important}
+## Pre-requisite
+Basic understanding of how Rmarkdown works ([This](https://rmarkdown.rstudio.com/lesson-1.html) or [This](https://bookdown.org/yihui/rmarkdown/basics.html) is a good place to start)
+:::
+
 ## Baisc workflow until publication
 
 Here are the proposed steps to generate a fully publication-ready article:
@@ -36,21 +42,26 @@ Here are the proposed steps to generate a fully publication-ready article:
 4. Revise and resubmit your manuscript after iterating between the authors (the same as step 2)
 5. Repeat steps 2, 3, and 4 until accepted (terminate the process if rejected)
 6. Finally, format your manuscript to the specific requirements by the journal
-   + create a style reference WORD file and refer to it (see Section @word-specify-style). 
+   + create a style reference WORD file and refer to it (see Section @sec-word-specify-style). 
 
 Now, let's take a closer look at Step 2. What you do in this step differs based on who your co-authors are. 
 
 :::{.callout-note icon=false}
 ## Case 1: one of your co-authors demands a WORD file for editing for him/herself
 
-+ In this case, you knit to WORD and give the output WORD file to those authors, let them edit on WORD, and then **you need to reflect the changes suggested in the WORD file to the Rmarkdown file**. The last step would not exist if you are writing in WORD exclusively. However, I did not find this painful personally. Rather, this forces me to carefully inspect all the changes made by co-authors (, which of course you should do even if you are using WORD alone). 
-+ Once you modify the Rmarkdown file and knit to WORD, all the track changes will be lost. For the co-authors who want to see the changes you made from the previous version, simply suggest taking advantage of WORD's capability to compare two versions of a document (see [here](https://www.businessinsider.com/guides/tech/how-to-compare-two-word-documents)). If they complain about doing this, just stop working with them entirely.  
++ In this case, you knit to WORD and give the output WORD file to those authors, let them edit in WORD, and then **you need to reflect the changes suggested in the WORD file to the Rmarkdown file**. The last step would not exist if you are writing in WORD exclusively. However, I did not find this painful personally. Rather, this forces me to carefully inspect all the changes made by co-authors (, which of course you should do even if you are using WORD alone). 
++ Once you modify the Rmarkdown file and knit to WORD, all the track changes will be lost. For the co-authors who want to see the changes you made from the previous version, simply suggest taking advantage of WORD's capability to compare two versions of a document (see [here](https://www.businessinsider.com/guides/tech/how-to-compare-two-word-documents)). If they complain about doing this, just stop working with them entirely. 
 :::
 
 :::{.callout-note icon=false}
 ## Case 2: every single one of the authors knows how to use Rmarkdown and git 
 
-In this case, things are just so easy. You never have to get out of Rmarkdown. Just let them edit the Rmarkdown file and keep track of changes using git.
+In this case, things are just so easy. You never have to get out of Rmarkdown. Just let them edit the Rmarkdown file and keep track of changes using git. Any IDE should give you a side-by-side comparison of the previous and current versions like below ([Sublime Merge](https://www.sublimemerge.com/) is used here).
+
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/git-illustrate.png")
+```
 :::
 
 
@@ -91,7 +102,7 @@ More detailed explanation of out put options will be provided later individually
 
 ### Main body
 
-This is where narratives and R codes are written.
+This is everything that is below the YAML header, where narratives and R codes are written.
 
 ## Control of some elements in WORD through Rmarkdown 
 
@@ -152,9 +163,54 @@ To break a page, use
 Confirm this by inspecting the end of the Introduction section of the sample rmd and word files.
 :::
 
-## Specifying the style of the output WORD file in detail {#word-specify-style}
 
-Rmarkdown itself is very limited in its ability to specify the style of the output WORD file. Few exceptions are:
+### List
+
+You can create an unordered list by simply using either +, -, or * in front of each item. For example,
+
+````{verbatim}
++ item 1
++ item 2
++ item 3
+````
+
+would print as below in the output WORD file.
+
++ item 1
++ item 2
++ item 3
+
+You can create a nested list like below
+
+````{verbatim}
++ item 1
+  - item 1.1
+  - item 1.2
++ item 2
++ item 3
+````
+
+would print as below in the output WORD file.
+
++ item 1
+  - item 1.1
+  - item 1.2
++ item 2
++ item 3
+
+Here is an ordered list. 
+
+````{verbatim}
+1. item 1
+2. item 2
+3. item 3
+````
+
+1. item 1
+2. item 2
+3. item 3
+
+### Bold and Italic
 
 + bold font: `**this becomes bold**` (or `__this becomes bold__`)
 + italic font: `*this becomes italic*` 
@@ -163,7 +219,30 @@ Rmarkdown itself is very limited in its ability to specify the style of the outp
 Confirm these by comparing the first sentence in the Introduction section of the sample rmd and WORD files.
 :::
 
-However, you can define the style of the output WORD file in detail using a style reference WORD file. This method can control virtually every aspect of WORD file styling. Some of the commonly customized elements among others are
+## Specifying the style of the output WORD file in detail {#sec-word-specify-style}
+
+You can change the style of the output WORD file either via direct control in the YAML header or via reference WORD file. 
+
+:::{.callout-tip}
++ You first change styles direclty using the options made available by the `officedown` package in the YAML header @sec-change-style-yaml
++ If the above is not sufficient, use reference WORD file to apply its style (not content) to the output WORD file @sec-change-style-reference
+:::
+
+### Change styles in the YAML header {#sec-change-style-yaml}
+
+You can control the style of the output WORD file somewhat in the YAML header. For example, you can determine the page size and margins using `page_size` and `page_margins` (see the YAML header in the sample rmd file). You also have some controls on how tables and figures appear. For example, the `align` option lets you determine the horizontal position of tables and figures. `topcaption` lets you determine whether you have the caption at the top of bottom. 
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/style-change-yaml.png")
+```
+
+:::{.callout-tip}
+For the complete set of options, see [Section 4 of the Officeverse book](https://ardata-fr.github.io/officeverse/officedown-for-word.html).
+:::
+
+### Change styles through reference docx {#sec-change-style-reference}
+
+It is almost always the case that the above approach is not sufficient to format your WORD file to the specific requirements of your target journal. In such a case, you can define the style of the output WORD file in detail using a style reference WORD file. This method can control virtually every aspect of WORD file styling. Some of the commonly customized elements among others are
 
 + font size
 + font family
@@ -250,9 +329,9 @@ First, create a reference file. Then, add the following to the YAML header (not 
 bibliography: bibliography file name
 ```
 
-There are various bibliography systems that can be used:
+There are various bibliography systems that can be used including BibLaTeX/BibTex (.bib), CSL-JSON (.json), EndNote (.enl) among other.
 
-```{r echo = F}
+<!-- ```{r echo = F}
 data.frame(
   format = c("CSL-JSON", "MODS", "BibLaTeX/BibTex", "RIS", "EndNote", "EndNote XML", "ISI", "MEDLINE", "Copac"),
   extension = c(".json", ".mods", ".bib", ".ris", ".enl", ".xml", ".wos", ".medline", ".copac")
@@ -260,15 +339,14 @@ data.frame(
   flextable() %>%
   fontsize(size = 18, part = "all") %>%
   autofit()
-```
+``` -->
 
-Then, add 
-```{r, eval = F}
+Then, add the following to the part of rmd where you want to put references. 
+
+````{verbatim}
 ::: {#refs}
 :::
-```
-
-to the part of rmd where you want to put references. 
+````
 
 In our example, we use a **bib** file and the bibliography file is named **bibliography.bib** and specified in the YAML header as below
 
@@ -440,7 +518,7 @@ figure_g
 3. Use `\@ref(fig:figure-id)` in the Rmarkdown file to cross-reference the figure (figure numbering in the output WORD file is automatic)
 
 :::{.callout-important}
-You cannot use `_` in the table id (`-` is allowed). Cross-referencing would not work with if the table id includes `_`.
+You cannot use `_` in the figure id (`-` is allowed). Cross-referencing would not work with if the table id includes `_`.
 :::
 
 ---
@@ -567,3 +645,6 @@ knitr::include_graphics("assets/pictures/math-rmd.png")
 ```{r  echo = F, out.width = "100%"}
 knitr::include_graphics("assets/pictures/math-word.png")
 ```
+
+
+<!-- ## How much R coding inside the manuscript rmd file? -->
