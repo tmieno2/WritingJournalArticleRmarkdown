@@ -8,10 +8,12 @@ book:
   date: "`r Sys.Date()`"
   chapters:
     - index.qmd
-    - intro.qmd
-    - WORD.qmd
-    - PDF.qmd
-    - references.qmd
+    - 01_intro.qmd
+    - 1_WORD.qmd
+    - 2_PDF-Rmarkdown.qmd
+    - 3_PDF-Quarto.qmd
+    - 4_PDF-KnitrLatex.qmd
+    - 99_references.qmd
 
 bibliography: references.bib
 

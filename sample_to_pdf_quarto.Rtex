@@ -1,0 +1,347 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  12pt,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{siunitx}
+\newcolumntype{d}{S[input-symbols = ()]}
+\floatplacement{figure}{H}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Paper Title},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Paper Title}
+\author{}
+\date{}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+\maketitle
+\begin{abstract}
+Your abstract goes here\ldots{}
+\end{abstract}
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}, interior hidden, frame hidden, breakable, enhanced]}{\end{tcolorbox}}\fi
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+The issue this article addresses is \textbf{super} \emph{important}!
+
+\begin{itemize}
+\item
+  \textbf{author names and year}: Schlenker and Roberts (2009) examined
+  \ldots.
+\item
+  \textbf{author names and year in parentheses}: (Schlenker and Roberts
+  2009)
+\item
+  \textbf{multiple citations in parentheses}: (Schlenker and Roberts
+  2009; Mas-Colell et al. 1995)
+\item
+  \textbf{only year in parentheses}: (2009)
+\end{itemize}
+
+\newpage
+
+\hypertarget{materials-and-methods}{%
+\section{Materials and Methods}\label{materials-and-methods}}
+
+This line break does not work: See?
+
+This line break does work:
+
+See?
+
+\hypertarget{data}{%
+\subsection{Data}\label{data}}
+
+The number of observations are 598 and 1376 for Zones 2 and 3,
+respectively.
+
+Table @ref(tab:summary-statistics) presents summary statistics by zone.
+
+\hypertarget{statistical-model}{%
+\subsection{Statistical Model}\label{statistical-model}}
+
+See equation \ref{eq-eqn1} and \ref{eq-eqn2} for the statistical models
+we use.
+
+\begin{equation}
+y = \beta_0 + \beta_1 x + \varepsilon \label{eq-eqn1}
+\end{equation}
+
+\begin{align}
+Y_z & = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z \\
+& = \sum_{i=1}^k \phi_k(S) + g_z(N) + h_z(X,Y) + \varepsilon_z \label{eq-eqn2}
+\end{align}
+
+Our target coefficient is \(\beta_1\) (in-line math).
+
+\hypertarget{results-and-discussions}{%
+\section{Results and Discussions}\label{results-and-discussions}}
+
+Table Table~\ref{tbl-reg-table} presents the regression results.
+
+Figure Figure~\ref{fig-1} presents the distribution of yields by zone.
+
+\hypertarget{conclusions}{%
+\section{Conclusions}\label{conclusions}}
+
+bluh bluh\footnote{This is a footnote}, another bluh bluh\footnote{This
+  is the second footnote}
+
+\newpage
+
+\hypertarget{tables}{%
+\section{Tables}\label{tables}}
+
+\hypertarget{tbl-reg-table}{}
+\begin{table}[H]
+\caption{\label{tbl-reg-table}Regression Results }\tabularnewline
+
+\centering
+\begin{tabular}[t]{lcc}
+\toprule
+  & Model 1 & Model 2\\
+\midrule
+(Intercept) & \num{36.908} & \num{38.752}\\
+ & (\num{2.191}) & (\num{1.787})\\
+hp & \num{-0.019} & \num{-0.018}\\
+ & (\num{0.015}) & (\num{0.012})\\
+cyl & \num{-2.265} & \num{-0.942}\\
+ & (\num{0.576}) & (\num{0.551})\\
+wt &  & \num{-3.167}\\
+ &  & (\num{0.741})\\
+\midrule
+Num.Obs. & \num{32} & \num{32}\\
+R2 & \num{0.741} & \num{0.843}\\
+R2 Adj. & \num{0.723} & \num{0.826}\\
+AIC & \num{169.6} & \num{155.5}\\
+BIC & \num{175.4} & \num{162.8}\\
+Log.Lik. & \num{-80.781} & \num{-72.738}\\
+F & \num{41.422} & \num{50.171}\\
+RMSE & \num{3.02} & \num{2.35}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Regression results are presented in Table Table~\ref{tbl-reg-table}.
+
+\newpage
+
+\hypertarget{figures}{%
+\section{Figures}\label{figures}}
+
+I like Figure Figure~\ref{fig-1} a lot.
+
+\begin{figure}[H]
+
+{\centering \includegraphics[width=17.1875in,height=3in]{sample_to_pdf_quarto_files/figure-pdf/fig-1-1.pdf}
+
+}
+
+\caption{\label{fig-1}The Distribution of Yield by Zone}
+
+\end{figure}
+
+\newpage
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-mas1995microeconomic}{}}%
+Mas-Colell, Andreu, Michael Dennis Whinston, Jerry R Green, et al. 1995.
+\emph{Microeconomic Theory}. Vol. 1. Oxford university press New York.
+
+\leavevmode\vadjust pre{\hypertarget{ref-schlenker2009nonlinear}{}}%
+Schlenker, Wolfram, and Michael J Roberts. 2009. {``Nonlinear
+Temperature Effects Indicate Severe Damages to US Crop Yields Under
+Climate Change.''} \emph{Proceedings of the National Academy of
+Sciences} 106 (37): 15594--98.
+
+\end{CSLReferences}
+
+
+
+\end{document}

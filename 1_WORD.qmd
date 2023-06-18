@@ -7,40 +7,54 @@ library(officer)
 library(flextable)
 ```
 
-# Knit to WORD
+# Knit to WORD {#sec-word}
 
 ## Preparation
 
 Before diving in, please do the followings:
 
-+ Go [here](https://www.dropbox.com/sh/l95j7vk8sxl2nnu/AAAwWMl8yO6Vbj0u_9zd_fv6a?dl=0) and download all the files including **sample_to_word.rmd**, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this [Github repository](https://github.com/tmieno2/WritingJournalArticleRmarkdown).
++ Go [here](https://www.dropbox.com/sh/kamcegpis7m0pzq/AAAdZ2eo1vhaZ7srxDLNHdMoa?dl=0) and download all the files including **sample_to_word.rmd**, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this [Github repository](https://github.com/tmieno2/WritingJournalArticleRmarkdown), go to the **Resources/WORD/** folder.
 
-+ Knit **sample_to_word.Rmd** to produce **sample_to_word.docx**, which we refer to as the sample WORD file.
++ Open RStudio (or any other software you you may be using like VS code) and knit **sample_to_word.Rmd** to produce **sample_to_word.docx**, which we refer to as the sample WORD file.
 
 + Install the following packages if you have not
   + `officedown`
   + `flextable`
   + `officer`
   + `knitr`
-  + `rmarkdown`
+  + `Rmarkdown`
   + `tidyverse`
   + `modelsummary`
 
 ## Baisc workflow until publication
 
-If you are trying to decide whether to use the rmd-WORD system, you should be aware that it is very likely that you cannot just do everything in rmarkdown unlike wirting to PDF. Specifically, you will  almost certainly need to format your manuscript manually in WORD itself to satisfy the format requirements by the final desination of your manuscript. This is because rmarkdown provides very weak formatting capabilities. 
+Here are the proposed steps to generate a fully publication-ready article:
 
-Here are the proposed steps to generate a fully publication-ready article: 
+1. Write an Rmarkdown file and knit to a WORD file (the focus of this lecture) without worrying about formatting your manuscript (Most journals do not require manuscript formatting until the manuscript is accepted. But, please do check yourself if it is indeed the case)
+2. Iterate between the authors until ready for submission
+3. Submit your manuscript (no formatting just yet)
+4. Revise and resubmit your manuscript after iterating between the authors (the same as step 2)
+5. Repeat steps 2, 3, and 4 until accepted (terminate the process if rejected)
+6. Finally, format your manuscript to the specific requirements by the journal
+   + create a style reference WORD file and refer to it (see Section @word-specify-style). 
 
-1. Write an Rmarkdown file and knit to a WORD file (the focus of this lecture) without worrying about formatting your manuscript (Most jorunals do not require manuscript formatting until the manuscript is accepted. But, please do check yourself it is indeed the case)
-2. Submit your masnucript
-3. Revise and resubmit your manuscript 
-4. Repeat steps 2 and 3 until accepted (terminate the process if rejeccted)
-5. Format (partially through Rmarkdown, but mostly in WORD) your manuscript to the specific requirements by the journal
+Now, let's take a closer look at Step 2. What you do in this step differs based on who your co-authors are. 
 
-Note that this process is recommended when you are knitting to PDF as well. It is just that it is more important to stick with it if you are using rmd-WORD system. 
+:::{.callout-note icon=false}
+## Case 1: one of your co-authors demands a WORD file for editing for him/herself
 
-## Structure of the rmarkdown file
++ In this case, you knit to WORD and give the output WORD file to those authors, let them edit on WORD, and then **you need to reflect the changes suggested in the WORD file to the Rmarkdown file**. The last step would not exist if you are writing in WORD exclusively. However, I did not find this painful personally. Rather, this forces me to carefully inspect all the changes made by co-authors (, which of course you should do even if you are using WORD alone). 
++ Once you modify the Rmarkdown file and knit to WORD, all the track changes will be lost. For the co-authors who want to see the changes you made from the previous version, simply suggest taking advantage of WORD's capability to compare two versions of a document (see [here](https://www.businessinsider.com/guides/tech/how-to-compare-two-word-documents)). If they complain about doing this, just stop working with them entirely.  
+:::
+
+:::{.callout-note icon=false}
+## Case 2: every single one of the authors knows how to use Rmarkdown and git 
+
+In this case, things are just so easy. You never have to get out of Rmarkdown. Just let them edit the Rmarkdown file and keep track of changes using git.
+:::
+
+
+## Structure of the Rmarkdown file
 
 The ramrkdown file consits mainly of two components.
 
@@ -49,7 +63,7 @@ The ramrkdown file consits mainly of two components.
 
 ### YAML header
 
-YAML header comes at the very top of the rmarkdown file and it lets you specify things like
+YAML header comes at the very top of the Rmarkdown file and it lets you specify things like
 
 + paper title
 + authors
@@ -138,7 +152,7 @@ To break a page, use
 Confirm this by inspecting the end of the Introduction section of the sample rmd and word files.
 :::
 
-## Specifying the style of the output WORD file in detail
+## Specifying the style of the output WORD file in detail {#word-specify-style}
 
 Rmarkdown itself is very limited in its ability to specify the style of the output WORD file. Few exceptions are:
 
@@ -170,14 +184,14 @@ knitr::include_graphics("assets/pictures/yaml-reference-docx.png")
 Of course, only the style and format of the reference WORD file will be inherited to the output WORD file, but not its contents.
 
 :::{.callout-note}
-+ Compared the style of **sample_to_word.docx** and "word_template.docx" and confirm they have the same font size and family for the narattive, sections, subsections, and subsubsection.
++ Compared the style of **sample_to_word.docx** and "word_template.docx" and confirm they have the same font size and family for the narrative, sections, subsections, and subsubsection.
 + Uncomment `reference_docx: word_template.docx` in the YAML header, knit to a WORD file, and check the style of **sample_to_word.dcox** again
 :::
 
 You can change the style of the reference WORD style file and save the changes. Then, the style changes will be reflected in the output WORD file when the rmd file is knitted next time.
 
 :::{.callout-tip}
-To create a style file for your liking you may find [this Microsoft tutorial](https://support.microsoft.com/en-gb/office/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) and [this book chapter](https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html) in @xie2020r useful. 
+To create a style file for your liking you may find [this Microsoft tutorial](https://support.microsoft.com/en-gb/office/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563) and [this book chapter](https://bookdown.org/yihui/Rmarkdown-cookbook/word-template.html) in @xie2020r useful. 
 :::
 
 ### Style change example
@@ -301,7 +315,7 @@ The cited items as automatically added to the reference following the specified 
 
 ### Citation and Reference Style
 
-You can change the citation and reference style using [Citation Style Language](https://citationstyles.org/). Citattion style files have **.csl** extension.
+You can change the citation and reference style using [Citation Style Language](https://citationstyles.org/). Citation style files have **.csl** extension.
 
 1. Obtain the csl file you would like to use from the [Zotero citation style repository](https://www.zotero.org/styles).
 
@@ -313,7 +327,7 @@ csl: csl file name
 
 3. Then, when knitted, citations and references styles reflect what the style specified by the csl file  
 
-Currently, the csl style should be set to **qje.csl** (citation style language for The Quartely Journal of Economics) as below
+Currently, the csl style should be set to **qje.csl** (citation style language for The Quarterly Journal of Economics) as below
 
 ```{r  echo = F, out.width = "100%"}
 knitr::include_graphics("assets/pictures/yaml-csl.png")
@@ -362,7 +376,7 @@ table_ft
 * `table-name` is the caption of the table in the output WORD file
 * `table-id` is the table id you can use to cross-reference
 
-3. Use `\@ref(tab:table-id)` in the rmarkdown file to cross-reference the table (table numbering in the output WORD file is automatic)
+3. Use `\@ref(tab:table-id)` in the Rmarkdown file to cross-reference the table (table numbering in the output WORD file is automatic)
 
 :::{.callout-important}
 You cannot use `_` in the table id (`-` is allowed). Cross-referencing would not work with if the table id includes `_`.
@@ -423,7 +437,7 @@ figure_g
 ```
 ````
 
-3. Use `\@ref(fig:figure-id)` in the rmarkdown file to cross-reference the figure (figure numbering in the output WORD file is automatic)
+3. Use `\@ref(fig:figure-id)` in the Rmarkdown file to cross-reference the figure (figure numbering in the output WORD file is automatic)
 
 :::{.callout-important}
 You cannot use `_` in the table id (`-` is allowed). Cross-referencing would not work with if the table id includes `_`.
@@ -473,12 +487,10 @@ Math
 For example,
 
 ```markdown
-$$
 \begin{equation}
 \bar{y} = \sum_{i=1}^n y_i
 (\#eq:eq-1)
 \end{equation}
-$$
 ```
 
 should print like below in the output WORD file.
@@ -506,12 +518,10 @@ Math
 For example,
 
 ```markdown
-$$
 \begin{align}
  AR(p): Y_i &= c + \epsilon_i + \phi_i Y_{i-1} \dots \\
  Y_{i} &= c + \phi_i Y_{i-1} \dots
 \end{align}
-$$
 ```
 
 should print like below in the output WORD file.
@@ -529,7 +539,7 @@ See the bottom of the Statistical Model subsection under the Materials and Metho
 
 ### In-line math
 
-To write a mathematical expresion in line, you can enclose math expressions by $ like below.
+To write a mathematical expression in line, you can enclose math expressions by $ like below.
 
 ````markdown
 Our model is written as $Y_z = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z$.
@@ -540,7 +550,7 @@ This should appear like below in the output WORD file.
 Our model is written as $Y_z = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z$.
 
 :::{.callout-note}
-See the bottom of the Statistical Model subsection under the Materials and Methods section of the sample rmd and output WORD files to confirm that `$\beta_1$` is sucessfully rendered as $\beta_1$ in line in the output WORD file.
+See the bottom of the Statistical Model subsection under the Materials and Methods section of the sample rmd and output WORD files to confirm that `$\beta_1$` is successfully rendered as $\beta_1$ in line in the output WORD file.
 :::
 
 ---

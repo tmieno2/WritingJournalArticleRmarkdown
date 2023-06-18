@@ -1,0 +1,39 @@
+# PDF using `knitr` and Latex {#sec-pdf-knitr-latex}
+
+If you already know how to use Latex, this is probably the best option for you to create manuscripts for journal submission. Comapred to the Rmarkdown-pdf option, this approach is more direct because it basically allows you to put R code chunks directly to a .tex file. One of the key advantages of this approach is that you can take advantage of the existing collection of Latex templates for many journals (e.g., PNAS). If your target journal is one of those, then you can simply take its template, and then add R code chunks. This is not the case for the other two options introduced in sections @sec-rmarkdown-pdf and @sec-quarto-pdf. One of the disadvantages of this approach is that you cannot knit to WORD unlike the Rmarkdown-WORD and Quart-WORD approaches. 
+
+## Preparation
+
+
+## R code chunks
+
+In this approach, you use the following to indicate an R code chunk:
+
+```text
+<<r chunk-name, chunk options>>
+R codes
+@
+```
+
+The available chunk options are basically the same as those for Rmarkdown.
+
+## Tables
+
+See 
+
+When creating tables using R, you need to use functions that can write the table in Latex. Fortunately, there are plenty options. Some of the recommended packages include 
+
++ `modelsummary`
++ `stargazer`
++ `gt`
++ `gtsummay`
++ `xtable`
++ `kable` and `kableExtra`
+
+## Figures
+
+
+
+
+
+

@@ -1,0 +1,157 @@
+# PDF using Rmarkdown via the `bookdown` package {#sec-rmarkdown-pdf}
+
+## Preparation
+
+Before diving in, please do the followings:
+
++ Go [here](https://www.dropbox.com/sh/l95j7vk8sxl2nnu/AAAwWMl8yO6Vbj0u_9zd_fv6a?dl=0) and download all the files including **sample_to_word.rmd**, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this [Github repository](https://github.com/tmieno2/WritingJournalArticleRmarkdown).
+
++ Knit **sample_to_word.Rmd** to produce **sample_to_word.docx**, which we refer to as the sample WORD file.
+
++ Install the following packages if you have not
+  + `officedown`
+  + `flextable`
+  + `officer`
+  + `knitr`
+  + `rmarkdown`
+  + `tidyverse`
+  + `modelsummary`
+
+## Tables
+
+`tab.cap` does not work
+
+:::{.callout-tips}
++ Create the title of the table using R because you cannot add a title using `tab.cap` unlike adding a title to a figure using `fig.cap`. 
++ 
+:::
+
+
+## Figures
+
+
+## Mathematical Equations
+
+### Basics
+You can fully take advantage of Latex math typesetting capability unlike the Rmarkdown-WORD system. This is because whatever you type inside of the following will be printed as is in the tex file when rmd file is converted to a tex file.
+
+````{verbatim}
+```{=tex}
+whatever you type
+```
+````
+
+So, for example, if you have the following in your rmd file, 
+
+````{verbatim}
+```{=tex}
+\begin{equation}
+y = \beta_0 + \beta_1 x + \varepsilon
+\end{equation}
+```
+````
+
+then you will the following printed in the tex file,
+
+````{verbatim}
+\begin{equation}
+y = \beta_0 + \beta_1 x + \varepsilon
+\end{equation}
+````
+
+, which will then appear as 
+
+```{=tex}
+\begin{equation}
+y = \beta_0 + \beta_1 x + \varepsilon
+\end{equation}
+```
+
+in the compiled pdf file.
+
+Of course, you can use other environments like `align`,
+
+````{verbatim}
+```{=tex}
+\begin{align}
+Y_z & = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z\notag \\
+& = \sum_{i=1}^k \phi_k(S) + g_z(N) + h_z(X,Y) + \varepsilon_z
+\end{align}
+```
+````
+
+```{=tex}
+\begin{align}
+Y_z & = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z\notag \\
+& = \sum_{i=1}^k \phi_k(S) + g_z(N) + h_z(X,Y) + \varepsilon_z
+\end{align}
+```
+
+### Cross-reference
+
+There are two ways to cross-reference equations. The first option is to place `(\#eq:equation-name)` at the end of the line that you would like to cross-reference. For example, `(\#eq:eqn1)` is placed at the end of the equation below.
+
+````{verbatim}
+```{=tex}
+\begin{equation}
+y = \beta_0 + \beta_1 x + \varepsilon (\#eq:eqn1)
+\end{equation}
+```
+````
+
+You can then write `\@ref(eq:eqn1)` to refer to the equation number.
+
+:::{.callout-note icon=false appearance="minimal" collapse="true"}
+## Rmarkdown-Latex Comparison: Visual Example
+<br>
+
+```{r, echo = F, out.width = "100%"}
+
+knitr::include_graphics("assets/pictures/math-bookdown-rmd.png")
+knitr::include_graphics("assets/pictures/math-bookdown-pdf.png")
+```
+:::
+
+
+Alternatively, you can do cross-reference as if you would do in a tex file. Specifically, you can add `\label{equation-name}` at the end of the line and then write `\ref{equation-name}`.
+
+````{verbatim}
+```{=tex}
+\begin{equation}
+y = \beta_0 + \beta_1 x + \varepsilon \label{eq-tex}
+\end{equation}
+```
+````
+
+:::{.callout-note icon=false appearance="minimal" collapse="true"}
+## Rmarkdown-Latex Comparison: Visual Example
+<br>
+
+```{r, echo = F, out.width = "100%"}
+
+knitr::include_graphics("assets/pictures/math-bookdown-latex-way-2.png")
+knitr::include_graphics("assets/pictures/math-bookdown-latex-way-1.png")
+```
+:::
+
+Just like Latex, you can use `\notag` to suppress equation numbers. You can cross-reference individual lines.
+
+````{verbatim}
+```{=tex}
+\begin{align}
+Y_z & = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z \notag \\
+& = \sum_{i=1}^k \phi_k(S) + g_z(N) + h_z(X,Y) + \varepsilon_z (\#eq:al-second)
+\end{align}
+```
+
+Equation \@ref(eq:al-second) is the second line.
+````
+
+:::{.callout-note icon=false appearance="minimal" collapse="true"}
+## Rmarkdown-Latex Comparison: Visual Example
+<br>
+```{r, echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/math-bookdown-notag-2.png")
+knitr::include_graphics("assets/pictures/math-bookdown-notag-1.png")
+```
+:::

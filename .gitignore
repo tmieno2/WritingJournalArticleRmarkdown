@@ -6,3 +6,11 @@ ResourceFolder/*
 sample_to_word.docx
 /.quarto/
 .Rproj.user
+*cache
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.log
+assets/*
+*.DS_Store

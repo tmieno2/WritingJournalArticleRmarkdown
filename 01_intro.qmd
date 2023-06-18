@@ -39,7 +39,7 @@ In a single Rmarkdown file,
 
 ## Why Rmarkdown
 
-Rmarkdown can let you avoid the following:
+Rmarkdown let you avoid the following:
 
 1. Manual copying and pasting of tables and figures
 2. Manual formatting of tables and figures^[This is more of what R can do] 
@@ -66,4 +66,11 @@ The Rmarkdown system is now mature enough that we can write an academic manuscri
 
 ## WORD or PDF?
 
-If I am a single author of the paper and your target journal accepts Latex file after acceptance, then I would go for PDF without hesitation. Writing to PDF is much easier when using the Rmarkdown system and Latex-driven PDF simply looks better than WORD. However, there are cases where you might want to or need to use WORD. First, there are many journals that accept only WORD files. Even if your target journal accepts PDF, your coauthors may demand that they have manuscripts in WORD so they can edit more easily. In summary, it really depends. One nice thing about using Rmarkdown is that you can go back and forth between PDF and WORD without too much effort.  
+If I am a single author of the paper and your target journal accepts Latex file after acceptance, then I would go for PDF without hesitation. Writing to PDF is much easier when using the Rmarkdown system and Latex-driven PDF simply looks better than WORD. However, there are cases where you might want to or need to use WORD. First, there are many journals that accept only WORD files. Even if your target journal accepts PDF, your coauthors may demand that they have manuscripts in WORD so they can edit more easily. In summary, it really depends. One nice thing about using Rmarkdown is that you can go back and forth between PDF and WORD without too much effort.
+
+## Flowchart
+
+PDF or WORD? 
+  - PDF 
+    - rticles
+  - WORD (rmarkdown)

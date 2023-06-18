@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./PDF.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./2_PDF-Rmarkdown.html" rel="next">
+<link href="./01_intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -112,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./WORD.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Knit to WORD</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_WORD.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Knit to WORD</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -145,25 +145,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+  <a href="./01_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./WORD.html" class="sidebar-item-text sidebar-link active">
+  <a href="./1_WORD.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Knit to WORD</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./PDF.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Knit to PDF</span></span></a>
+  <a href="./2_PDF-Rmarkdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">PDF using Rmarkdown via the <code>bookdown</code> package</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
+  <a href="./3_PDF-Quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">PDF using Quarto</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4_PDF-KnitrLatex.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">PDF using <code>knitr</code> and Latex</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./99_references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
@@ -179,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#preparation" id="toc-preparation" class="nav-link active" data-scroll-target="#preparation"><span class="header-section-number">2.1</span> Preparation</a></li>
   <li><a href="#baisc-workflow-until-publication" id="toc-baisc-workflow-until-publication" class="nav-link" data-scroll-target="#baisc-workflow-until-publication"><span class="header-section-number">2.2</span> Baisc workflow until publication</a></li>
-  <li><a href="#structure-of-the-rmarkdown-file" id="toc-structure-of-the-rmarkdown-file" class="nav-link" data-scroll-target="#structure-of-the-rmarkdown-file"><span class="header-section-number">2.3</span> Structure of the rmarkdown file</a>
+  <li><a href="#structure-of-the-rmarkdown-file" id="toc-structure-of-the-rmarkdown-file" class="nav-link" data-scroll-target="#structure-of-the-rmarkdown-file"><span class="header-section-number">2.3</span> Structure of the Rmarkdown file</a>
   <ul class="collapse">
   <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header"><span class="header-section-number">2.3.1</span> YAML header</a></li>
   <li><a href="#main-body" id="toc-main-body" class="nav-link" data-scroll-target="#main-body"><span class="header-section-number">2.3.2</span> Main body</a></li>
@@ -190,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#footnote" id="toc-footnote" class="nav-link" data-scroll-target="#footnote"><span class="header-section-number">2.4.2</span> Footnote</a></li>
   <li><a href="#line-and-page-break" id="toc-line-and-page-break" class="nav-link" data-scroll-target="#line-and-page-break"><span class="header-section-number">2.4.3</span> Line and page break</a></li>
   </ul></li>
-  <li><a href="#specifying-the-style-of-the-output-word-file-in-detail" id="toc-specifying-the-style-of-the-output-word-file-in-detail" class="nav-link" data-scroll-target="#specifying-the-style-of-the-output-word-file-in-detail"><span class="header-section-number">2.5</span> Specifying the style of the output WORD file in detail</a>
+  <li><a href="#word-specify-style" id="toc-word-specify-style" class="nav-link" data-scroll-target="#word-specify-style"><span class="header-section-number">2.5</span> Specifying the style of the output WORD file in detail</a>
   <ul class="collapse">
   <li><a href="#style-change-example" id="toc-style-change-example" class="nav-link" data-scroll-target="#style-change-example"><span class="header-section-number">2.5.1</span> Style change example</a></li>
   </ul></li>
@@ -218,7 +230,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Knit to WORD</span></h1>
+<h1 class="title"><span id="sec-word" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Knit to WORD</span></span></h1>
 </div>
 
 
@@ -237,15 +249,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="2.1" class="anchored" data-anchor-id="preparation"><span class="header-section-number">2.1</span> Preparation</h2>
 <p>Before diving in, please do the followings:</p>
 <ul>
-<li><p>Go <a href="https://www.dropbox.com/sh/l95j7vk8sxl2nnu/AAAwWMl8yO6Vbj0u_9zd_fv6a?dl=0">here</a> and download all the files including <strong>sample_to_word.rmd</strong>, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this <a href="https://github.com/tmieno2/WritingJournalArticleRmarkdown">Github repository</a>.</p></li>
-<li><p>Knit <strong>sample_to_word.Rmd</strong> to produce <strong>sample_to_word.docx</strong>, which we refer to as the sample WORD file.</p></li>
+<li><p>Go <a href="https://www.dropbox.com/sh/kamcegpis7m0pzq/AAAdZ2eo1vhaZ7srxDLNHdMoa?dl=0">here</a> and download all the files including <strong>sample_to_word.rmd</strong>, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this <a href="https://github.com/tmieno2/WritingJournalArticleRmarkdown">Github repository</a>, go to the <strong>Resources/WORD/</strong> folder.</p></li>
+<li><p>Open RStudio (or any other software you you may be using like VS code) and knit <strong>sample_to_word.Rmd</strong> to produce <strong>sample_to_word.docx</strong>, which we refer to as the sample WORD file.</p></li>
 <li><p>Install the following packages if you have not</p>
 <ul>
 <li><code>officedown</code></li>
 <li><code>flextable</code></li>
 <li><code>officer</code></li>
 <li><code>knitr</code></li>
-<li><code>rmarkdown</code></li>
+<li><code>Rmarkdown</code></li>
 <li><code>tidyverse</code></li>
 <li><code>modelsummary</code></li>
 </ul></li>
@@ -253,19 +265,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="baisc-workflow-until-publication" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="baisc-workflow-until-publication"><span class="header-section-number">2.2</span> Baisc workflow until publication</h2>
-<p>If you are trying to decide whether to use the rmd-WORD system, you should be aware that it is very likely that you cannot just do everything in rmarkdown unlike wirting to PDF. Specifically, you will almost certainly need to format your manuscript manually in WORD itself to satisfy the format requirements by the final desination of your manuscript. This is because rmarkdown provides very weak formatting capabilities.</p>
 <p>Here are the proposed steps to generate a fully publication-ready article:</p>
 <ol type="1">
-<li>Write an Rmarkdown file and knit to a WORD file (the focus of this lecture) without worrying about formatting your manuscript (Most jorunals do not require manuscript formatting until the manuscript is accepted. But, please do check yourself it is indeed the case)</li>
-<li>Submit your masnucript</li>
-<li>Revise and resubmit your manuscript</li>
-<li>Repeat steps 2 and 3 until accepted (terminate the process if rejeccted)</li>
-<li>Format (partially through Rmarkdown, but mostly in WORD) your manuscript to the specific requirements by the journal</li>
+<li>Write an Rmarkdown file and knit to a WORD file (the focus of this lecture) without worrying about formatting your manuscript (Most journals do not require manuscript formatting until the manuscript is accepted. But, please do check yourself if it is indeed the case)</li>
+<li>Iterate between the authors until ready for submission</li>
+<li>Submit your manuscript (no formatting just yet)</li>
+<li>Revise and resubmit your manuscript after iterating between the authors (the same as step 2)</li>
+<li>Repeat steps 2, 3, and 4 until accepted (terminate the process if rejected)</li>
+<li>Finally, format your manuscript to the specific requirements by the journal
+<ul>
+<li>create a style reference WORD file and refer to it (see Section <span class="citation" data-cites="word-specify-style">(<a href="1_WORD.html#ref-word-specify-style" role="doc-biblioref"><strong>word-specify-style?</strong></a>)</span>).</li>
+</ul></li>
 </ol>
-<p>Note that this process is recommended when you are knitting to PDF as well. It is just that it is more important to stick with it if you are using rmd-WORD system.</p>
+<p>Now, let’s take a closer look at Step 2. What you do in this step differs based on who your co-authors are.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case 1: one of your co-authors demands a WORD file for editing for him/herself
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>In this case, you knit to WORD and give the output WORD file to those authors, let them edit on WORD, and then <strong>you need to reflect the changes suggested in the WORD file to the Rmarkdown file</strong>. The last step would not exist if you are writing in WORD exclusively. However, I did not find this painful personally. Rather, this forces me to carefully inspect all the changes made by co-authors (, which of course you should do even if you are using WORD alone).</li>
+<li>Once you modify the Rmarkdown file and knit to WORD, all the track changes will be lost. For the co-authors who want to see the changes you made from the previous version, simply suggest taking advantage of WORD’s capability to compare two versions of a document (see <a href="https://www.businessinsider.com/guides/tech/how-to-compare-two-word-documents">here</a>). If they complain about doing this, just stop working with them entirely.<br>
+</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Case 1: every single one of the authors knows how to use Rmarkdown and git
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this case, things are just so easy. You never have to get out of Rmarkdown. Just let them edit the Rmarkdown file and keep track of changes using git.</p>
+</div>
+</div>
 </section>
 <section id="structure-of-the-rmarkdown-file" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="structure-of-the-rmarkdown-file"><span class="header-section-number">2.3</span> Structure of the rmarkdown file</h2>
+<h2 data-number="2.3" class="anchored" data-anchor-id="structure-of-the-rmarkdown-file"><span class="header-section-number">2.3</span> Structure of the Rmarkdown file</h2>
 <p>The ramrkdown file consits mainly of two components.</p>
 <ul>
 <li>YAML header</li>
@@ -273,7 +318,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="yaml-header" class="level3" data-number="2.3.1">
 <h3 data-number="2.3.1" class="anchored" data-anchor-id="yaml-header"><span class="header-section-number">2.3.1</span> YAML header</h3>
-<p>YAML header comes at the very top of the rmarkdown file and it lets you specify things like</p>
+<p>YAML header comes at the very top of the Rmarkdown file and it lets you specify things like</p>
 <ul>
 <li>paper title</li>
 <li>authors</li>
@@ -396,8 +441,8 @@ Note
 </div>
 </section>
 </section>
-<section id="specifying-the-style-of-the-output-word-file-in-detail" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="specifying-the-style-of-the-output-word-file-in-detail"><span class="header-section-number">2.5</span> Specifying the style of the output WORD file in detail</h2>
+<section id="word-specify-style" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="word-specify-style"><span class="header-section-number">2.5</span> Specifying the style of the output WORD file in detail</h2>
 <p>Rmarkdown itself is very limited in its ability to specify the style of the output WORD file. Few exceptions are:</p>
 <ul>
 <li>bold font: <code>**this becomes bold**</code> (or <code>__this becomes bold__</code>)</li>
@@ -445,7 +490,7 @@ Note
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Compared the style of <strong>sample_to_word.docx</strong> and “word_template.docx” and confirm they have the same font size and family for the narattive, sections, subsections, and subsubsection.</li>
+<li>Compared the style of <strong>sample_to_word.docx</strong> and “word_template.docx” and confirm they have the same font size and family for the narrative, sections, subsections, and subsubsection.</li>
 <li>Uncomment <code>reference_docx: word_template.docx</code> in the YAML header, knit to a WORD file, and check the style of <strong>sample_to_word.dcox</strong> again</li>
 </ul>
 </div>
@@ -461,7 +506,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>To create a style file for your liking you may find <a href="https://support.microsoft.com/en-gb/office/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563">this Microsoft tutorial</a> and <a href="https://bookdown.org/yihui/rmarkdown-cookbook/word-template.html">this book chapter</a> in <span class="citation" data-cites="xie2020r">(<a href="WORD.html#ref-xie2020r" role="doc-biblioref"><strong>xie2020r?</strong></a>)</span> useful.</p>
+<p>To create a style file for your liking you may find <a href="https://support.microsoft.com/en-gb/office/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563">this Microsoft tutorial</a> and <a href="https://bookdown.org/yihui/Rmarkdown-cookbook/word-template.html">this book chapter</a> in <span class="citation" data-cites="xie2020r">(<a href="1_WORD.html#ref-xie2020r" role="doc-biblioref"><strong>xie2020r?</strong></a>)</span> useful.</p>
 </div>
 </div>
 <section id="style-change-example" class="level3" data-number="2.5.1">
@@ -523,8 +568,8 @@ Tip
 <div class="cell">
 <div class="cell-output-display">
 
-<div class="tabwid"><style>.cl-f0d597ce{}.cl-f0d2e772{font-family:'Helvetica';font-size:18pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f0d2f33e{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f0d30ca2{width:97.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f0d30ca3{width:160.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f0d30cac{width:160.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f0d30cad{width:97.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f0d30cae{width:160.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f0d30cb6{width:97.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f0d30cb7{width:97.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f0d30cb8{width:160.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f0d30cc0{width:97.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f0d30cc1{width:160.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f0d30cc2{width:97.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f0d30cc3{width:160.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-f0d597ce">
-<thead><tr style="overflow-wrap:break-word;"><td class="cl-f0d30cc3"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">format</span></p></td><td class="cl-f0d30cc2"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">extension</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-f0d30ca3"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">CSL-JSON</span></p></td><td class="cl-f0d30ca2"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">.json</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f0d30cac"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">MODS</span></p></td><td class="cl-f0d30cad"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">.mods</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f0d30cae"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">BibLaTeX/BibTex</span></p></td><td class="cl-f0d30cb6"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">.bib</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f0d30cac"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">RIS</span></p></td><td class="cl-f0d30cad"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">.ris</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f0d30cb8"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">EndNote</span></p></td><td class="cl-f0d30cb7"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">.enl</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f0d30cb8"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">EndNote XML</span></p></td><td class="cl-f0d30cb7"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">.xml</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f0d30cac"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">ISI</span></p></td><td class="cl-f0d30cad"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">.wos</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f0d30cae"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">MEDLINE</span></p></td><td class="cl-f0d30cb6"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">.medline</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f0d30cc1"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">Copac</span></p></td><td class="cl-f0d30cc0"><p class="cl-f0d2f33e"><span class="cl-f0d2e772">.copac</span></p></td></tr></tbody></table></div>
+<div class="tabwid"><style>.cl-da27167a{}.cl-da244b70{font-family:'Helvetica';font-size:18pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-da245656{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-da246f42{width:97.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da246f43{width:160.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da246f4c{width:160.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da246f4d{width:97.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da246f4e{width:160.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da246f56{width:97.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da246f57{width:97.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da246f58{width:160.6pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da246f59{width:97.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da246f60{width:160.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da246f61{width:97.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-da246f62{width:160.6pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class="cl-da27167a">
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-da246f62"><p class="cl-da245656"><span class="cl-da244b70">format</span></p></td><td class="cl-da246f61"><p class="cl-da245656"><span class="cl-da244b70">extension</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-da246f43"><p class="cl-da245656"><span class="cl-da244b70">CSL-JSON</span></p></td><td class="cl-da246f42"><p class="cl-da245656"><span class="cl-da244b70">.json</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da246f4c"><p class="cl-da245656"><span class="cl-da244b70">MODS</span></p></td><td class="cl-da246f4d"><p class="cl-da245656"><span class="cl-da244b70">.mods</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da246f4e"><p class="cl-da245656"><span class="cl-da244b70">BibLaTeX/BibTex</span></p></td><td class="cl-da246f56"><p class="cl-da245656"><span class="cl-da244b70">.bib</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da246f4c"><p class="cl-da245656"><span class="cl-da244b70">RIS</span></p></td><td class="cl-da246f4d"><p class="cl-da245656"><span class="cl-da244b70">.ris</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da246f58"><p class="cl-da245656"><span class="cl-da244b70">EndNote</span></p></td><td class="cl-da246f57"><p class="cl-da245656"><span class="cl-da244b70">.enl</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da246f58"><p class="cl-da245656"><span class="cl-da244b70">EndNote XML</span></p></td><td class="cl-da246f57"><p class="cl-da245656"><span class="cl-da244b70">.xml</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da246f4c"><p class="cl-da245656"><span class="cl-da244b70">ISI</span></p></td><td class="cl-da246f4d"><p class="cl-da245656"><span class="cl-da244b70">.wos</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da246f4e"><p class="cl-da245656"><span class="cl-da244b70">MEDLINE</span></p></td><td class="cl-da246f56"><p class="cl-da245656"><span class="cl-da244b70">.medline</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-da246f60"><p class="cl-da245656"><span class="cl-da244b70">Copac</span></p></td><td class="cl-da246f59"><p class="cl-da245656"><span class="cl-da244b70">.copac</span></p></td></tr></tbody></table></div>
 </div>
 </div>
 <p>Then, add</p>
@@ -599,7 +644,7 @@ Note
 </section>
 <section id="citation-and-reference-style" class="level3" data-number="2.6.3">
 <h3 data-number="2.6.3" class="anchored" data-anchor-id="citation-and-reference-style"><span class="header-section-number">2.6.3</span> Citation and Reference Style</h3>
-<p>You can change the citation and reference style using <a href="https://citationstyles.org/">Citation Style Language</a>. Citattion style files have <strong>.csl</strong> extension.</p>
+<p>You can change the citation and reference style using <a href="https://citationstyles.org/">Citation Style Language</a>. Citation style files have <strong>.csl</strong> extension.</p>
 <ol type="1">
 <li><p>Obtain the csl file you would like to use from the <a href="https://www.zotero.org/styles">Zotero citation style repository</a>.</p></li>
 <li><p>Place the following in the YAML header (not under <strong>output:</strong>):</p></li>
@@ -610,7 +655,7 @@ Note
 <ol start="3" type="1">
 <li>Then, when knitted, citations and references styles reflect what the style specified by the csl file</li>
 </ol>
-<p>Currently, the csl style should be set to <strong>qje.csl</strong> (citation style language for The Quartely Journal of Economics) as below</p>
+<p>Currently, the csl style should be set to <strong>qje.csl</strong> (citation style language for The Quarterly Journal of Economics) as below</p>
 <div class="cell">
 <div class="cell-output-display">
 <p><img src="assets/pictures/yaml-csl.png" class="img-fluid" style="width:100.0%"></p>
@@ -660,7 +705,7 @@ Note
 <li><code>table-id</code> is the table id you can use to cross-reference</li>
 </ul>
 <ol start="3" type="1">
-<li>Use <code>\@ref(tab:table-id)</code> in the rmarkdown file to cross-reference the table (table numbering in the output WORD file is automatic)</li>
+<li>Use <code>\@ref(tab:table-id)</code> in the Rmarkdown file to cross-reference the table (table numbering in the output WORD file is automatic)</li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -745,7 +790,7 @@ Note
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>figure_g </span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
-<li>Use <code>\@ref(fig:figure-id)</code> in the rmarkdown file to cross-reference the figure (figure numbering in the output WORD file is automatic)</li>
+<li>Use <code>\@ref(fig:figure-id)</code> in the Rmarkdown file to cross-reference the figure (figure numbering in the output WORD file is automatic)</li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -794,12 +839,10 @@ Important
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>(<span class="sc">\#</span>eq:equation-id)</span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>\end{equation}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For example,</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>\bar{y} = \sum_{i=1}^n y_i</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>(<span class="sc">\#</span>eq:eq-1)</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>\end{equation}</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>\begin{equation}</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>\bar{y} = \sum_{i=1}^n y_i</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>(<span class="sc">\#</span>eq:eq-1)</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>\end{equation}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>should print like below in the output WORD file.</p>
 <p><span class="math display">\[
 \begin{equation}
@@ -815,12 +858,10 @@ Important
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>(<span class="sc">\#</span>eq:equation-id)</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>\end{align}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>For example,</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>\begin{align}</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a> AR(p): Y_i &amp;= c + \epsilon_i + \phi_i Y_{i-1} \dots <span class="sc">\\</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a> Y_{i} &amp;= c + \phi_i Y_{i-1} \dots</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>\end{align}</span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>\begin{align}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a> AR(p): Y_i &amp;= c + \epsilon_i + \phi_i Y_{i-1} \dots <span class="sc">\\</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a> Y_{i} &amp;= c + \phi_i Y_{i-1} \dots</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>\end{align}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>should print like below in the output WORD file.</p>
 <p><span class="math display">\[
 \begin{align}
@@ -844,7 +885,7 @@ Note
 </section>
 <section id="in-line-math" class="level3" data-number="2.9.2">
 <h3 data-number="2.9.2" class="anchored" data-anchor-id="in-line-math"><span class="header-section-number">2.9.2</span> In-line math</h3>
-<p>To write a mathematical expresion in line, you can enclose math expressions by $ like below.</p>
+<p>To write a mathematical expression in line, you can enclose math expressions by $ like below.</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>Our model is written as $Y_z = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z$.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This should appear like below in the output WORD file.</p>
 <p>Our model is written as <span class="math inline">\(Y_z = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z\)</span>.</p>
@@ -858,7 +899,7 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>See the bottom of the Statistical Model subsection under the Materials and Methods section of the sample rmd and output WORD files to confirm that <code>$\beta_1$</code> is sucessfully rendered as <span class="math inline">\(\beta_1\)</span> in line in the output WORD file.</p>
+<p>See the bottom of the Statistical Model subsection under the Materials and Methods section of the sample rmd and output WORD files to confirm that <code>$\beta_1$</code> is successfully rendered as <span class="math inline">\(\beta_1\)</span> in line in the output WORD file.</p>
 </div>
 </div>
 <hr>
@@ -1123,13 +1164,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link">
+      <a href="./01_intro.html" class="pagination-link">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./PDF.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Knit to PDF</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./2_PDF-Rmarkdown.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">PDF using Rmarkdown via the <code>bookdown</code> package</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
