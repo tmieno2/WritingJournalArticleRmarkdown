@@ -9,6 +9,22 @@ library(flextable)
 
 # WORD {#sec-word}
 
+
+## Before you start 
+
+:::{.callout-note}
+## What you need to know
+
+In order for you to be able to write a complete journal article without touching WORD, you will need to learn the following if you have not.
+
++ How Rmarkdown works ([This](https://rmarkdown.rstudio.com/lesson-1.html) or [This](https://bookdown.org/yihui/rmarkdown/basics.html) is a good place to start) 
++ How to write mathematical expressions using Latex(-like) syntax ([This](https://www.overleaf.com/learn/latex/Mathematical_expressions) can be a good start)
++ Create figures using R (any R pacakge, like `ggplot2`)
++ Create talbes using R with select R pacakges that are compatible with WORD output (e.g., `flextable`, `modelsummary`)
+
+Please think carfully about the cost of learning all these skills before you invest you time in reading this chapter. 
+:::
+
 ## Preparation
 
 Before diving in, please do the followings:
@@ -26,17 +42,11 @@ Before diving in, please do the followings:
   + `tidyverse`
   + `modelsummary`
 
-
-:::{.callout-important}
-## Pre-requisite
-Basic understanding of how Rmarkdown works ([This](https://rmarkdown.rstudio.com/lesson-1.html) or [This](https://bookdown.org/yihui/rmarkdown/basics.html) is a good place to start)
-:::
-
 ## Baisc workflow until publication
 
 Here are the proposed steps to generate a fully publication-ready article:
 
-1. Write an Rmarkdown file and knit to a WORD file (the focus of this lecture) without worrying about formatting your manuscript (Most journals do not require manuscript formatting until the manuscript is accepted. But, please do check yourself if it is indeed the case)
+1. Write an Rmarkdown file and knit to a WORD file without worrying about formatting your manuscript (Most journals do not require manuscript formatting until the manuscript is accepted. But, please do check yourself if it is indeed the case)
 2. Iterate between the authors until ready for submission
 3. Submit your manuscript (no formatting just yet)
 4. Revise and resubmit your manuscript after iterating between the authors (the same as step 2)
@@ -382,7 +392,7 @@ If you are using CSL json file, then it is the **id** of an entry as in
 knitr::include_graphics("assets/pictures/bib-csl-example.png")
 ```
 
-The cited items as automatically added to the reference following the specified style (see the next section).
+The cited items are automatically added to the reference following the specified style (see the next section).
 
 :::{.callout-note}
 + See the Introduction and Reference sections in the sample rmd and WORD files to confirm this rule.
@@ -413,29 +423,33 @@ knitr::include_graphics("assets/pictures/yaml-csl.png")
 
 Citation and references styles in the output WORD file follows the rules for the QJE.
 
-**Citation style** observed in the output WORD file (QJE)
-```{r  echo = F, out.width = "100%"}
+:::{.callout-note icon=false appearance="minimal"}
+```{r, echo = F, out.width = "100%"}
+#| layout-ncol: 1
+#| fig-cap:
+#|   - "Citation style for QJE"
+#|   - "Reference style for QJE"
 knitr::include_graphics("assets/pictures/citation-qje.png")
-```
-
-**Reference style** observed in the output WORD file (QJE)
-```{r  echo = F, out.width = "100%"}
 knitr::include_graphics("assets/pictures/reference-qje.png")
 ```
+:::
+
+
 
 Now, comment `csl: qje.csl` and uncomment `csl: pnas.csl` so that the CSL for the Proceedings of the National Academy of Sciences (PNAS) is used, and then knit the sample rmd file. 
 
 You can now see that the citation style no longer respects the rules I mentioned above and also the reference style follows that of PNAS. This is because PNAS uses only numbers, but not author names or years.
 
-**Citation style** observed in the output WORD file (PNAS)
-```{r  echo = F, out.width = "100%"}
+:::{.callout-note icon=false appearance="minimal"}
+```{r, echo = F, out.width = "100%"}
+#| layout-ncol: 1
+#| fig-cap:
+#|   - "Citation style for PNAS"
+#|   - "Reference style for PNAS"
 knitr::include_graphics("assets/pictures/citation-pnas.png")
-```
-
-**Reference style** observed in the output WORD file (PNAS)
-```{r  echo = F, out.width = "100%"}
 knitr::include_graphics("assets/pictures/reference-pnas.png")
 ```
+:::
 
 
 ## Cross-referenced Tables
@@ -477,8 +491,8 @@ Here are some example R codes of using the `modelsummary` package to create a re
 
 ```{r, eval = F}
 #--- regressions ---#
-lm_1 <- lm(mpg ~ hp + cyl, data = mtcars)
-lm_2 <- lm(mpg ~ hp + cyl + wt, data = mtcars)
+lm_1 <- fixest::feols(mpg ~ hp + cyl, data = mtcars)
+lm_2 <- fixest::feols(mpg ~ hp + cyl + wt, data = mtcars)
 
 #--- create a regression results table ---#
 modelsummary::modelsummary(
@@ -491,8 +505,9 @@ modelsummary::modelsummary(
 
 ```{r, eval = F}
 modelsummary::datasummary(
-  mtcars,
-  output = "flextable" #<<
+  mpg + hp + cyl ~ Mean + SD,
+  data = mtcars,
+  output = "flextable"
 )
 ```
 
@@ -502,7 +517,11 @@ See how the exactly the same codes above in the sample rmd file translates into 
 
 ## Cross-referenced Figures
 
-1. Create a figure
+### Figures created internally
+
+You can create plots within an rmarkdown file and display them in the output WORD file. Here are the steps.
+
+1. Create a plot using R
 
 2. Add an R code chunk like this:
   * `figure_g` is a plot.
@@ -517,24 +536,73 @@ figure_g
 
 3. Use `\@ref(fig:figure-id)` in the Rmarkdown file to cross-reference the figure (figure numbering in the output WORD file is automatic)
 
-:::{.callout-important}
-You cannot use `_` in the figure id (`-` is allowed). Cross-referencing would not work with if the table id includes `_`.
-:::
+:::{.callout-note icon=false appearance="minimal" collapse="true"}
+## Rmarkdown-WORD Comparison: Visual Example
+<br>
 
----
-
-Here is the rmd-WORD comparison of the part we discussed in this section.
-
-**rmd**
-
-```{r  echo = F, out.width = "100%"}
+```{r, echo = F, out.width = "100%"}
+#| layout-ncol: 1
+#| fig-cap:
+#|   - "Rmarkdown"
+#|   - "WORD"
 knitr::include_graphics("assets/pictures/figure-rmd.png")
-```
-
-**WORD**
-```{r  echo = F, out.width = "100%"}
 knitr::include_graphics("assets/pictures/figure-word.png")
 ```
+:::
+
+:::{.callout-important}
++ Please do not forget to have `fig.cap = "caption"` in the R code chunk option that output a plot. Otherwise, the plot will not be recognized as a plot in the outpur WORD file and cross-referencing will not work even though the plot will be displayed (check to confirm this by removing `fig.cap = "The Distribution of Yield by Zone"` from the R code chunk in the Figures secdion of the sample WORD file). 
++ You cannot use `_` in the figure id (`-` is allowed). Cross-referencing would not work with if the table id includes `_`.
+:::
+
+You can control the size of the plots in the output WORD file, using the `fig.width` and `fig.height` options in the R code chunk. For example, `fig.width = 4` would mean that the width of the plot will be 4 inches. Use the `dpi` option to control the resolution of the plot. The higher the `dpi` value, the sharper the plot is.
+
+:::{.callout-note}
+## Try
++ Change `fig.width` to 2 and see what happens to the output WORD file.
++ Remove the `fig.cap` option and see what happens to the output WORD file.
++ Change the `dpi` value to 100 see what happens to the output WORD file.
+:::
+
+
+### Importing pre-made figures
+
+Instead of creating plots using R code inside an Rmarkdown, we often need to import figures that were made elsewhere. You may be importing your company/university logos. You may have created plots using the `ggplot2` package and saved them as pictures. In order to import a pre-made figure and cross-reference it, you can use `knitr::include_graphics()` as follows,
+
+
+````{verbatim}
+```{r  echo = F, fig.id = "figure-id", fig.cap = "figure caption"}
+knitr::include_graphics("file name")
+```
+````
+
+You can cross-reference imported figures in the same manner as the R-generated figures as shown above. 
+
+:::{.callout-note icon=false appearance="minimal" collapse="true"}
+## Rmarkdown-WORD Comparison: Visual Example
+<br>
+
+```{r, echo = F, out.width = "100%"}
+#| layout-ncol: 1
+#| fig-cap:
+#|   - "Rmarkdown"
+#|   - "WORD"
+knitr::include_graphics("assets/pictures/figure-rmd-import.png")
+knitr::include_graphics("assets/pictures/figure-word-import.png")
+```
+:::
+
+It is important to note that pdf files are not accepted^[If you are using Rmarkdown-PDF, you can import pdf files]. One of the accepted files types is `.png` (or `jpg`)^[I am not aware of all the types of accepted file types.]. So, if you are creating figures outside of the Rmarkdown file, save it as a `png` file.
+
+In order to change the size of the imported figure, you can use the same R chunk option of `fig.width` and `fig.height` as the internally created plots. However, you cannot control the resolution of the imported figure using `dpi` (naturally) because the resolution of the saved image will be respected. If you are using R to create a plot, you can set its dpi when saving it. For example, if you are using `ggplot2`, you can the `dpi` option in `ggsave()` will do the job.
+
+
+:::{.callout-note}
+## Try!
++ Change `fig.width = 3` to see its effect on the output WORD file
++ Change `dpi = 600` in the R code chunk for the second figure to confirmt that it does not anything
+:::
+
 
 ## Mathematical equations
 
@@ -611,9 +679,22 @@ $$
 \end{align}
 $$
 
-:::{.callout-note}
-See the bottom of the Statistical Model subsection under the Materials and Methods section of the sample rmd and output WORD files to confirm the equations are numbered and cross-referencing of the equations are done correctly.
+
+:::{.callout-note icon=false appearance="minimal" collapse="true"}
+## Rmarkdown-WORD Comparison: Visual Example
+<br>
+
+```{r, echo = F, out.width = "100%"}
+#| layout-ncol: 1
+#| fig-cap:
+#|   - "Rmarkdown"
+#|   - "WORD"
+knitr::include_graphics("assets/pictures/math-env-rmd.png")
+knitr::include_graphics("assets/pictures/math-env-word.png")
+```
 :::
+
+
 
 ### In-line math
 
@@ -627,24 +708,18 @@ This should appear like below in the output WORD file.
 
 Our model is written as $Y_z = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z$.
 
-:::{.callout-note}
-See the bottom of the Statistical Model subsection under the Materials and Methods section of the sample rmd and output WORD files to confirm that `$\beta_1$` is successfully rendered as $\beta_1$ in line in the output WORD file.
+:::{.callout-note icon=false appearance="minimal" collapse="true"}
+## Rmarkdown-WORD Comparison: Visual Example
+<br>
+
+```{r, echo = F, out.width = "100%"}
+#| layout-ncol: 1
+#| fig-cap:
+#|   - "Rmarkdown"
+#|   - "WORD"
+knitr::include_graphics("assets/pictures/math-inline-rmd.png")
+knitr::include_graphics("assets/pictures/math-inline-word.png")
+```
 :::
-
----
-
-Here is the rmd-WORD comparison of the part we discussed in this section.
-
-**rmd**
-
-```{r  echo = F, out.width = "100%"}
-knitr::include_graphics("assets/pictures/math-rmd.png")
-```
-
-**WORD**
-```{r  echo = F, out.width = "100%"}
-knitr::include_graphics("assets/pictures/math-word.png")
-```
-
 
 <!-- ## How much R coding inside the manuscript rmd file? -->
