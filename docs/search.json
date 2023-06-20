@@ -49,6 +49,13 @@
     "text": "This is more of what R can do↩︎"
   },
   {
+    "objectID": "1_WORD.html#before-you-start",
+    "href": "1_WORD.html#before-you-start",
+    "title": "2  WORD",
+    "section": "2.1 Before you start",
+    "text": "2.1 Before you start\n\n\n\n\n\n\nWhat you need to know\n\n\n\nIn order for you to be able to write a complete journal article without touching WORD, you will need to learn the following if you have not.\n\nHow Rmarkdown works (This or This is a good place to start)\nHow to write mathematical expressions using Latex(-like) syntax (This can be a good start)\nCreate figures using R (any R pacakge, like ggplot2)\nCreate talbes using R with select R pacakges that are compatible with WORD output (e.g., flextable, modelsummary)\n\nPlease think carfully about the cost of learning all these skills before you invest you time in reading this chapter."
+  },
+  {
     "objectID": "1_WORD.html#preparation",
     "href": "1_WORD.html#preparation",
     "title": "2  WORD",
@@ -187,26 +194,5 @@
     "title": "5  PDF using knitr and Latex",
     "section": "5.4 Figures",
     "text": "5.4 Figures"
-  },
-  {
-    "objectID": "1_WORD.html#what-you-may-need-to-learn",
-    "href": "1_WORD.html#what-you-may-need-to-learn",
-    "title": "2  WORD",
-    "section": "2.2 What you may need to learn",
-    "text": "2.2 What you may need to learn\nIn order for you to be able to write a complete journal article without touching WORD, you will need to learn the following if you have not.\n\nHow Rmarkdown works (This or This is a good place to start)\nHow to write mathematical expressions using Latex(-like) syntax\nCreate figures using R (any R pacakge, like ggplot2)\nCreate talbes using R with select R pacakges that are compatible with WROD output (e.g., flextable, modelsummary)\n\nPlease think carfully about the cost of learning all these skills before you invest you time in reading this chapter."
-  },
-  {
-    "objectID": "1_WORD.html#what-you-need-to-know",
-    "href": "1_WORD.html#what-you-need-to-know",
-    "title": "2  WORD",
-    "section": "2.2 What you need to know",
-    "text": "2.2 What you need to know\nIn order for you to be able to write a complete journal article without touching WORD, you will need to learn the following if you have not.\n\nHow Rmarkdown works (This or This is a good place to start)\nHow to write mathematical expressions using Latex(-like) syntax (This can be a good start)\nCreate figures using R (any R pacakge, like ggplot2)\nCreate talbes using R with select R pacakges that are compatible with WORD output (e.g., flextable, modelsummary)\n\nPlease think carfully about the cost of learning all these skills before you invest you time in reading this chapter."
-  },
-  {
-    "objectID": "1_WORD.html#before-you-start",
-    "href": "1_WORD.html#before-you-start",
-    "title": "2  WORD",
-    "section": "2.1 Before you start",
-    "text": "2.1 Before you start\n\n\n\n\n\n\nWhat you need to know\n\n\n\nIn order for you to be able to write a complete journal article without touching WORD, you will need to learn the following if you have not.\n\nHow Rmarkdown works (This or This is a good place to start)\nHow to write mathematical expressions using Latex(-like) syntax (This can be a good start)\nCreate figures using R (any R pacakge, like ggplot2)\nCreate talbes using R with select R pacakges that are compatible with WORD output (e.g., flextable, modelsummary)\n\nPlease think carfully about the cost of learning all these skills before you invest you time in reading this chapter."
   }
 ]
