@@ -1,0 +1,2117 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Writing Reproducible Journal Articles using Rmarkdown},
+  pdfauthor={Taro Mieno},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Writing Reproducible Journal Articles using Rmarkdown}
+\author{Taro Mieno}
+\date{Invalid Date}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[enhanced, breakable, frame hidden, interior hidden, boxrule=0pt, sharp corners, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{welcome}{%
+\chapter*{Welcome}\label{welcome}}
+\addcontentsline{toc}{chapter}{Welcome}
+
+\markboth{Welcome}{Welcome}
+
+This book covers how to write journal articles using Rmarkdown to either
+WORD or PDF.
+
+\hypertarget{license}{%
+\section*{License}\label{license}}
+\addcontentsline{toc}{section}{License}
+
+\markright{License}
+
+This book is (and will always be) \textbf{free to use}, and is licensed
+under the
+\href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{Creative
+Commons Attribution-NonCommercial-NoDerivs 4.0} License.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+This books aims at learning how to use a combination of R packages to
+generate (mostly) publication-ready articles in WORD and PDF.
+
+\hypertarget{required-knowledge}{%
+\section{Required knowledge}\label{required-knowledge}}
+
+This book assumes you
+
+\begin{itemize}
+\tightlist
+\item
+  have basic understanding of how Rmarkdown works
+  (\href{https://bookdown.org/yihui/rmarkdown/basics.html}{This} is an
+  excellent introduction to Rmarkdown)
+\item
+  know how to write mathematical equations using latex(-like) syntax
+\item
+  know how to use a citation manager (you should know this anyway if you
+  are a scholar) including but not limited to
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Bibtex/Biblatex
+  \item
+    EndNote
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{what-can-you-do-with-rmarkdown}{%
+\section{What can you do with
+Rmarkdown?}\label{what-can-you-do-with-rmarkdown}}
+
+In a single Rmarkdown file,
+
+\begin{itemize}
+\item
+  include (and run) R codes to
+
+  \begin{itemize}
+  \tightlist
+  \item
+    run statistical or modeling analysis\\
+  \item
+    create figures (e.g., the \texttt{ggplot2} package)
+  \item
+    create tables (e.g., the \texttt{modelsummary} and
+    \texttt{flextable} packages)
+  \end{itemize}
+\item
+  refer to the R objects generated (data, tables, figures) to place them
+  in the output WORD file
+\item
+  cross-reference tables and figures using special syntaxes
+\item
+  create citations and a reference list automatically using special
+  syntaxes
+\item
+  format citation and reference using
+  \href{https://citationstyles.org/}{Citation Style Language}
+\item
+  use Latex(-like) math syntax to write equations (different for PDF and
+  WORD)
+\item
+  use markdown syntax for providing a basic structure to the output
+  document
+
+  \begin{itemize}
+  \tightlist
+  \item
+    headings (section, subsection, subsubsection)
+  \item
+    footnotes
+  \end{itemize}
+\item
+  format the output document fully so you do not have to do any
+  formatting in the output document (if you are writing to PDF, not
+  WORD).
+\end{itemize}
+
+\hypertarget{why-rmarkdown}{%
+\section{Why Rmarkdown}\label{why-rmarkdown}}
+
+Rmarkdown let you avoid the following:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Manual copying and pasting of tables and figures
+\item
+  Manual formatting of tables and figures\footnote{This is more of what
+    R can do}
+\item
+  Manual updating of data-driven numbers (e.g., coefficient estimates,
+  summary numbers) in text
+\end{enumerate}
+
+16 years ago when I was a graduate student, Rmarkdown did not exist (the
+\texttt{sweave} package did exist). Fairly new to the academic world, I
+was using R to create reports for econometrics courses or writing
+manuscripts before I learned how to use Latex.
+
+\begin{itemize}
+\tightlist
+\item
+  Run R codes and create tables (regression results, summary statistics,
+  etc) on R, take a screenshot of the tables on R, save them as pictures
+\item
+  Run R codes and create plots on R, save the plots as pictures
+\item
+  Import tables and figures manually to the WORD file
+\item
+  Format tables manually on WORD
+\end{itemize}
+
+These are extremely tedious and time-consuming. When something changes
+(underlying data, parameter, etc), then you need to start the process
+all over again every time. You are probebly well aware that these
+changes are rather common during the process of completing a project
+with the final goal being publising a paper.
+
+The arrival of the \texttt{knitr} and \texttt{Rmarkdown} packages have
+completely changed the game because you can now integrate narratives and
+R codes in a single file. When you \texttt{knit} (compile) the file,
+then you have everything you need in the output file in various formats
+(WORD, pdf, html).
+
+The Rmarkdown system is now mature enough that we can write an academic
+manuscript in both PDF and WORD (more clumsy, but acceptable). This book
+provides introduction of how to do so.
+
+\hypertarget{word-or-pdf}{%
+\section{WORD or PDF?}\label{word-or-pdf}}
+
+If I am a single author of the paper and your target journal accepts
+Latex file after acceptance, then I would go for PDF especially when
+there is a template that you can take to format the output pdf file to
+the journal you are targeting. However, there are cases where you might
+want to or need to use WORD. First, there are many journals that accept
+only WORD files. Even if your target journal accepts PDF, your coauthors
+may demand that they have manuscripts in WORD so they can edit more
+easily.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{sec-word}{%
+\chapter{WORD}\label{sec-word}}
+
+\hypertarget{before-you-start}{%
+\section{Before you start}\label{before-you-start}}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-important-color-frame, toptitle=1mm, colbacktitle=quarto-callout-important-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{What you need to know/learn}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+In order for you to be able to write a complete journal article without
+touching WORD, you will need to learn the following if you have not.
+
+\begin{itemize}
+\tightlist
+\item
+  How Rmarkdown works
+  (\href{https://rmarkdown.rstudio.com/lesson-1.html}{This} or
+  \href{https://bookdown.org/yihui/rmarkdown/basics.html}{This} is a
+  good place to start)
+\item
+  How to write mathematical expressions using Latex(-like) syntax
+  (\href{https://www.overleaf.com/learn/latex/Mathematical_expressions}{This}
+  can be a good start)
+\item
+  Create figures using R (any R pacakge, like \texttt{ggplot2})
+\item
+  Create talbes using R with select R pacakges that are compatible with
+  WORD output (e.g., \texttt{flextable}, \texttt{modelsummary})
+\end{itemize}
+
+Please think carfully about the cost of learning all these skills before
+you invest you time in reading this chapter.
+
+\end{tcolorbox}
+
+\hypertarget{preparation}{%
+\section{Preparation}\label{preparation}}
+
+Before diving in, please do the followings:
+
+\begin{itemize}
+\item
+  Go
+  \href{https://www.dropbox.com/sh/kamcegpis7m0pzq/AAAdZ2eo1vhaZ7srxDLNHdMoa?dl=0}{here}
+  and download all the files including \textbf{sample\_to\_word.rmd},
+  which we refer to as the sample rmd file throughout this chapter.
+  Alternatively, you can clone this
+  \href{https://github.com/tmieno2/WritingJournalArticleRmarkdown}{Github
+  repository}, go to the \textbf{Resources/WORD/} folder.
+\item
+  Open RStudio (or any other software you you may be using like VS code)
+  and knit \textbf{sample\_to\_word.Rmd} to produce
+  \textbf{sample\_to\_word.docx}, which we refer to as the sample WORD
+  file.
+\item
+  Install the following packages if you have not
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{officedown}
+  \item
+    \texttt{flextable}
+  \item
+    \texttt{officer}
+  \item
+    \texttt{knitr}
+  \item
+    \texttt{Rmarkdown}
+  \item
+    \texttt{tidyverse}
+  \item
+    \texttt{modelsummary}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{baisc-workflow-until-publication}{%
+\section{Baisc workflow until
+publication}\label{baisc-workflow-until-publication}}
+
+Here are the proposed steps to generate a fully publication-ready
+article:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Write an Rmarkdown file and knit to a WORD file without worrying about
+  formatting your manuscript (Most journals do not require manuscript
+  formatting until the manuscript is accepted. But, please do check
+  yourself if it is indeed the case)
+\item
+  Iterate between the authors until ready for submission
+\item
+  Submit your manuscript (no formatting just yet)
+\item
+  Revise and resubmit your manuscript after iterating between the
+  authors (the same as step 2)
+\item
+  Repeat steps 2, 3, and 4 until accepted (terminate the process if
+  rejected)
+\item
+  Finally, format your manuscript to the specific requirements by the
+  journal
+
+  \begin{itemize}
+  \tightlist
+  \item
+    create a style reference WORD file and refer to it (see Section
+    Section~\ref{sec-word-specify-style}).
+  \end{itemize}
+\end{enumerate}
+
+Now, let's take a closer look at Step 2. What you do in this step
+differs based on who your co-authors are.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title={Case 1: one of your co-authors demands a WORD file for editing for
+him/herself}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+\begin{itemize}
+\tightlist
+\item
+  In this case, you knit to WORD and give the output WORD file to those
+  authors, let them edit in WORD, and then \textbf{you need to reflect
+  the changes suggested in the WORD file to the Rmarkdown file}. The
+  last step would not exist if you are writing in WORD exclusively.
+  However, I did not find this painful personally. Rather, this forces
+  me to carefully inspect all the changes made by co-authors (, which of
+  course you should do even if you are using WORD alone).
+\item
+  Once you modify the Rmarkdown file and knit to WORD, all the track
+  changes will be lost. For the co-authors who want to see the changes
+  you made from the previous version, simply suggest taking advantage of
+  WORD's capability to compare two versions of a document (see
+  \href{https://www.businessinsider.com/guides/tech/how-to-compare-two-word-documents}{here}).
+  If they complain about doing this, just stop working with them
+  entirely.
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title={Case 2: every single one of the authors knows how to use Rmarkdown and
+git}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+In this case, things are just so easy. You never have to get out of
+Rmarkdown. Just let them edit the Rmarkdown file and keep track of
+changes using git. Any IDE should give you a side-by-side comparison of
+the previous and current versions like below
+(\href{https://www.sublimemerge.com/}{Sublime Merge} is used here).
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/git-illustrate.png}
+
+\end{tcolorbox}
+
+\hypertarget{structure-of-the-rmarkdown-file}{%
+\section{Structure of the Rmarkdown
+file}\label{structure-of-the-rmarkdown-file}}
+
+The ramrkdown file consits mainly of two components.
+
+\begin{itemize}
+\tightlist
+\item
+  YAML header
+\item
+  Main body
+\end{itemize}
+
+\hypertarget{yaml-header}{%
+\subsection{YAML header}\label{yaml-header}}
+
+YAML header comes at the very top of the Rmarkdown file and it lets you
+specify things like
+
+\begin{itemize}
+\tightlist
+\item
+  paper title
+\item
+  authors
+\item
+  date
+\item
+  abstract
+\end{itemize}
+
+It also lets you specify various aspects of the output word file
+including
+
+\begin{itemize}
+\tightlist
+\item
+  whether to include table of contents (\texttt{toc})
+\item
+  the depth of table of contents (\texttt{toc\_depth})
+\item
+  whether to number sections or not (\texttt{number\_sections})
+\item
+  how to display plots and tables (\texttt{plots}, \texttt{tables})
+
+  \begin{itemize}
+  \tightlist
+  \item
+    alignment (\texttt{align})
+  \item
+    prefix (\texttt{pre}), etc
+  \end{itemize}
+\end{itemize}
+
+This is also where you specify what files you use as bibliography,
+citation style, among other things. Important ones will be introduced
+later.
+
+Here is an example YAML header, which you can see in
+\texttt{sample\_to\_word.rmd} file.
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/yaml-example.png}
+
+More detailed explanation of output options will be provided later
+individually when the relevant topics are discussed.
+
+\hypertarget{main-body}{%
+\subsection{Main body}\label{main-body}}
+
+This is everything that is below the YAML header, where narratives and R
+codes are written.
+
+\hypertarget{control-of-some-elements-in-word-through-rmarkdown}{%
+\section{Control of some elements in WORD through
+Rmarkdown}\label{control-of-some-elements-in-word-through-rmarkdown}}
+
+\hypertarget{section-subsection-subsubsections}{%
+\subsection{Section, subsection,
+subsubsections}\label{section-subsection-subsubsections}}
+
+You can use \texttt{\#}, \texttt{\#\#}, \texttt{\#\#\#} at the beginning
+of the line to define sections, subsections, and subsubsections.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# This becomes section title}
+
+\DocumentationTok{\#\# This becomes subsection title}
+
+\DocumentationTok{\#\#\# This becomes subsubsection title}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+\begin{itemize}
+\tightlist
+\item
+  Confirm that \texttt{\#\ Materials\ and\ Methods} and
+  \texttt{\#\#\ Data} in \textbf{sample\_to\_word.rmd} turn into a
+  section and subsection title in \textbf{sample\_to\_word.docx}.
+\item
+  Note also that the sections and subsections are automatically numbered
+  because \texttt{number\_sections:\ true} in the YAML header.
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{footnote}{%
+\subsection{Footnote}\label{footnote}}
+
+You can add a footnote using \texttt{\^{}{[}{]}} like this:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{regular texts}\SpecialCharTok{\^{}}\NormalTok{[this is a footnote]}
+\end{Highlighting}
+\end{Shaded}
+
+Footnotes are automatically numbered.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+See the \textbf{Conclusion} section of \textbf{sample\_to\_word.rmd} and
+\textbf{sample\_to\_word.docx}.
+
+\end{tcolorbox}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{line-and-page-break}{%
+\subsection{Line and page break}\label{line-and-page-break}}
+
+You can create a line break by inserting the following.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{\textless{}br\textgreater{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+\begin{itemize}
+\tightlist
+\item
+  If \texttt{\textless{}br\textgreater{}} is placed in the same line as
+  the one after which you want a break, then it does not give you a line
+  break. Rather, put \texttt{\textless{}br\textgreater{}} in the next
+  line.
+\item
+  Confirm this by inspecting the Materials and Methods section of the
+  sample rmd and word files.
+\end{itemize}
+
+\end{tcolorbox}
+
+To break a page, use
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\StringTok{\textasciigrave{}}\AttributeTok{r run\_pagebreak()}\StringTok{\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+Confirm this by inspecting the end of the Introduction section of the
+sample rmd and word files.
+
+\end{tcolorbox}
+
+\hypertarget{list}{%
+\subsection{List}\label{list}}
+
+You can create an unordered list by simply using either +, -, or * in
+front of each item. For example,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{+ item 1}
+\NormalTok{+ item 2}
+\NormalTok{+ item 3}
+\end{Highlighting}
+\end{Shaded}
+
+would print as below in the output WORD file.
+
+\begin{itemize}
+\tightlist
+\item
+  item 1
+\item
+  item 2
+\item
+  item 3
+\end{itemize}
+
+You can create a nested list like below
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{+ item 1}
+\NormalTok{  {-} item 1.1}
+\NormalTok{  {-} item 1.2}
+\NormalTok{+ item 2}
+\NormalTok{+ item 3}
+\end{Highlighting}
+\end{Shaded}
+
+would print as below in the output WORD file.
+
+\begin{itemize}
+\tightlist
+\item
+  item 1
+
+  \begin{itemize}
+  \tightlist
+  \item
+    item 1.1
+  \item
+    item 1.2
+  \end{itemize}
+\item
+  item 2
+\item
+  item 3
+\end{itemize}
+
+Here is an ordered list.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{1. item 1}
+\NormalTok{2. item 2}
+\NormalTok{3. item 3}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  item 1
+\item
+  item 2
+\item
+  item 3
+\end{enumerate}
+
+\hypertarget{bold-and-italic}{%
+\subsection{Bold and Italic}\label{bold-and-italic}}
+
+\begin{itemize}
+\tightlist
+\item
+  bold font: \texttt{**this\ becomes\ bold**} (or
+  \texttt{\_\_this\ becomes\ bold\_\_})
+\item
+  italic font: \texttt{*this\ becomes\ italic*}
+\end{itemize}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+Confirm these by comparing the first sentence in the Introduction
+section of the sample rmd and WORD files.
+
+\end{tcolorbox}
+
+\hypertarget{sec-word-specify-style}{%
+\section{Specifying the style of the output WORD file in
+detail}\label{sec-word-specify-style}}
+
+You can change the style of the output WORD file either via direct
+control in the YAML header or via reference WORD file.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+\begin{itemize}
+\tightlist
+\item
+  You first change styles direclty using the options made available by
+  the \texttt{officedown} package in the YAML header
+  Section~\ref{sec-change-style-yaml}
+\item
+  If the above is not sufficient, use reference WORD file to apply its
+  style (not content) to the output WORD file
+  Section~\ref{sec-change-style-reference}
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{sec-change-style-yaml}{%
+\subsection{Change styles in the YAML
+header}\label{sec-change-style-yaml}}
+
+You can control the style of the output WORD file somewhat in the YAML
+header. For example, you can determine the page size and margins using
+\texttt{page\_size} and \texttt{page\_margins} (see the YAML header in
+the sample rmd file). You also have some controls on how tables and
+figures appear. For example, the \texttt{align} option lets you
+determine the horizontal position of tables and figures.
+\texttt{topcaption} lets you determine whether you have the caption at
+the top of bottom.
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/style-change-yaml.png}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+For the complete set of options, see
+\href{https://ardata-fr.github.io/officeverse/officedown-for-word.html}{Section
+4 of the Officeverse book}.
+
+\end{tcolorbox}
+
+\hypertarget{sec-change-style-reference}{%
+\subsection{Change styles through reference
+docx}\label{sec-change-style-reference}}
+
+It is almost always the case that the above approach is not sufficient
+to format your WORD file to the specific requirements of your target
+journal. In such a case, you can define the style of the output WORD
+file in detail using a style reference WORD file. This method can
+control virtually every aspect of WORD file styling. Some of the
+commonly customized elements among others are
+
+\begin{itemize}
+\tightlist
+\item
+  font size
+\item
+  font family
+\item
+  line spacing
+\end{itemize}
+
+To do this, you first create a style reference word file that follows
+the style and format you would like the output WORD file to have. Then,
+add the following to the YAML header under \textbf{output:} like below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\AnnotationTok{output:}
+\NormalTok{  reference\_docx: word{-}style.docx}
+\end{Highlighting}
+\end{Shaded}
+
+In our example project, \textbf{word\_template.docx} is the reference
+file.
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/yaml-reference-docx.png}
+
+Of course, only the style and format of the reference WORD file will be
+inherited to the output WORD file, but not its contents.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+\begin{itemize}
+\tightlist
+\item
+  Compared the style of \textbf{sample\_to\_word.docx} and
+  ``word\_template.docx'' and confirm they have the same font size and
+  family for the narrative, sections, subsections, and subsubsection.
+\item
+  Uncomment \texttt{reference\_docx:\ word\_template.docx} in the YAML
+  header, knit to a WORD file, and check the style of
+  \textbf{sample\_to\_word.dcox} again
+\end{itemize}
+
+\end{tcolorbox}
+
+You can change the style of the reference WORD style file and save the
+changes. Then, the style changes will be reflected in the output WORD
+file when the rmd file is knitted next time.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-tip-color-frame, toptitle=1mm, colbacktitle=quarto-callout-tip-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Tip}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+To create a style file for your liking you may find
+\href{https://support.microsoft.com/en-gb/office/customize-or-create-new-styles-d38d6e47-f6fc-48eb-a607-1eb120dec563}{this
+Microsoft tutorial} and
+\href{https://bookdown.org/yihui/Rmarkdown-cookbook/word-template.html}{this
+book chapter} in (\textbf{xie2020r?}) useful.
+
+\end{tcolorbox}
+
+\hypertarget{style-change-example}{%
+\subsection{Style change example}\label{style-change-example}}
+
+This section gives you a quick look at what it may look to be changing
+the style of a reference WORD file. We use \textbf{word\_template.docx}
+for this demonstration. First, open the document on WORD and open the
+Styles Pane (If you are using Mac, it should be at the right upper
+corner of the document). Then you should see something like below.
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/style-change-1.png}
+
+Then, put your cursor on anywhere in line 2 as below and you should see
+that the current style is changed to ``1 Heading 1'', which is the name
+of the class (style type) the texts in line 2 belong to.
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/style-change-2.png}
+
+Now, put your cursor at the black triangle and you should see available
+options including ``Modify Style\ldots{}''
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/style-change-3.png}
+
+Once you click on it, you should see a pop-up window like below.
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/style-change-4.png}
+
+Here, you can change font family, font size, among other things. In this
+demonstration, let's get rid of automatic section number. To do so,
+click on the ``Format'' button at the lower left corner of the window.
+Then, you should see this.
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/style-change-5.png}
+
+Pick ``Numbering,'' click on ``None,'' and hit ``OK.''
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/style-change-6.png}
+
+Hit ``OK'' again in the previous pop-up window, then you should see
+this.
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/style-change-7.png}
+
+Notice that section numbering is now gone. Now, knit the sample rmd file
+and confirm that the output WORD file indeed lost section numbers
+(subsection numbers still remain because you did not modify that part in
+the reference docx.).
+
+\hypertarget{citations-and-references}{%
+\section{Citations and References}\label{citations-and-references}}
+
+\hypertarget{set-up}{%
+\subsection{Set up}\label{set-up}}
+
+First, create a reference file. Then, add the following to the YAML
+header (not under \textbf{output:}).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bibliography}\SpecialCharTok{:}\NormalTok{ bibliography file name}
+\end{Highlighting}
+\end{Shaded}
+
+There are various bibliography systems that can be used including
+BibLaTeX/BibTex (.bib), CSL-JSON (.json), EndNote (.enl) among other.
+
+Then, add the following to the part of rmd where you want to put
+references.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{::: \{\#refs\}}
+\NormalTok{:::}
+\end{Highlighting}
+\end{Shaded}
+
+In our example, we use a \textbf{bib} file and the bibliography file is
+named \textbf{bibliography.bib} and specified in the YAML header as
+below
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/yaml-bib.png}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+\begin{itemize}
+\tightlist
+\item
+  See the sample rmd file to see how bibliography file is specified in
+  the YAML header
+\item
+  Confirm that \texttt{\{\#refs\}} enclosed by \texttt{:::}is placed in
+  the Reference section of the sample rmd file and confirm that
+  references are indeed added in the Reference section of the output
+  word file
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{cite-and-create-references}{%
+\subsection{Cite and create
+references}\label{cite-and-create-references}}
+
+To cite, use the following syntax:
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{@reference\_name} to print ``author names (year)'' in the
+  output WORD file
+\item
+  \texttt{{[}@reference\_name{]}} to print ``(author names, year)'' in
+  the output WORD file
+\item
+  \texttt{{[}@reference\_name\_1;\ @reference\_name\_2{]}} to print
+  ``(author names, year; author names, year)'' in the output WORD file
+\item
+  \texttt{{[}-@reference\_name{]}} to print just year
+\end{itemize}
+
+\texttt{reference\_name} is the very first entry of a \textbf{.bib} file
+as in
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/bib-example.png}
+
+If you are using CSL json file, then it is the \textbf{id} of an entry
+as in
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/bib-csl-example.png}
+
+The cited items are automatically added to the reference following the
+specified style (see the next section).
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+\begin{itemize}
+\tightlist
+\item
+  See the Introduction and Reference sections in the sample rmd and WORD
+  files to confirm this rule.
+\item
+  Comment out \texttt{bibliography:\ bibliography.bib} and uncomment
+  \texttt{bibliography:\ bibliography.csl}, knit again, and check
+  citations and references are still there. This is just an illustration
+  of using a different bibliography file (CSL json file).
+\end{itemize}
+
+\end{tcolorbox}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{citation-and-reference-style}{%
+\subsection{Citation and Reference
+Style}\label{citation-and-reference-style}}
+
+You can change the citation and reference style using
+\href{https://citationstyles.org/}{Citation Style Language}. Citation
+style files have \textbf{.csl} extension.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Obtain the csl file you would like to use from the
+  \href{https://www.zotero.org/styles}{Zotero citation style
+  repository}.
+\item
+  Place the following in the YAML header (not under \textbf{output:}):
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{csl}\SpecialCharTok{:}\NormalTok{ csl file name }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Then, when knitted, citations and references styles reflect the style
+  specified by the csl file
+\end{enumerate}
+
+Currently, the csl style should be set to \textbf{qje.csl} (citation
+style language for The Quarterly Journal of Economics) as below
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/yaml-csl.png}
+
+Citation and references styles in the output WORD file follows the rules
+for the QJE.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, left=2mm, toprule=.15mm, colback=white, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm]
+
+\begin{figure}[H]
+
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{assets/pictures/citation-qje.png}
+
+}
+
+\caption{Citation style for QJE}
+
+}
+
+\end{minipage}%
+\newline
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{assets/pictures/reference-qje.png}
+
+}
+
+\caption{Reference style for QJE}
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
+\end{tcolorbox}
+
+Now, comment \texttt{csl:\ qje.csl} and uncomment
+\texttt{csl:\ pnas.csl} so that the CSL for the Proceedings of the
+National Academy of Sciences (PNAS) is used, and then knit the sample
+rmd file.
+
+You can now see that the citation style no longer respects the rules I
+mentioned above and also the reference style follows that of PNAS. This
+is because PNAS uses only numbers, but not author names or years.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, left=2mm, toprule=.15mm, colback=white, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm]
+
+\begin{figure}[H]
+
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{assets/pictures/citation-pnas.png}
+
+}
+
+\caption{Citation style for PNAS}
+
+}
+
+\end{minipage}%
+\newline
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{assets/pictures/reference-pnas.png}
+
+}
+
+\caption{Reference style for PNAS}
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
+\end{tcolorbox}
+
+\hypertarget{cross-referenced-tables}{%
+\section{Cross-referenced Tables}\label{cross-referenced-tables}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Create a table using the \texttt{flextable} package (this is not the
+  only option, and will be discussed later)
+\item
+  Add an R code chunk like this:
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r, tab.id = "table{-}id", tab.cap = "table{-}name"\}}
+\NormalTok{table\_ft}
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{table\_ft} is a \texttt{flextable} object.
+\item
+  \texttt{table-name} is the caption of the table in the output WORD
+  file
+\item
+  \texttt{table-id} is the table id you can use to cross-reference
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Use \texttt{\textbackslash{}@ref(tab:table-id)} in the Rmarkdown file
+  to cross-reference the table (table numbering in the output WORD file
+  is automatic)
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-important-color-frame, toptitle=1mm, colbacktitle=quarto-callout-important-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+You cannot use \texttt{\_} in the table id (\texttt{-} is allowed).
+Cross-referencing would not work with if the table id includes
+\texttt{\_}.
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+\begin{itemize}
+\tightlist
+\item
+  See the Tables section of the sample rmd for the R codes to create a
+  table using the \texttt{flextable} package and confirm that the table
+  appears in the output WORD files
+\item
+  See the bottom of the Data subsection under the Materials and Methods
+  section to confirm that cross-referencing is working.
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{packages-to-create-tables}{%
+\subsection{Packages to create tables}\label{packages-to-create-tables}}
+
+One of the disadvantages of writing to a WORD file is that some
+table-making R packages are not compatible with it. The
+\texttt{flextable} package is written by the same author of the
+\texttt{officedown} package, which we are using to write to a WORD file.
+So, naturally, a table object created by the \texttt{flextable} package
+(a \texttt{flextable} object) can be knitted into the output WORD
+without (almost) any hiccups as we saw earlier. A notable R package that
+does NOT work well with the output class of
+\texttt{officedown::rdocx\_document} (which we are using) is the
+\texttt{gt} package. Tables created by the package is an object of class
+\texttt{gt}. Unfortunately, there is no function that lets you convert
+an \texttt{gt} object to a \texttt{flextable} object as of now.
+
+One of the recommended packages is the
+\href{https://vincentarelbundock.github.io/modelsummary/index.html}{\texttt{modelsummary}}
+package (especially for those who often include regression results
+tables and summary statistics tables). It lets you create regression
+results tables via the \texttt{modelsummary()} function and summary
+statistics tables via the \texttt{datasummary()} function\footnote{The
+  \href{https://www.danieldsjoberg.com/gtsummary/index.html}{gtsummary}
+  package is also compatible. Use \texttt{as\_flex\_table()} to convert
+  a \texttt{gtsummary} object to a \texttt{flextable} object.}. Both
+functions has an option called \texttt{output} and you can use
+\texttt{output\ =\ "flextable"} to generate tables as \texttt{flextable}
+objects, which can then be included in the output file easily.
+
+Here are some example R codes of using the \texttt{modelsummary} package
+to create a regression results and summary statistics tables.
+
+\textbf{Regression} table
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#{-}{-}{-} regressions {-}{-}{-}\#}
+\NormalTok{lm\_1 }\OtherTok{\textless{}{-}}\NormalTok{ fixest}\SpecialCharTok{::}\FunctionTok{feols}\NormalTok{(mpg }\SpecialCharTok{\textasciitilde{}}\NormalTok{ hp }\SpecialCharTok{+}\NormalTok{ cyl, }\AttributeTok{data =}\NormalTok{ mtcars)}
+\NormalTok{lm\_2 }\OtherTok{\textless{}{-}}\NormalTok{ fixest}\SpecialCharTok{::}\FunctionTok{feols}\NormalTok{(mpg }\SpecialCharTok{\textasciitilde{}}\NormalTok{ hp }\SpecialCharTok{+}\NormalTok{ cyl }\SpecialCharTok{+}\NormalTok{ wt, }\AttributeTok{data =}\NormalTok{ mtcars)}
+\NormalTok{lm\_3 }\OtherTok{\textless{}{-}}\NormalTok{ fixest}\SpecialCharTok{::}\FunctionTok{feols}\NormalTok{(mpg }\SpecialCharTok{\textasciitilde{}}\NormalTok{ hp }\SpecialCharTok{+}\NormalTok{ cyl }\SpecialCharTok{+}\NormalTok{ wt, }\AttributeTok{cluster =} \SpecialCharTok{\textasciitilde{}}\NormalTok{ vs, }\AttributeTok{data =}\NormalTok{ mtcars)}
+
+\CommentTok{\#{-}{-}{-} create a regression results table {-}{-}{-}\#}
+\NormalTok{modelsummary}\SpecialCharTok{::}\FunctionTok{modelsummary}\NormalTok{(}
+  \FunctionTok{list}\NormalTok{(lm\_1, lm\_2, lm\_3),}
+  \AttributeTok{output =} \StringTok{"flextable"}\NormalTok{,}
+  \AttributeTok{gof\_omit =} \StringTok{"IC|Log|Adj|F|Pseudo|Within"}
+\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{autofit}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{hline}\NormalTok{(}\DecValTok{8}\NormalTok{) }\CommentTok{\# add horizontal line. modelsummary() adds horizontal line separating coefficient estimates and model summary statistics. But, it disappears on WORD for some reason. So, it is manually added here.}
+\end{Highlighting}
+\end{Shaded}
+
+\textbf{Summary statistics} table
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{modelsummary}\SpecialCharTok{::}\FunctionTok{datasummary}\NormalTok{(}
+\NormalTok{  mpg }\SpecialCharTok{+}\NormalTok{ hp }\SpecialCharTok{+}\NormalTok{ cyl }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Mean }\SpecialCharTok{+}\NormalTok{ SD,}
+  \AttributeTok{data =}\NormalTok{ mtcars,}
+  \AttributeTok{output =} \StringTok{"flextable"}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\href{https://tmieno2.github.io/AECN-Data-Science-R/Chapter-7-MakeTable_flextable/make_table_flextable_x.html?panelset6=instruction5\&panelset7=instruction6\&panelset8=introduction2\&panelset9=instruction7\&panelset10=add_*_row\%28\%292\&panelset11=instruction8\#1}{Here}
+is one of the resources to learn how to use the \texttt{flextable}
+package if you need to further modify the tables created by the
+\texttt{modelsummary()} and \texttt{datasummary()} functions.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Note}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+See how the exactly the same codes above in the sample rmd file
+translates into the regression results and summary statistics tables in
+the output word file.
+
+\end{tcolorbox}
+
+\hypertarget{cross-referenced-figures}{%
+\section{Cross-referenced Figures}\label{cross-referenced-figures}}
+
+\hypertarget{figures-created-internally}{%
+\subsection{Figures created
+internally}\label{figures-created-internally}}
+
+You can create plots within an rmarkdown file and display them in the
+output WORD file. Here are the steps.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Create a plot using R
+\item
+  Add an R code chunk like this:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{figure\_g} is a plot.
+\item
+  \texttt{fig.cap\ =\ "caption"} adds \texttt{caption} as the caption of
+  the figure
+\item
+  \texttt{figure-id} is the figure id used for cross-referencing
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r, fig.id = "figure{-}id", fig.cap = "caption"\}}
+\NormalTok{figure\_g }
+\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Use \texttt{\textbackslash{}@ref(fig:figure-id)} in the Rmarkdown file
+  to cross-reference the figure (figure numbering in the output WORD
+  file is automatic)
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, left=2mm, toprule=.15mm, colback=white, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm]
+
+\textbf{Rmarkdown-WORD Comparison: Visual Example}\vspace{2mm}
+
+\begin{figure}[H]
+
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{assets/pictures/figure-rmd.png}
+
+}
+
+\caption{Rmarkdown}
+
+}
+
+\end{minipage}%
+\newline
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{assets/pictures/figure-word.png}
+
+}
+
+\caption{WORD}
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-important-color-frame, toptitle=1mm, colbacktitle=quarto-callout-important-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Important}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+\begin{itemize}
+\tightlist
+\item
+  Please do not forget to have \texttt{fig.cap\ =\ "caption"} in the R
+  code chunk option that output a plot. Otherwise, the plot will not be
+  recognized as a plot in the output WORD file and cross-referencing
+  will not work even though the plot will be displayed (check to confirm
+  this by removing
+  \texttt{fig.cap\ =\ "The\ Distribution\ of\ Yield\ by\ Zone"} from the
+  R code chunk in the Figures secdion of the sample WORD file).
+\item
+  You cannot use \texttt{\_} in the figure id (\texttt{-} is allowed).
+  Cross-referencing would not work with if the table id includes
+  \texttt{\_}.
+\end{itemize}
+
+\end{tcolorbox}
+
+You can control the size of the plots in the output WORD file, using the
+\texttt{fig.width} and \texttt{fig.height} options in the R code chunk.
+For example, \texttt{fig.width\ =\ 4} would mean that the width of the
+plot will be 4 inches. Use the \texttt{dpi} option to control the
+resolution of the plot. The higher the \texttt{dpi} value, the sharper
+the plot is.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Try}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+\begin{itemize}
+\tightlist
+\item
+  Change \texttt{fig.width} to 2 and see what happens to the output WORD
+  file.
+\item
+  Remove the \texttt{fig.cap} option and see what happens to the output
+  WORD file.
+\item
+  Change the \texttt{dpi} value to 100 see what happens to the output
+  WORD file.
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{importing-pre-made-figures}{%
+\subsection{Importing pre-made
+figures}\label{importing-pre-made-figures}}
+
+Instead of creating plots using R code inside an Rmarkdown, we often
+need to import figures that were made elsewhere. You may be importing
+your company/university logos. You may have created plots using the
+\texttt{ggplot2} package and saved them as pictures. In order to import
+a pre-made figure and cross-reference it, you can use
+\texttt{knitr::include\_graphics()} as follows,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{r  echo = F, fig.id = "figure{-}id", fig.cap = "figure caption"\}}
+\NormalTok{knitr::include\_graphics("file name")}
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+You can cross-reference imported figures in the same manner as the
+R-generated figures as shown above.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, left=2mm, toprule=.15mm, colback=white, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm]
+
+\textbf{Rmarkdown-WORD Comparison: Visual Example}\vspace{2mm}
+
+\begin{figure}[H]
+
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{assets/pictures/figure-rmd-import.png}
+
+}
+
+\caption{Rmarkdown}
+
+}
+
+\end{minipage}%
+\newline
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{assets/pictures/figure-word-import.png}
+
+}
+
+\caption{WORD}
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
+\end{tcolorbox}
+
+It is important to note that pdf files are not accepted\footnote{If you
+  are using Rmarkdown-PDF, you can import pdf files}. One of the
+accepted files types is \texttt{.png} (or \texttt{jpg})\footnote{I am
+  not aware of all the types of accepted file types.}. So, if you are
+creating figures outside of the Rmarkdown file, save it as a
+\texttt{png} file.
+
+In order to change the size of the imported figure, you can use the same
+R chunk option of \texttt{fig.width} and \texttt{fig.height} as the
+internally created plots. However, you cannot control the resolution of
+the imported figure using \texttt{dpi} (naturally) because the
+resolution of the saved image will be respected. If you are using R to
+create a plot, you can set its dpi when saving it. For example, if you
+are using \texttt{ggplot2}, you can the \texttt{dpi} option in
+\texttt{ggsave()} will do the job.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, toptitle=1mm, colbacktitle=quarto-callout-note-color!10!white, toprule=.15mm, colback=white, arc=.35mm, bottomtitle=1mm, opacitybacktitle=0.6, breakable, left=2mm, coltitle=black, leftrule=.75mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Try!}, rightrule=.15mm, titlerule=0mm, opacityback=0, bottomrule=.15mm]
+
+\begin{itemize}
+\tightlist
+\item
+  Change \texttt{fig.width\ =\ 3} to see its effect on the output WORD
+  file
+\item
+  Change \texttt{dpi\ =\ 600} in the R code chunk for the second figure
+  to confirmt that it does not anything
+\end{itemize}
+
+\end{tcolorbox}
+
+\hypertarget{mathematical-equations}{%
+\section{Mathematical equations}\label{mathematical-equations}}
+
+You can use Latex-like math syntax to write mathematical equations. For
+equation numbering and cross-referencing to work as discussed here, make
+sure that you use \texttt{bookdown::word\_document2} for the
+\texttt{base\_format} in the YAML header as below.
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/yaml-math.png}
+
+\hypertarget{math-equation}{%
+\subsection{Math equation}\label{math-equation}}
+
+Math for WORD output is much limited compared to writing to a PDF file
+using Latex (when knitting to a PDF file, Rmarkdown uses Latex to render
+math equations). This is because Latex is \textbf{NOT} involved in
+converting Latex-like math syntax to math equations when knitted to
+WORD. Instead, pandoc is doing the conversion job. So, it is not
+surprising that not all the Latex math capabilities can be utilized when
+knitting to a WORD file. With that said, most of the syntaxes that you
+will need are the same between Rmd-to-WORD and Latex. You can use the
+equation (for single line of math) and align (more than equal to one
+equations) environments with successful cross-referencing.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{equation} environment
+
+To use an equation environment, first write math and then put
+\texttt{(\textbackslash{}\#eq:equation-id)} at the end (but before
+\texttt{\textbackslash{}end\{equation\}}) to give an equation id to the
+equation. You can use \texttt{\textbackslash{}@ref(eq:equation-id)} to
+cross-reference the equation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{equation\}}
+\NormalTok{Math}
+\NormalTok{(}\SpecialCharTok{\textbackslash{}\#}\NormalTok{eq:equation{-}id)}
+\NormalTok{\textbackslash{}end\{equation\}}
+\end{Highlighting}
+\end{Shaded}
+
+For example,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{equation\}}
+\NormalTok{\textbackslash{}bar\{y\} = \textbackslash{}sum\_\{i=1\}\^{}n y\_i}
+\NormalTok{(}\SpecialCharTok{\textbackslash{}\#}\NormalTok{eq:eq{-}1)}
+\NormalTok{\textbackslash{}end\{equation\}}
+\end{Highlighting}
+\end{Shaded}
+
+should print like below in the output WORD file.
+
+\[
+\begin{equation}
+\bar{y} = \sum_{i=1}^n y_i
+\end{equation}
+\]
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\textbf{align} environment
+
+This works just like \textbf{equation} environment. To use an align
+environment, first write line(s) of math and then put
+\texttt{(\textbackslash{}\#eq:equation-id)} at the end (but before
+\texttt{\textbackslash{}end\{align\}}) to give an equation id to the
+equation. You can use \texttt{\textbackslash{}@ref(eq:equation-id)} to
+cross-reference the equation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{align\}}
+\NormalTok{Math}\SpecialCharTok{\textbackslash{}\textbackslash{}} 
+\NormalTok{Math}
+\NormalTok{(}\SpecialCharTok{\textbackslash{}\#}\NormalTok{eq:equation{-}id)}
+\NormalTok{\textbackslash{}end\{align\}}
+\end{Highlighting}
+\end{Shaded}
+
+For example,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{align\}}
+\NormalTok{ AR(p): Y\_i \&= c + \textbackslash{}epsilon\_i + \textbackslash{}phi\_i Y\_\{i{-}1\} \textbackslash{}dots }\SpecialCharTok{\textbackslash{}\textbackslash{}}
+\NormalTok{ Y\_\{i\} \&= c + \textbackslash{}phi\_i Y\_\{i{-}1\} \textbackslash{}dots}
+\NormalTok{\textbackslash{}end\{align\}}
+\end{Highlighting}
+\end{Shaded}
+
+should print like below in the output WORD file.
+
+\[
+\begin{align}
+ AR(p): Y_i &= c + \epsilon_i + \phi_i Y_{i-1} \dots \\
+ Y_{i} &= c + \phi_i Y_{i-1} \dots
+\end{align}
+\]
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, left=2mm, toprule=.15mm, colback=white, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm]
+
+\textbf{Rmarkdown-WORD Comparison: Visual Example}\vspace{2mm}
+
+\begin{figure}[H]
+
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{assets/pictures/math-env-rmd.png}
+
+}
+
+\caption{Rmarkdown}
+
+}
+
+\end{minipage}%
+\newline
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{assets/pictures/math-env-word.png}
+
+}
+
+\caption{WORD}
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
+\end{tcolorbox}
+
+\hypertarget{in-line-math}{%
+\subsection{In-line math}\label{in-line-math}}
+
+To write a mathematical expression in line, you can enclose math
+expressions by \$ like below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Our model is written as $Y\_z = f\_z(S) + g\_z(N) + h\_z(X,Y) + \textbackslash{}varepsilon\_z$.}
+\end{Highlighting}
+\end{Shaded}
+
+This should appear like below in the output WORD file.
+
+Our model is written as
+\(Y_z = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z\).
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, left=2mm, toprule=.15mm, colback=white, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm]
+
+\textbf{Rmarkdown-WORD Comparison: Visual Example}\vspace{2mm}
+
+\begin{figure}[H]
+
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{assets/pictures/math-inline-rmd.png}
+
+}
+
+\caption{Rmarkdown}
+
+}
+
+\end{minipage}%
+\newline
+\begin{minipage}[t]{\linewidth}
+
+{\centering 
+
+\raisebox{-\height}{
+
+\includegraphics{assets/pictures/math-inline-word.png}
+
+}
+
+\caption{WORD}
+
+}
+
+\end{minipage}%
+
+\end{figure}
+
+\end{tcolorbox}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{sec-rmarkdown-pdf}{%
+\chapter{\texorpdfstring{PDF using Rmarkdown via the \texttt{bookdown}
+package}{PDF using Rmarkdown via the bookdown package}}\label{sec-rmarkdown-pdf}}
+
+\hypertarget{preparation-1}{%
+\section{Preparation}\label{preparation-1}}
+
+Before diving in, please do the followings:
+
+\begin{itemize}
+\item
+  Go
+  \href{https://www.dropbox.com/sh/l95j7vk8sxl2nnu/AAAwWMl8yO6Vbj0u_9zd_fv6a?dl=0}{here}
+  and download all the files including \textbf{sample\_to\_word.rmd},
+  which we refer to as the sample rmd file throughout this chapter.
+  Alternatively, you can clone this
+  \href{https://github.com/tmieno2/WritingJournalArticleRmarkdown}{Github
+  repository}.
+\item
+  Knit \textbf{sample\_to\_word.Rmd} to produce
+  \textbf{sample\_to\_word.docx}, which we refer to as the sample WORD
+  file.
+\item
+  Install the following packages if you have not
+
+  \begin{itemize}
+  \tightlist
+  \item
+    \texttt{officedown}
+  \item
+    \texttt{flextable}
+  \item
+    \texttt{officer}
+  \item
+    \texttt{knitr}
+  \item
+    \texttt{rmarkdown}
+  \item
+    \texttt{tidyverse}
+  \item
+    \texttt{modelsummary}
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{tables}{%
+\section{Tables}\label{tables}}
+
+\texttt{tab.cap} does not work
+
+\begin{itemize}
+\tightlist
+\item
+  Create the title of the table using R because you cannot add a title
+  using \texttt{tab.cap} unlike adding a title to a figure using
+  \texttt{fig.cap}.
+\item
+\end{itemize}
+
+\hypertarget{figures}{%
+\section{Figures}\label{figures}}
+
+\hypertarget{mathematical-equations-1}{%
+\section{Mathematical Equations}\label{mathematical-equations-1}}
+
+\hypertarget{basics}{%
+\subsection{Basics}\label{basics}}
+
+You can fully take advantage of Latex math typesetting capability unlike
+the Rmarkdown-WORD system. This is because whatever you type inside of
+the following will be printed as is in the tex file when rmd file is
+converted to a tex file.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{=tex\}}
+\NormalTok{whatever you type}
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+So, for example, if you have the following in your rmd file,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{=tex\}}
+\NormalTok{\textbackslash{}begin\{equation\}}
+\NormalTok{y = \textbackslash{}beta\_0 + \textbackslash{}beta\_1 x + \textbackslash{}varepsilon}
+\NormalTok{\textbackslash{}end\{equation\}}
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+then you will the following printed in the tex file,
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textbackslash{}begin\{equation\}}
+\NormalTok{y = \textbackslash{}beta\_0 + \textbackslash{}beta\_1 x + \textbackslash{}varepsilon}
+\NormalTok{\textbackslash{}end\{equation\}}
+\end{Highlighting}
+\end{Shaded}
+
+, which will then appear as
+
+\begin{equation}
+y = \beta_0 + \beta_1 x + \varepsilon
+\end{equation}
+
+in the compiled pdf file.
+
+Of course, you can use other environments like \texttt{align},
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{=tex\}}
+\NormalTok{\textbackslash{}begin\{align\}}
+\NormalTok{Y\_z \& = f\_z(S) + g\_z(N) + h\_z(X,Y) + \textbackslash{}varepsilon\_z\textbackslash{}notag \textbackslash{}\textbackslash{}}
+\NormalTok{\& = \textbackslash{}sum\_\{i=1\}\^{}k \textbackslash{}phi\_k(S) + g\_z(N) + h\_z(X,Y) + \textbackslash{}varepsilon\_z}
+\NormalTok{\textbackslash{}end\{align\}}
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{align}
+Y_z & = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z\notag \\
+& = \sum_{i=1}^k \phi_k(S) + g_z(N) + h_z(X,Y) + \varepsilon_z
+\end{align}
+
+\hypertarget{cross-reference}{%
+\subsection{Cross-reference}\label{cross-reference}}
+
+There are two ways to cross-reference equations. The first option is to
+place \texttt{(\textbackslash{}\#eq:equation-name)} at the end of the
+line that you would like to cross-reference. For example,
+\texttt{(\textbackslash{}\#eq:eqn1)} is placed at the end of the
+equation below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{=tex\}}
+\NormalTok{\textbackslash{}begin\{equation\}}
+\NormalTok{y = \textbackslash{}beta\_0 + \textbackslash{}beta\_1 x + \textbackslash{}varepsilon (\textbackslash{}\#eq:eqn1)}
+\NormalTok{\textbackslash{}end\{equation\}}
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+You can then write \texttt{\textbackslash{}@ref(eq:eqn1)} to refer to
+the equation number.
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, left=2mm, toprule=.15mm, colback=white, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm]
+
+\textbf{Rmarkdown-Latex Comparison: Visual Example}\vspace{2mm}
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/math-bookdown-rmd.png}
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/math-bookdown-pdf.png}
+
+\end{tcolorbox}
+
+Alternatively, you can do cross-reference as if you would do in a tex
+file. Specifically, you can add
+\texttt{\textbackslash{}label\{equation-name\}} at the end of the line
+and then write \texttt{\textbackslash{}ref\{equation-name\}}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{=tex\}}
+\NormalTok{\textbackslash{}begin\{equation\}}
+\NormalTok{y = \textbackslash{}beta\_0 + \textbackslash{}beta\_1 x + \textbackslash{}varepsilon \textbackslash{}label\{eq{-}tex\}}
+\NormalTok{\textbackslash{}end\{equation\}}
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, left=2mm, toprule=.15mm, colback=white, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm]
+
+\textbf{Rmarkdown-Latex Comparison: Visual Example}\vspace{2mm}
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/math-bookdown-latex-way-2.png}
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/math-bookdown-latex-way-1.png}
+
+\end{tcolorbox}
+
+Just like Latex, you can use \texttt{\textbackslash{}notag} to suppress
+equation numbers. You can cross-reference individual lines.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}\{=tex\}}
+\NormalTok{\textbackslash{}begin\{align\}}
+\NormalTok{Y\_z \& = f\_z(S) + g\_z(N) + h\_z(X,Y) + \textbackslash{}varepsilon\_z \textbackslash{}notag \textbackslash{}\textbackslash{}}
+\NormalTok{\& = \textbackslash{}sum\_\{i=1\}\^{}k \textbackslash{}phi\_k(S) + g\_z(N) + h\_z(X,Y) + \textbackslash{}varepsilon\_z (\textbackslash{}\#eq:al{-}second)}
+\NormalTok{\textbackslash{}end\{align\}}
+\NormalTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+
+\NormalTok{Equation \textbackslash{}@ref(eq:al{-}second) is the second line.}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tcolorbox}[enhanced jigsaw, colframe=quarto-callout-note-color-frame, breakable, left=2mm, toprule=.15mm, colback=white, arc=.35mm, rightrule=.15mm, bottomrule=.15mm, opacityback=0, leftrule=.75mm]
+
+\textbf{Rmarkdown-Latex Comparison: Visual Example}\vspace{2mm}
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/math-bookdown-notag-2.png}
+
+\includegraphics[width=1\textwidth,height=\textheight]{assets/pictures/math-bookdown-notag-1.png}
+
+\end{tcolorbox}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{sec-quarto-pdf}{%
+\chapter{PDF using Quarto}\label{sec-quarto-pdf}}
+
+\hypertarget{tables-1}{%
+\section{Tables}\label{tables-1}}
+
+\hypertarget{figures-1}{%
+\section{Figures}\label{figures-1}}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{sec-pdf-knitr-latex}{%
+\chapter{\texorpdfstring{PDF using \texttt{knitr} and
+Latex}{PDF using knitr and Latex}}\label{sec-pdf-knitr-latex}}
+
+If you already know how to use Latex, this is probably the best option
+for you to create manuscripts for journal submission. Comapred to the
+Rmarkdown-pdf option, this approach is more direct because it basically
+allows you to put R code chunks directly to a .tex file. One of the key
+advantages of this approach is that you can take advantage of the
+existing collection of Latex templates for many journals (e.g., PNAS).
+If your target journal is one of those, then you can simply take its
+template, and then add R code chunks. This is not the case for the other
+two options introduced in sections Chapter~\ref{sec-rmarkdown-pdf} and
+Chapter~\ref{sec-quarto-pdf}. One of the disadvantages of this approach
+is that you cannot knit to WORD unlike the Rmarkdown-WORD and Quart-WORD
+approaches.
+
+\hypertarget{preparation-2}{%
+\section{Preparation}\label{preparation-2}}
+
+\hypertarget{r-code-chunks}{%
+\section{R code chunks}\label{r-code-chunks}}
+
+In this approach, you use the following to indicate an R code chunk:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{\textless{}\textless{}r chunk{-}name, chunk options\textgreater{}\textgreater{}}
+\NormalTok{R codes}
+\NormalTok{@}
+\end{Highlighting}
+\end{Shaded}
+
+The available chunk options are basically the same as those for
+Rmarkdown.
+
+\hypertarget{tables-2}{%
+\section{Tables}\label{tables-2}}
+
+See
+
+When creating tables using R, you need to use functions that can write
+the table in Latex. Fortunately, there are plenty options. Some of the
+recommended packages include
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{modelsummary}
+\item
+  \texttt{stargazer}
+\item
+  \texttt{gt}
+\item
+  \texttt{gtsummay}
+\item
+  \texttt{xtable}
+\item
+  \texttt{kable} and \texttt{kableExtra}
+\end{itemize}
+
+\hypertarget{figures-2}{%
+\section{Figures}\label{figures-2}}
+
+\bookmarksetup{startatroot}
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{0}
+\end{CSLReferences}
+
+
+
+\end{document}

@@ -1,11 +1,20 @@
 # PDF using Quarto {#sec-quarto-pdf}
 
-
-## Tables
-
-
-## Figures
++ [pdf options](https://quarto.org/docs/reference/formats/pdf.html)
 
 
+## Cross-referenced Tables
+
++ label needs to start with tbl-
+
+## Cross-referenced Figures
+
+
++ label needs to start with fig-
+
+
+## References
+
+References will be always placed at the very end. 
 
 

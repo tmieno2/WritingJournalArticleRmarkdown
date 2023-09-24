@@ -1,6 +1,5 @@
 sample_to_word*/*
 .Rproj.user/*
-ResourceFolder/*
 .vscode/*
 .quarto/*
 sample_to_word.docx
@@ -14,3 +13,5 @@ sample_to_word.docx
 *.log
 assets/*
 *.DS_Store
+ResourceFolder/*/*cache/*
+ResourceFolder/*/*files/*

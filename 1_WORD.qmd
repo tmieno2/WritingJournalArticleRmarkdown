@@ -12,15 +12,15 @@ library(flextable)
 
 ## Before you start 
 
-:::{.callout-note}
-## What you need to know
+:::{.callout-important}
+## What you need to know/learn
 
-In order for you to be able to write a complete journal article without touching WORD, you will need to learn the following if you have not.
+In order for you to be able to write a complete journal article without touching WORD, you will need to know/learn the following.
 
 + How Rmarkdown works ([This](https://rmarkdown.rstudio.com/lesson-1.html) or [This](https://bookdown.org/yihui/rmarkdown/basics.html) is a good place to start) 
 + How to write mathematical expressions using Latex(-like) syntax ([This](https://www.overleaf.com/learn/latex/Mathematical_expressions) can be a good start)
 + Create figures using R (any R pacakge, like `ggplot2`)
-+ Create talbes using R with select R pacakges that are compatible with WORD output (e.g., `flextable`, `modelsummary`)
++ Create talbes using R with select R pacakges that are compatible with WORD output (e.g., `flextable`, `modelsummary`, `gtsummary`)
 
 Please think carfully about the cost of learning all these skills before you invest you time in reading this chapter. 
 :::
@@ -29,7 +29,7 @@ Please think carfully about the cost of learning all these skills before you inv
 
 Before diving in, please do the followings:
 
-+ Go [here](https://www.dropbox.com/sh/kamcegpis7m0pzq/AAAdZ2eo1vhaZ7srxDLNHdMoa?dl=0) and download all the files including **sample_to_word.rmd**, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this [Github repository](https://github.com/tmieno2/WritingJournalArticleRmarkdown), go to the **Resources/WORD/** folder.
++ Go [here](https://www.dropbox.com/sh/kamcegpis7m0pzq/AAAdZ2eo1vhaZ7srxDLNHdMoa?dl=0) and download all the files including **sample_to_word.rmd**, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this [Github repository](https://github.com/tmieno2/WritingJournalArticleRmarkdown) and go to the **Resources/WORD/** folder.
 
 + Open RStudio (or any other software you you may be using like VS code) and knit **sample_to_word.Rmd** to produce **sample_to_word.docx**, which we refer to as the sample WORD file.
 
@@ -46,13 +46,14 @@ Before diving in, please do the followings:
 
 Here are the proposed steps to generate a fully publication-ready article:
 
-1. Write an Rmarkdown file and knit to a WORD file without worrying about formatting your manuscript (Most journals do not require manuscript formatting until the manuscript is accepted. But, please do check yourself if it is indeed the case)
+1. Write an Rmarkdown file and knit to a WORD file without worrying about formatting your manuscript (Most journals do not require manuscript formatting until the manuscript is accepted. But, please do check yourself if it is required)
 2. Iterate between the authors until ready for submission
 3. Submit your manuscript (no formatting just yet)
 4. Revise and resubmit your manuscript after iterating between the authors (the same as step 2)
 5. Repeat steps 2, 3, and 4 until accepted (terminate the process if rejected)
 6. Finally, format your manuscript to the specific requirements by the journal
-   + create a style reference WORD file and refer to it (see Section @sec-word-specify-style). 
+   + create a style reference WORD file and refer to it (see Section @sec-word-specify-style).
+   + modify the format manually on WORD if that is faster
 
 Now, let's take a closer look at Step 2. What you do in this step differs based on who your co-authors are. 
 
@@ -66,7 +67,7 @@ Now, let's take a closer look at Step 2. What you do in this step differs based 
 :::{.callout-note icon=false}
 ## Case 2: every single one of the authors knows how to use Rmarkdown and git 
 
-In this case, things are just so easy. You never have to get out of Rmarkdown. Just let them edit the Rmarkdown file and keep track of changes using git. Any IDE should give you a side-by-side comparison of the previous and current versions like below ([Sublime Merge](https://www.sublimemerge.com/) is used here).
+In this case, things are just so much easier. You never have to get out of Rmarkdown. Just let them edit the Rmarkdown file and keep track of changes using git. Any IDE should give you a side-by-side comparison of the previous and current versions like below ([Sublime Merge](https://www.sublimemerge.com/) is used here).
 
 
 ```{r  echo = F, out.width = "100%"}
@@ -108,7 +109,7 @@ Here is an example YAML header, which you can see in `sample_to_word.rmd` file.
 knitr::include_graphics("assets/pictures/yaml-example.png")
 ```
 
-More detailed explanation of out put options will be provided later individually when the relevant topics are discussed.
+More detailed explanation of output options will be provided later individually when the relevant topics are discussed.
 
 ### Main body
 
@@ -413,7 +414,7 @@ You can change the citation and reference style using [Citation Style Language](
 csl: csl file name 
 ```
 
-3. Then, when knitted, citations and references styles reflect what the style specified by the csl file  
+3. Then, when knitted, citations and references styles reflect the style specified by the csl file  
 
 Currently, the csl style should be set to **qje.csl** (citation style language for The Quarterly Journal of Economics) as below
 
@@ -481,9 +482,9 @@ You cannot use `_` in the table id (`-` is allowed). Cross-referencing would not
 
 ### Packages to create tables
 
-One of the disadvantages of writing to a WORD file is that some table-making R packages are not compatible with it. The `flextable` package is written by the same author of the `officedown` package, which we are using to write to a WORD file. So, naturally, a table object created by the `flextable` package (a `flextable` object) can be knitted into the output WORD without any hiccups as we saw earlier. A notable R package that does NOT work well with the output class of `officedown::rdocx_document` (which we are using) is the `gt` package. Tables created by the package is an object of class `gt`. Unfortunately, there is no function that lets you convert an `gt` object to a `flextable` object. 
+One of the disadvantages of writing to a WORD file is that some table-making R packages are not compatible with it. The `flextable` package is written by the same author of the `officedown` package, which we are using to write to a WORD file. So, naturally, a table object created by the `flextable` package (a `flextable` object) can be knitted into the output WORD without (almost) any hiccups as we saw earlier. A notable R package that does NOT work well with the output class of `officedown::rdocx_document` (which we are using) is the `gt` package. Tables created by the package is an object of class `gt`. Unfortunately, there is no function that lets you convert an `gt` object to a `flextable` object as of now. 
 
-One of the recommended packages is the [`modelsummary`](https://vincentarelbundock.github.io/modelsummary/index.html) package (especially for those who often include regression results tables and summary statistics tables). It lets you create regression results tables via the `modelsummary()` function and summary statistics tables via the `datasummary()` function^[The [gtsummary](https://vincentarelbundock.github.io/modelsummary/index.html) package is also compatible. Use `as_flex_table()` to convert a `gtsummary` object to a `flextable` object.]. Both functions has an option called `output` and you can use `output = "flextable"` to generate tables as `flextable` objects, which can then be included in the output file easily. 
+One of the recommended packages is the [`modelsummary`](https://vincentarelbundock.github.io/modelsummary/index.html) package (especially for those who often include regression results tables and summary statistics tables). It lets you create regression results tables via the `modelsummary()` function and summary statistics tables via the `datasummary()` function^[The [gtsummary](https://www.danieldsjoberg.com/gtsummary/index.html) package is also compatible. Use `as_flex_table()` to convert a `gtsummary` object to a `flextable` object.]. Both functions has an option called `output` and you can use `output = "flextable"` to generate tables as `flextable` objects, which can then be included in the output file easily. 
 
 Here are some example R codes of using the `modelsummary` package to create a regression results and summary statistics tables.
 
@@ -493,12 +494,16 @@ Here are some example R codes of using the `modelsummary` package to create a re
 #--- regressions ---#
 lm_1 <- fixest::feols(mpg ~ hp + cyl, data = mtcars)
 lm_2 <- fixest::feols(mpg ~ hp + cyl + wt, data = mtcars)
+lm_3 <- fixest::feols(mpg ~ hp + cyl + wt, cluster = ~ vs, data = mtcars)
 
 #--- create a regression results table ---#
 modelsummary::modelsummary(
-  list(lm_1, lm_2),
-  outpute = "flextable" #<<
-)
+  list(lm_1, lm_2, lm_3),
+  output = "flextable",
+  gof_omit = "IC|Log|Adj|F|Pseudo|Within"
+) %>%
+  autofit() %>%
+  hline(8) # add horizontal line. modelsummary() adds horizontal line separating coefficient estimates and model summary statistics. But, it disappears on WORD for some reason. So, it is manually added here.
 ```
 
 **Summary statistics** table
@@ -510,6 +515,8 @@ modelsummary::datasummary(
   output = "flextable"
 )
 ```
+
+[Here](https://tmieno2.github.io/AECN-Data-Science-R/Chapter-7-MakeTable_flextable/make_table_flextable_x.html?panelset6=instruction5&panelset7=instruction6&panelset8=introduction2&panelset9=instruction7&panelset10=add_*_row%28%292&panelset11=instruction8#1) is one of the resources to learn how to use the `flextable` package if you need to further modify the tables created by the `modelsummary()` and `datasummary()` functions.
 
 :::{.callout-note}
 See how the exactly the same codes above in the sample rmd file translates into the regression results and summary statistics tables in the output word file.
@@ -551,7 +558,7 @@ knitr::include_graphics("assets/pictures/figure-word.png")
 :::
 
 :::{.callout-important}
-+ Please do not forget to have `fig.cap = "caption"` in the R code chunk option that output a plot. Otherwise, the plot will not be recognized as a plot in the outpur WORD file and cross-referencing will not work even though the plot will be displayed (check to confirm this by removing `fig.cap = "The Distribution of Yield by Zone"` from the R code chunk in the Figures secdion of the sample WORD file). 
++ Please do not forget to have `fig.cap = "caption"` in the R code chunk option that output a plot. Otherwise, the plot will not be recognized as a plot in the output WORD file and cross-referencing will not work even though the plot will be displayed (check to confirm this by removing `fig.cap = "The Distribution of Yield by Zone"` from the R code chunk in the Figures secdion of the sample WORD file). 
 + You cannot use `_` in the figure id (`-` is allowed). Cross-referencing would not work with if the table id includes `_`.
 :::
 

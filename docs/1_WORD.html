@@ -254,22 +254,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="before-you-start" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="before-you-start"><span class="header-section-number">2.1</span> Before you start</h2>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-What you need to know
+What you need to know/learn
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In order for you to be able to write a complete journal article without touching WORD, you will need to learn the following if you have not.</p>
+<p>In order for you to be able to write a complete journal article without touching WORD, you will need to know/learn the following.</p>
 <ul>
 <li>How Rmarkdown works (<a href="https://rmarkdown.rstudio.com/lesson-1.html">This</a> or <a href="https://bookdown.org/yihui/rmarkdown/basics.html">This</a> is a good place to start)</li>
 <li>How to write mathematical expressions using Latex(-like) syntax (<a href="https://www.overleaf.com/learn/latex/Mathematical_expressions">This</a> can be a good start)</li>
 <li>Create figures using R (any R pacakge, like <code>ggplot2</code>)</li>
-<li>Create talbes using R with select R pacakges that are compatible with WORD output (e.g., <code>flextable</code>, <code>modelsummary</code>)</li>
+<li>Create talbes using R with select R pacakges that are compatible with WORD output (e.g., <code>flextable</code>, <code>modelsummary</code>, <code>gtsummary</code>)</li>
 </ul>
 <p>Please think carfully about the cost of learning all these skills before you invest you time in reading this chapter.</p>
 </div>
@@ -377,7 +377,7 @@ Case 2: every single one of the authors knows how to use Rmarkdown and git
 <p><img src="assets/pictures/yaml-example.png" class="img-fluid" style="width:100.0%"></p>
 </div>
 </div>
-<p>More detailed explanation of out put options will be provided later individually when the relevant topics are discussed.</p>
+<p>More detailed explanation of output options will be provided later individually when the relevant topics are discussed.</p>
 </section>
 <section id="main-body" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="main-body"><span class="header-section-number">2.4.2</span> Main body</h3>
@@ -769,7 +769,7 @@ Note
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>csl<span class="sc">:</span> csl file name </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="3" type="1">
-<li>Then, when knitted, citations and references styles reflect what the style specified by the csl file</li>
+<li>Then, when knitted, citations and references styles reflect the style specified by the csl file</li>
 </ol>
 <p>Currently, the csl style should be set to <strong>qje.csl</strong> (citation style language for The Quarterly Journal of Economics) as below</p>
 <div class="cell">
@@ -892,7 +892,7 @@ Note
 </div>
 <section id="packages-to-create-tables" class="level3" data-number="2.8.1">
 <h3 data-number="2.8.1" class="anchored" data-anchor-id="packages-to-create-tables"><span class="header-section-number">2.8.1</span> Packages to create tables</h3>
-<p>One of the disadvantages of writing to a WORD file is that some table-making R packages are not compatible with it. The <code>flextable</code> package is written by the same author of the <code>officedown</code> package, which we are using to write to a WORD file. So, naturally, a table object created by the <code>flextable</code> package (a <code>flextable</code> object) can be knitted into the output WORD without any hiccups as we saw earlier. A notable R package that does NOT work well with the output class of <code>officedown::rdocx_document</code> (which we are using) is the <code>gt</code> package. Tables created by the package is an object of class <code>gt</code>. Unfortunately, there is no function that lets you convert an <code>gt</code> object to a <code>flextable</code> object.</p>
+<p>One of the disadvantages of writing to a WORD file is that some table-making R packages are not compatible with it. The <code>flextable</code> package is written by the same author of the <code>officedown</code> package, which we are using to write to a WORD file. So, naturally, a table object created by the <code>flextable</code> package (a <code>flextable</code> object) can be knitted into the output WORD without (almost) any hiccups as we saw earlier. A notable R package that does NOT work well with the output class of <code>officedown::rdocx_document</code> (which we are using) is the <code>gt</code> package. Tables created by the package is an object of class <code>gt</code>. Unfortunately, there is no function that lets you convert an <code>gt</code> object to a <code>flextable</code> object as of now.</p>
 <p>One of the recommended packages is the <a href="https://vincentarelbundock.github.io/modelsummary/index.html"><code>modelsummary</code></a> package (especially for those who often include regression results tables and summary statistics tables). It lets you create regression results tables via the <code>modelsummary()</code> function and summary statistics tables via the <code>datasummary()</code> function<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Both functions has an option called <code>output</code> and you can use <code>output = "flextable"</code> to generate tables as <code>flextable</code> objects, which can then be included in the output file easily.</p>
 <p>Here are some example R codes of using the <code>modelsummary</code> package to create a regression results and summary statistics tables.</p>
 <p><strong>Regression</strong> table</p>
@@ -900,12 +900,16 @@ Note
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#--- regressions ---#</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>lm_1 <span class="ot">&lt;-</span> fixest<span class="sc">::</span><span class="fu">feols</span>(mpg <span class="sc">~</span> hp <span class="sc">+</span> cyl, <span class="at">data =</span> mtcars)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>lm_2 <span class="ot">&lt;-</span> fixest<span class="sc">::</span><span class="fu">feols</span>(mpg <span class="sc">~</span> hp <span class="sc">+</span> cyl <span class="sc">+</span> wt, <span class="at">data =</span> mtcars)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#--- create a regression results table ---#</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>modelsummary<span class="sc">::</span><span class="fu">modelsummary</span>(</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(lm_1, lm_2),</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">outpute =</span> <span class="st">"flextable"</span> <span class="co">#&lt;&lt;</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>lm_3 <span class="ot">&lt;-</span> fixest<span class="sc">::</span><span class="fu">feols</span>(mpg <span class="sc">~</span> hp <span class="sc">+</span> cyl <span class="sc">+</span> wt, <span class="at">cluster =</span> <span class="sc">~</span> vs, <span class="at">data =</span> mtcars)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#--- create a regression results table ---#</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>modelsummary<span class="sc">::</span><span class="fu">modelsummary</span>(</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">list</span>(lm_1, lm_2, lm_3),</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">"flextable"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">gof_omit =</span> <span class="st">"IC|Log|Adj|F|Pseudo|Within"</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">autofit</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hline</span>(<span class="dv">8</span>) <span class="co"># add horizontal line. modelsummary() adds horizontal line separating coefficient estimates and model summary statistics. But, it disappears on WORD for some reason. So, it is manually added here.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>Summary statistics</strong> table</p>
 <div class="cell">
@@ -915,6 +919,7 @@ Note
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">output =</span> <span class="st">"flextable"</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><a href="https://tmieno2.github.io/AECN-Data-Science-R/Chapter-7-MakeTable_flextable/make_table_flextable_x.html?panelset6=instruction5&amp;panelset7=instruction6&amp;panelset8=introduction2&amp;panelset9=instruction7&amp;panelset10=add_*_row%28%292&amp;panelset11=instruction8#1">Here</a> is one of the resources to learn how to use the <code>flextable</code> package if you need to further modify the tables created by the <code>modelsummary()</code> and <code>datasummary()</code> functions.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -999,7 +1004,7 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>Please do not forget to have <code>fig.cap = "caption"</code> in the R code chunk option that output a plot. Otherwise, the plot will not be recognized as a plot in the outpur WORD file and cross-referencing will not work even though the plot will be displayed (check to confirm this by removing <code>fig.cap = "The Distribution of Yield by Zone"</code> from the R code chunk in the Figures secdion of the sample WORD file).</li>
+<li>Please do not forget to have <code>fig.cap = "caption"</code> in the R code chunk option that output a plot. Otherwise, the plot will not be recognized as a plot in the output WORD file and cross-referencing will not work even though the plot will be displayed (check to confirm this by removing <code>fig.cap = "The Distribution of Yield by Zone"</code> from the R code chunk in the Figures secdion of the sample WORD file).</li>
 <li>You cannot use <code>_</code> in the figure id (<code>-</code> is allowed). Cross-referencing would not work with if the table id includes <code>_</code>.</li>
 </ul>
 </div>
@@ -1228,7 +1233,7 @@ Rmarkdown-WORD Comparison: Visual Example
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>The <a href="https://vincentarelbundock.github.io/modelsummary/index.html">gtsummary</a> package is also compatible. Use <code>as_flex_table()</code> to convert a <code>gtsummary</code> object to a <code>flextable</code> object.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>The <a href="https://www.danieldsjoberg.com/gtsummary/index.html">gtsummary</a> package is also compatible. Use <code>as_flex_table()</code> to convert a <code>gtsummary</code> object to a <code>flextable</code> object.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>If you are using Rmarkdown-PDF, you can import pdf files<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>I am not aware of all the types of accepted file types.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
