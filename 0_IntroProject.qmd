@@ -1,0 +1,10 @@
+# Introduction
+
+## Required knowledge
+
++ R project (RStudio)
++ `renv` package
++ folder structure
++ best practice
+
+

@@ -15,3 +15,5 @@ assets/*
 *.DS_Store
 ResourceFolder/*/*cache/*
 ResourceFolder/*/*files/*
+/.luarc.json
+qmd-templates/*

@@ -1,0 +1,112 @@
+### Section, subsection, subsubsections
+
+You can use `#`, `##`, `###` at the beginning of the line to define sections, subsections, and subsubsections.
+
+```{r eval = F}
+# This becomes section title
+
+## This becomes subsection title
+
+### This becomes subsubsection title
+```
+
+:::{.callout-note}
++ Confirm that `# Materials and Methods` and `## Data` in **sample_to_word.rmd** turn into a section and subsection title in **sample_to_word.docx**.
++ Note also that the sections and subsections are automatically numbered because `number_sections: true` in the YAML header.
+:::
+
+---
+
+### Footnote
+
+You can add a footnote using `^[]` like this:
+
+```{r eval = F}
+regular texts^[this is a footnote]
+```
+
+Footnotes are automatically numbered.
+
+:::{.callout-note}
+See the **Conclusion** section of **sample_to_word.rmd** and **sample_to_word.docx**. 
+:::
+
+---
+
+### Line and page break
+
+You can create a line break by inserting the following.
+
+```markdown
+<br>
+```
+
+:::{.callout-tip}
++ If `<br>` is placed in the same line as the one after which you want a break, then it does not give you a line break. Rather, put `<br>` in the next line.
++ Confirm this by inspecting the Materials and Methods section of the sample rmd and word files.
+:::
+
+To break a page, use
+```{r, eval = F}
+`r run_pagebreak()`
+```
+
+:::{.callout-note}
+Confirm this by inspecting the end of the Introduction section of the sample rmd and word files.
+:::
+
+
+### List
+
+You can create an unordered list by simply using either +, -, or * in front of each item. For example,
+
+````{verbatim}
++ item 1
++ item 2
++ item 3
+````
+
+would print as below in the output WORD file.
+
++ item 1
++ item 2
++ item 3
+
+You can create a nested list like below
+
+````{verbatim}
++ item 1
+  - item 1.1
+  - item 1.2
++ item 2
++ item 3
+````
+
+would print as below in the output WORD file.
+
++ item 1
+  - item 1.1
+  - item 1.2
++ item 2
++ item 3
+
+Here is an ordered list. 
+
+````{verbatim}
+1. item 1
+2. item 2
+3. item 3
+````
+
+1. item 1
+2. item 2
+3. item 3
+
+### Bold and Italic
+
++ bold font: `**this becomes bold**` (or `__this becomes bold__`)
++ italic font: `*this becomes italic*` 
+
+:::{.callout-note}
+Confirm these by comparing the first sentence in the Introduction section of the sample rmd and WORD files.
+:::

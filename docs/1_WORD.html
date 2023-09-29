@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.361">
+<meta name="generator" content="quarto-1.4.376">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Writing Reproducible Journal Articles using Rmarkdown - 2&nbsp; WORD</title>
+<title>Reproducible Journal Articles using R with Rmarkdown/Quarto - 3&nbsp; WORD</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -65,7 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./2_PDF-Rmarkdown.html" rel="next">
-<link href="./01_intro.html" rel="prev">
+<link href="./0_IntroWriting.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -82,6 +82,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "panel-placement": "start",
   "type": "textbox",
   "limit": 20,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -110,9 +116,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1_WORD.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">WORD</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./0_IntroWriting.html">Writing</a></li><li class="breadcrumb-item"><a href="./1_WORD.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">WORD</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -125,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Writing Reproducible Journal Articles using Rmarkdown</a> 
+      <a href="./">Reproducible Journal Articles using R with Rmarkdown/Quarto</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -141,42 +147,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Welcome</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Project Setup</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_intro.html" class="sidebar-item-text sidebar-link">
+  <a href="./0_IntroProject.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Writing</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./0_IntroWriting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./1_WORD.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">WORD</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">WORD</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./2_PDF-Rmarkdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">PDF using Rmarkdown via the <code>bookdown</code> package</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">PDF using Rmarkdown via the <code>bookdown</code> package</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3_PDF-Quarto.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">PDF using Quarto</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">PDF using Quarto</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./4_PDF-KnitrLatex.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">PDF using <code>knitr</code> and Latex</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">PDF using <code>knitr</code> and Latex</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./99_references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -187,47 +223,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link active" data-scroll-target="#before-you-start"><span class="header-section-number">2.1</span> Before you start</a></li>
-  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">2.2</span> Preparation</a></li>
-  <li><a href="#baisc-workflow-until-publication" id="toc-baisc-workflow-until-publication" class="nav-link" data-scroll-target="#baisc-workflow-until-publication"><span class="header-section-number">2.3</span> Baisc workflow until publication</a></li>
-  <li><a href="#structure-of-the-rmarkdown-file" id="toc-structure-of-the-rmarkdown-file" class="nav-link" data-scroll-target="#structure-of-the-rmarkdown-file"><span class="header-section-number">2.4</span> Structure of the Rmarkdown file</a>
+  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link active" data-scroll-target="#before-you-start"><span class="header-section-number">3.1</span> Before you start</a></li>
+  <li><a href="#preparation" id="toc-preparation" class="nav-link" data-scroll-target="#preparation"><span class="header-section-number">3.2</span> Preparation</a></li>
+  <li><a href="#basic-workflow-until-publication" id="toc-basic-workflow-until-publication" class="nav-link" data-scroll-target="#basic-workflow-until-publication"><span class="header-section-number">3.3</span> Basic workflow until publication</a></li>
+  <li><a href="#structure-of-the-rmarkdown-file" id="toc-structure-of-the-rmarkdown-file" class="nav-link" data-scroll-target="#structure-of-the-rmarkdown-file"><span class="header-section-number">3.4</span> Structure of the Rmarkdown file</a>
   <ul class="collapse">
-  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header"><span class="header-section-number">2.4.1</span> YAML header</a></li>
-  <li><a href="#main-body" id="toc-main-body" class="nav-link" data-scroll-target="#main-body"><span class="header-section-number">2.4.2</span> Main body</a></li>
+  <li><a href="#yaml-header" id="toc-yaml-header" class="nav-link" data-scroll-target="#yaml-header"><span class="header-section-number">3.4.1</span> YAML header</a></li>
+  <li><a href="#main-body" id="toc-main-body" class="nav-link" data-scroll-target="#main-body"><span class="header-section-number">3.4.2</span> Main body</a></li>
   </ul></li>
-  <li><a href="#control-of-some-elements-in-word-through-rmarkdown" id="toc-control-of-some-elements-in-word-through-rmarkdown" class="nav-link" data-scroll-target="#control-of-some-elements-in-word-through-rmarkdown"><span class="header-section-number">2.5</span> Control of some elements in WORD through Rmarkdown</a>
+  <li><a href="#control-of-some-elements-in-word-through-rmarkdown" id="toc-control-of-some-elements-in-word-through-rmarkdown" class="nav-link" data-scroll-target="#control-of-some-elements-in-word-through-rmarkdown"><span class="header-section-number">3.5</span> Control of some elements in WORD through Rmarkdown</a>
   <ul class="collapse">
-  <li><a href="#section-subsection-subsubsections" id="toc-section-subsection-subsubsections" class="nav-link" data-scroll-target="#section-subsection-subsubsections"><span class="header-section-number">2.5.1</span> Section, subsection, subsubsections</a></li>
-  <li><a href="#footnote" id="toc-footnote" class="nav-link" data-scroll-target="#footnote"><span class="header-section-number">2.5.2</span> Footnote</a></li>
-  <li><a href="#line-and-page-break" id="toc-line-and-page-break" class="nav-link" data-scroll-target="#line-and-page-break"><span class="header-section-number">2.5.3</span> Line and page break</a></li>
-  <li><a href="#list" id="toc-list" class="nav-link" data-scroll-target="#list"><span class="header-section-number">2.5.4</span> List</a></li>
-  <li><a href="#bold-and-italic" id="toc-bold-and-italic" class="nav-link" data-scroll-target="#bold-and-italic"><span class="header-section-number">2.5.5</span> Bold and Italic</a></li>
+  <li><a href="#section-subsection-subsubsections" id="toc-section-subsection-subsubsections" class="nav-link" data-scroll-target="#section-subsection-subsubsections"><span class="header-section-number">3.5.1</span> Section, subsection, subsubsections</a></li>
+  <li><a href="#footnote" id="toc-footnote" class="nav-link" data-scroll-target="#footnote"><span class="header-section-number">3.5.2</span> Footnote</a></li>
+  <li><a href="#line-and-page-break" id="toc-line-and-page-break" class="nav-link" data-scroll-target="#line-and-page-break"><span class="header-section-number">3.5.3</span> Line and page break</a></li>
+  <li><a href="#list" id="toc-list" class="nav-link" data-scroll-target="#list"><span class="header-section-number">3.5.4</span> List</a></li>
+  <li><a href="#bold-and-italic" id="toc-bold-and-italic" class="nav-link" data-scroll-target="#bold-and-italic"><span class="header-section-number">3.5.5</span> Bold and Italic</a></li>
   </ul></li>
-  <li><a href="#sec-word-specify-style" id="toc-sec-word-specify-style" class="nav-link" data-scroll-target="#sec-word-specify-style"><span class="header-section-number">2.6</span> Specifying the style of the output WORD file in detail</a>
+  <li><a href="#sec-word-specify-style" id="toc-sec-word-specify-style" class="nav-link" data-scroll-target="#sec-word-specify-style"><span class="header-section-number">3.6</span> Specifying the style of the output WORD file in detail</a>
   <ul class="collapse">
-  <li><a href="#sec-change-style-yaml" id="toc-sec-change-style-yaml" class="nav-link" data-scroll-target="#sec-change-style-yaml"><span class="header-section-number">2.6.1</span> Change styles in the YAML header</a></li>
-  <li><a href="#sec-change-style-reference" id="toc-sec-change-style-reference" class="nav-link" data-scroll-target="#sec-change-style-reference"><span class="header-section-number">2.6.2</span> Change styles through reference docx</a></li>
-  <li><a href="#style-change-example" id="toc-style-change-example" class="nav-link" data-scroll-target="#style-change-example"><span class="header-section-number">2.6.3</span> Style change example</a></li>
+  <li><a href="#sec-change-style-yaml" id="toc-sec-change-style-yaml" class="nav-link" data-scroll-target="#sec-change-style-yaml"><span class="header-section-number">3.6.1</span> Change styles in the YAML header</a></li>
+  <li><a href="#sec-change-style-reference" id="toc-sec-change-style-reference" class="nav-link" data-scroll-target="#sec-change-style-reference"><span class="header-section-number">3.6.2</span> Change styles through reference docx</a></li>
+  <li><a href="#style-change-example" id="toc-style-change-example" class="nav-link" data-scroll-target="#style-change-example"><span class="header-section-number">3.6.3</span> Style change example</a></li>
   </ul></li>
-  <li><a href="#citations-and-references" id="toc-citations-and-references" class="nav-link" data-scroll-target="#citations-and-references"><span class="header-section-number">2.7</span> Citations and References</a>
+  <li><a href="#citations-and-references" id="toc-citations-and-references" class="nav-link" data-scroll-target="#citations-and-references"><span class="header-section-number">3.7</span> Citations and References</a>
   <ul class="collapse">
-  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up"><span class="header-section-number">2.7.1</span> Set up</a></li>
-  <li><a href="#cite-and-create-references" id="toc-cite-and-create-references" class="nav-link" data-scroll-target="#cite-and-create-references"><span class="header-section-number">2.7.2</span> Cite and create references</a></li>
-  <li><a href="#citation-and-reference-style" id="toc-citation-and-reference-style" class="nav-link" data-scroll-target="#citation-and-reference-style"><span class="header-section-number">2.7.3</span> Citation and Reference Style</a></li>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up"><span class="header-section-number">3.7.1</span> Set up</a></li>
+  <li><a href="#cite-and-create-references" id="toc-cite-and-create-references" class="nav-link" data-scroll-target="#cite-and-create-references"><span class="header-section-number">3.7.2</span> Cite and create references</a></li>
+  <li><a href="#citation-and-reference-style" id="toc-citation-and-reference-style" class="nav-link" data-scroll-target="#citation-and-reference-style"><span class="header-section-number">3.7.3</span> Citation and Reference Style</a></li>
   </ul></li>
-  <li><a href="#cross-referenced-tables" id="toc-cross-referenced-tables" class="nav-link" data-scroll-target="#cross-referenced-tables"><span class="header-section-number">2.8</span> Cross-referenced Tables</a>
+  <li><a href="#cross-ref-table-word" id="toc-cross-ref-table-word" class="nav-link" data-scroll-target="#cross-ref-table-word"><span class="header-section-number">3.8</span> Cross-referenced Tables</a>
   <ul class="collapse">
-  <li><a href="#packages-to-create-tables" id="toc-packages-to-create-tables" class="nav-link" data-scroll-target="#packages-to-create-tables"><span class="header-section-number">2.8.1</span> Packages to create tables</a></li>
+  <li><a href="#packages-to-create-tables" id="toc-packages-to-create-tables" class="nav-link" data-scroll-target="#packages-to-create-tables"><span class="header-section-number">3.8.1</span> Packages to create tables</a></li>
   </ul></li>
-  <li><a href="#cross-referenced-figures" id="toc-cross-referenced-figures" class="nav-link" data-scroll-target="#cross-referenced-figures"><span class="header-section-number">2.9</span> Cross-referenced Figures</a>
+  <li><a href="#cross-referenced-figures" id="toc-cross-referenced-figures" class="nav-link" data-scroll-target="#cross-referenced-figures"><span class="header-section-number">3.9</span> Cross-referenced Figures</a>
   <ul class="collapse">
-  <li><a href="#figures-created-internally" id="toc-figures-created-internally" class="nav-link" data-scroll-target="#figures-created-internally"><span class="header-section-number">2.9.1</span> Figures created internally</a></li>
-  <li><a href="#importing-pre-made-figures" id="toc-importing-pre-made-figures" class="nav-link" data-scroll-target="#importing-pre-made-figures"><span class="header-section-number">2.9.2</span> Importing pre-made figures</a></li>
+  <li><a href="#figures-created-internally" id="toc-figures-created-internally" class="nav-link" data-scroll-target="#figures-created-internally"><span class="header-section-number">3.9.1</span> Figures created internally</a></li>
+  <li><a href="#importing-pre-made-figures" id="toc-importing-pre-made-figures" class="nav-link" data-scroll-target="#importing-pre-made-figures"><span class="header-section-number">3.9.2</span> Importing pre-made figures</a></li>
   </ul></li>
-  <li><a href="#mathematical-equations" id="toc-mathematical-equations" class="nav-link" data-scroll-target="#mathematical-equations"><span class="header-section-number">2.10</span> Mathematical equations</a>
+  <li><a href="#mathematical-equations" id="toc-mathematical-equations" class="nav-link" data-scroll-target="#mathematical-equations"><span class="header-section-number">3.10</span> Mathematical equations</a>
   <ul class="collapse">
-  <li><a href="#math-equation" id="toc-math-equation" class="nav-link" data-scroll-target="#math-equation"><span class="header-section-number">2.10.1</span> Math equation</a></li>
-  <li><a href="#in-line-math" id="toc-in-line-math" class="nav-link" data-scroll-target="#in-line-math"><span class="header-section-number">2.10.2</span> In-line math</a></li>
+  <li><a href="#math-equation" id="toc-math-equation" class="nav-link" data-scroll-target="#math-equation"><span class="header-section-number">3.10.1</span> Math equation</a></li>
+  <li><a href="#in-line-math" id="toc-in-line-math" class="nav-link" data-scroll-target="#in-line-math"><span class="header-section-number">3.10.2</span> In-line math</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -235,9 +271,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./0_IntroWriting.html">Writing</a></li><li class="breadcrumb-item"><a href="./1_WORD.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">WORD</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-word" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">WORD</span></span></h1>
+<h1 class="title"><span id="sec-word" class="quarto-section-identifier"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">WORD</span></span></h1>
 </div>
 
 
@@ -250,10 +286,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
 
-<section id="before-you-start" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="before-you-start"><span class="header-section-number">2.1</span> Before you start</h2>
+<section id="before-you-start" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="before-you-start"><span class="header-section-number">3.1</span> Before you start</h2>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -275,11 +312,11 @@ What you need to know/learn
 </div>
 </div>
 </section>
-<section id="preparation" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="preparation"><span class="header-section-number">2.2</span> Preparation</h2>
+<section id="preparation" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="preparation"><span class="header-section-number">3.2</span> Preparation</h2>
 <p>Before diving in, please do the followings:</p>
 <ul>
-<li><p>Go <a href="https://www.dropbox.com/sh/kamcegpis7m0pzq/AAAdZ2eo1vhaZ7srxDLNHdMoa?dl=0">here</a> and download all the files including <strong>sample_to_word.rmd</strong>, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this <a href="https://github.com/tmieno2/WritingJournalArticleRmarkdown">Github repository</a>, go to the <strong>Resources/WORD/</strong> folder.</p></li>
+<li><p>Go <a href="https://www.dropbox.com/sh/kamcegpis7m0pzq/AAAdZ2eo1vhaZ7srxDLNHdMoa?dl=0">here</a> and download all the files including <strong>sample_to_word.rmd</strong>, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this <a href="https://github.com/tmieno2/WritingJournalArticleRmarkdown">Github repository</a> and go to the <strong>Resources/WORD/</strong> folder.</p></li>
 <li><p>Open RStudio (or any other software you you may be using like VS code) and knit <strong>sample_to_word.Rmd</strong> to produce <strong>sample_to_word.docx</strong>, which we refer to as the sample WORD file.</p></li>
 <li><p>Install the following packages if you have not</p>
 <ul>
@@ -293,18 +330,19 @@ What you need to know/learn
 </ul></li>
 </ul>
 </section>
-<section id="baisc-workflow-until-publication" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="baisc-workflow-until-publication"><span class="header-section-number">2.3</span> Baisc workflow until publication</h2>
+<section id="basic-workflow-until-publication" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="basic-workflow-until-publication"><span class="header-section-number">3.3</span> Basic workflow until publication</h2>
 <p>Here are the proposed steps to generate a fully publication-ready article:</p>
 <ol type="1">
-<li>Write an Rmarkdown file and knit to a WORD file without worrying about formatting your manuscript (Most journals do not require manuscript formatting until the manuscript is accepted. But, please do check yourself if it is indeed the case)</li>
+<li>Write an Rmarkdown file and knit to a WORD file without worrying about formatting your manuscript (Most journals do not require manuscript formatting until the manuscript is accepted. But, please do check yourself if it is required)</li>
 <li>Iterate between the authors until ready for submission</li>
 <li>Submit your manuscript (no formatting just yet)</li>
 <li>Revise and resubmit your manuscript after iterating between the authors (the same as step 2)</li>
 <li>Repeat steps 2, 3, and 4 until accepted (terminate the process if rejected)</li>
 <li>Finally, format your manuscript to the specific requirements by the journal
 <ul>
-<li>create a style reference WORD file and refer to it (see Section <a href="#sec-word-specify-style"><span>Section&nbsp;2.6</span></a>).</li>
+<li>create a style reference WORD file and refer to it (see Section <a href="#sec-word-specify-style" class="quarto-xref"><span>Section&nbsp;3.6</span></a>).</li>
+<li>modify the format manually on WORD if that is faster</li>
 </ul></li>
 </ol>
 <p>Now, let’s take a closer look at Step 2. What you do in this step differs based on who your co-authors are.</p>
@@ -334,24 +372,30 @@ Case 2: every single one of the authors knows how to use Rmarkdown and git
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In this case, things are just so easy. You never have to get out of Rmarkdown. Just let them edit the Rmarkdown file and keep track of changes using git. Any IDE should give you a side-by-side comparison of the previous and current versions like below (<a href="https://www.sublimemerge.com/">Sublime Merge</a> is used here).</p>
+<p>In this case, things are just so much easier. You never have to get out of Rmarkdown. Just let them edit the Rmarkdown file and keep track of changes using git. Any IDE should give you a side-by-side comparison of the previous and current versions like below (<a href="https://www.sublimemerge.com/">Sublime Merge</a> is used here).</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/git-illustrate.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/git-illustrate.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="structure-of-the-rmarkdown-file" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="structure-of-the-rmarkdown-file"><span class="header-section-number">2.4</span> Structure of the Rmarkdown file</h2>
+<section id="structure-of-the-rmarkdown-file" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="structure-of-the-rmarkdown-file"><span class="header-section-number">3.4</span> Structure of the Rmarkdown file</h2>
 <p>The ramrkdown file consits mainly of two components.</p>
 <ul>
 <li>YAML header</li>
 <li>Main body</li>
 </ul>
-<section id="yaml-header" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="yaml-header"><span class="header-section-number">2.4.1</span> YAML header</h3>
+<section id="yaml-header" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="yaml-header"><span class="header-section-number">3.4.1</span> YAML header</h3>
 <p>YAML header comes at the very top of the Rmarkdown file and it lets you specify things like</p>
 <ul>
 <li>paper title</li>
@@ -374,20 +418,26 @@ Case 2: every single one of the authors knows how to use Rmarkdown and git
 <p>Here is an example YAML header, which you can see in <code>sample_to_word.rmd</code> file.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/yaml-example.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/yaml-example.png" id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>More detailed explanation of output options will be provided later individually when the relevant topics are discussed.</p>
 </section>
-<section id="main-body" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="main-body"><span class="header-section-number">2.4.2</span> Main body</h3>
+<section id="main-body" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="main-body"><span class="header-section-number">3.4.2</span> Main body</h3>
 <p>This is everything that is below the YAML header, where narratives and R codes are written.</p>
 </section>
 </section>
-<section id="control-of-some-elements-in-word-through-rmarkdown" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="control-of-some-elements-in-word-through-rmarkdown"><span class="header-section-number">2.5</span> Control of some elements in WORD through Rmarkdown</h2>
-<section id="section-subsection-subsubsections" class="level3" data-number="2.5.1">
-<h3 data-number="2.5.1" class="anchored" data-anchor-id="section-subsection-subsubsections"><span class="header-section-number">2.5.1</span> Section, subsection, subsubsections</h3>
+<section id="control-of-some-elements-in-word-through-rmarkdown" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="control-of-some-elements-in-word-through-rmarkdown"><span class="header-section-number">3.5</span> Control of some elements in WORD through Rmarkdown</h2>
+<section id="section-subsection-subsubsections" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="section-subsection-subsubsections"><span class="header-section-number">3.5.1</span> Section, subsection, subsubsections</h3>
 <p>You can use <code>#</code>, <code>##</code>, <code>###</code> at the beginning of the line to define sections, subsections, and subsubsections.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This becomes section title</span></span>
@@ -414,8 +464,8 @@ Note
 </div>
 <hr>
 </section>
-<section id="footnote" class="level3" data-number="2.5.2">
-<h3 data-number="2.5.2" class="anchored" data-anchor-id="footnote"><span class="header-section-number">2.5.2</span> Footnote</h3>
+<section id="footnote" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="footnote"><span class="header-section-number">3.5.2</span> Footnote</h3>
 <p>You can add a footnote using <code>^[]</code> like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>regular texts<span class="sc">^</span>[this is a footnote]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -436,10 +486,10 @@ Note
 </div>
 <hr>
 </section>
-<section id="line-and-page-break" class="level3" data-number="2.5.3">
-<h3 data-number="2.5.3" class="anchored" data-anchor-id="line-and-page-break"><span class="header-section-number">2.5.3</span> Line and page break</h3>
+<section id="line-and-page-break" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="line-and-page-break"><span class="header-section-number">3.5.3</span> Line and page break</h3>
 <p>You can create a line break by inserting the following.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>&lt;br&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -474,8 +524,8 @@ Note
 </div>
 </div>
 </section>
-<section id="list" class="level3" data-number="2.5.4">
-<h3 data-number="2.5.4" class="anchored" data-anchor-id="list"><span class="header-section-number">2.5.4</span> List</h3>
+<section id="list" class="level3" data-number="3.5.4">
+<h3 data-number="3.5.4" class="anchored" data-anchor-id="list"><span class="header-section-number">3.5.4</span> List</h3>
 <p>You can create an unordered list by simply using either +, -, or * in front of each item. For example,</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>+ item 1</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>+ item 2</span>
@@ -512,8 +562,8 @@ Note
 <li>item 3</li>
 </ol>
 </section>
-<section id="bold-and-italic" class="level3" data-number="2.5.5">
-<h3 data-number="2.5.5" class="anchored" data-anchor-id="bold-and-italic"><span class="header-section-number">2.5.5</span> Bold and Italic</h3>
+<section id="bold-and-italic" class="level3" data-number="3.5.5">
+<h3 data-number="3.5.5" class="anchored" data-anchor-id="bold-and-italic"><span class="header-section-number">3.5.5</span> Bold and Italic</h3>
 <ul>
 <li>bold font: <code>**this becomes bold**</code> (or <code>__this becomes bold__</code>)</li>
 <li>italic font: <code>*this becomes italic*</code></li>
@@ -533,8 +583,8 @@ Note
 </div>
 </section>
 </section>
-<section id="sec-word-specify-style" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="sec-word-specify-style"><span class="header-section-number">2.6</span> Specifying the style of the output WORD file in detail</h2>
+<section id="sec-word-specify-style" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="sec-word-specify-style"><span class="header-section-number">3.6</span> Specifying the style of the output WORD file in detail</h2>
 <p>You can change the style of the output WORD file either via direct control in the YAML header or via reference WORD file.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -547,17 +597,23 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>You first change styles direclty using the options made available by the <code>officedown</code> package in the YAML header <a href="#sec-change-style-yaml"><span>Section&nbsp;2.6.1</span></a></li>
-<li>If the above is not sufficient, use reference WORD file to apply its style (not content) to the output WORD file <a href="#sec-change-style-reference"><span>Section&nbsp;2.6.2</span></a></li>
+<li>You first change styles direclty using the options made available by the <code>officedown</code> package in the YAML header <a href="#sec-change-style-yaml" class="quarto-xref"><span>Section&nbsp;3.6.1</span></a></li>
+<li>If the above is not sufficient, use reference WORD file to apply its style (not content) to the output WORD file <a href="#sec-change-style-reference" class="quarto-xref"><span>Section&nbsp;3.6.2</span></a></li>
 </ul>
 </div>
 </div>
-<section id="sec-change-style-yaml" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="sec-change-style-yaml"><span class="header-section-number">2.6.1</span> Change styles in the YAML header</h3>
+<section id="sec-change-style-yaml" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="sec-change-style-yaml"><span class="header-section-number">3.6.1</span> Change styles in the YAML header</h3>
 <p>You can control the style of the output WORD file somewhat in the YAML header. For example, you can determine the page size and margins using <code>page_size</code> and <code>page_margins</code> (see the YAML header in the sample rmd file). You also have some controls on how tables and figures appear. For example, the <code>align</code> option lets you determine the horizontal position of tables and figures. <code>topcaption</code> lets you determine whether you have the caption at the top of bottom.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/style-change-yaml.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/style-change-yaml.png" id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -574,8 +630,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="sec-change-style-reference" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="sec-change-style-reference"><span class="header-section-number">2.6.2</span> Change styles through reference docx</h3>
+<section id="sec-change-style-reference" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="sec-change-style-reference"><span class="header-section-number">3.6.2</span> Change styles through reference docx</h3>
 <p>It is almost always the case that the above approach is not sufficient to format your WORD file to the specific requirements of your target journal. In such a case, you can define the style of the output WORD file in detail using a style reference WORD file. This method can control virtually every aspect of WORD file styling. Some of the commonly customized elements among others are</p>
 <ul>
 <li>font size</li>
@@ -590,7 +646,13 @@ Tip
 <p>In our example project, <strong>word_template.docx</strong> is the reference file.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/yaml-reference-docx.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/yaml-reference-docx.png" id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>Of course, only the style and format of the reference WORD file will be inherited to the output WORD file, but not its contents.</p>
@@ -625,63 +687,104 @@ Tip
 </div>
 </div>
 </section>
-<section id="style-change-example" class="level3" data-number="2.6.3">
-<h3 data-number="2.6.3" class="anchored" data-anchor-id="style-change-example"><span class="header-section-number">2.6.3</span> Style change example</h3>
+<section id="style-change-example" class="level3" data-number="3.6.3">
+<h3 data-number="3.6.3" class="anchored" data-anchor-id="style-change-example"><span class="header-section-number">3.6.3</span> Style change example</h3>
 <p>This section gives you a quick look at what it may look to be changing the style of a reference WORD file. We use <strong>word_template.docx</strong> for this demonstration. First, open the document on WORD and open the Styles Pane (If you are using Mac, it should be at the right upper corner of the document). Then you should see something like below.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/style-change-1.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/style-change-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>Then, put your cursor on anywhere in line 2 as below and you should see that the current style is changed to “1 Heading 1”, which is the name of the class (style type) the texts in line 2 belong to.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/style-change-2.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/style-change-2.png" id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>Now, put your cursor at the black triangle and you should see available options including “Modify Style…”</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/style-change-3.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/style-change-3.png" id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>Once you click on it, you should see a pop-up window like below.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/style-change-4.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/style-change-4.png" id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>Here, you can change font family, font size, among other things. In this demonstration, let’s get rid of automatic section number. To do so, click on the “Format” button at the lower left corner of the window. Then, you should see this.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/style-change-5.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/style-change-5.png" id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>Pick “Numbering,” click on “None,” and hit “OK.”</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/style-change-6.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/style-change-6.png" id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>Hit “OK” again in the previous pop-up window, then you should see this.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/style-change-7.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/style-change-7.png" id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>Notice that section numbering is now gone. Now, knit the sample rmd file and confirm that the output WORD file indeed lost section numbers (subsection numbers still remain because you did not modify that part in the reference docx.).</p>
 </section>
 </section>
-<section id="citations-and-references" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="citations-and-references"><span class="header-section-number">2.7</span> Citations and References</h2>
-<section id="set-up" class="level3" data-number="2.7.1">
-<h3 data-number="2.7.1" class="anchored" data-anchor-id="set-up"><span class="header-section-number">2.7.1</span> Set up</h3>
+<section id="citations-and-references" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="citations-and-references"><span class="header-section-number">3.7</span> Citations and References</h2>
+<section id="set-up" class="level3" data-number="3.7.1">
+<h3 data-number="3.7.1" class="anchored" data-anchor-id="set-up"><span class="header-section-number">3.7.1</span> Set up</h3>
 <p>First, create a reference file. Then, add the following to the YAML header (not under <strong>output:</strong>).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>bibliography<span class="sc">:</span> bibliography file name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There are various bibliography systems that can be used including BibLaTeX/BibTex (.bib), CSL-JSON (.json), EndNote (.enl) among other.</p>
-
 <!-- ```{r echo = F}
 data.frame(
   format = c("CSL-JSON", "MODS", "BibLaTeX/BibTex", "RIS", "EndNote", "EndNote XML", "ISI", "MEDLINE", "Copac"),
@@ -697,7 +800,13 @@ data.frame(
 <p>In our example, we use a <strong>bib</strong> file and the bibliography file is named <strong>bibliography.bib</strong> and specified in the YAML header as below</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/yaml-bib.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/yaml-bib.png" id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -718,8 +827,8 @@ Note
 </div>
 <hr>
 </section>
-<section id="cite-and-create-references" class="level3" data-number="2.7.2">
-<h3 data-number="2.7.2" class="anchored" data-anchor-id="cite-and-create-references"><span class="header-section-number">2.7.2</span> Cite and create references</h3>
+<section id="cite-and-create-references" class="level3" data-number="3.7.2">
+<h3 data-number="3.7.2" class="anchored" data-anchor-id="cite-and-create-references"><span class="header-section-number">3.7.2</span> Cite and create references</h3>
 <p>To cite, use the following syntax:</p>
 <ul>
 <li><code>@reference_name</code> to print “author names (year)” in the output WORD file</li>
@@ -730,13 +839,25 @@ Note
 <p><code>reference_name</code> is the very first entry of a <strong>.bib</strong> file as in</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/bib-example.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/bib-example.png" id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>If you are using CSL json file, then it is the <strong>id</strong> of an entry as in</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/bib-csl-example.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-14" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/bib-csl-example.png" id="fig-539a35d47e664c97a50115a146a7f1bd-14" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>The cited items are automatically added to the reference following the specified style (see the next section).</p>
@@ -752,14 +873,14 @@ Note
 <div class="callout-body-container callout-body">
 <ul>
 <li>See the Introduction and Reference sections in the sample rmd and WORD files to confirm this rule.</li>
-<li>Comment out <code>bibliography: bibliography.bib</code> and uncomment <code>bibliography: bibliography.csl</code>, knit again, and check citations and references are still there. This is just an illustration of using a different bibliography file (CSL json file).</li>
+<li>Comment out <code>bibliography: bibliography.bib</code> and uncomment <code>bibliography: bibliography.json</code>, knit again, and check citations and references are still there. This is just an illustration of using a different bibliography file (CSL-json file).</li>
 </ul>
 </div>
 </div>
 <hr>
 </section>
-<section id="citation-and-reference-style" class="level3" data-number="2.7.3">
-<h3 data-number="2.7.3" class="anchored" data-anchor-id="citation-and-reference-style"><span class="header-section-number">2.7.3</span> Citation and Reference Style</h3>
+<section id="citation-and-reference-style" class="level3" data-number="3.7.3">
+<h3 data-number="3.7.3" class="anchored" data-anchor-id="citation-and-reference-style"><span class="header-section-number">3.7.3</span> Citation and Reference Style</h3>
 <p>You can change the citation and reference style using <a href="https://citationstyles.org/">Citation Style Language</a>. Citation style files have <strong>.csl</strong> extension.</p>
 <ol type="1">
 <li><p>Obtain the csl file you would like to use from the <a href="https://www.zotero.org/styles">Zotero citation style repository</a>.</p></li>
@@ -774,7 +895,13 @@ Note
 <p>Currently, the csl style should be set to <strong>qje.csl</strong> (citation style language for The Quarterly Journal of Economics) as below</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/yaml-csl.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-15" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/yaml-csl.png" id="fig-539a35d47e664c97a50115a146a7f1bd-15" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
+</div>
 </div>
 </div>
 <p>Citation and references styles in the output WORD file follows the rules for the QJE.</p>
@@ -784,25 +911,24 @@ Note
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div class="cell quarto-layout-panel">
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><img src="assets/pictures/citation-qje.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Citation style for QJE</figcaption>
+<p><img src="assets/pictures/citation-qje.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Citation style for QJE</figcaption>
 </figure>
 </div>
 </div>
-</div>
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><img src="assets/pictures/reference-qje.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Reference style for QJE</figcaption>
+<p><img src="assets/pictures/reference-qje.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Reference style for QJE</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </div>
@@ -817,25 +943,24 @@ Note
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-body-container">
-<div class="cell quarto-layout-panel">
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><img src="assets/pictures/citation-pnas.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Citation style for PNAS</figcaption>
+<p><img src="assets/pictures/citation-pnas.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Citation style for PNAS</figcaption>
 </figure>
 </div>
 </div>
-</div>
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><img src="assets/pictures/reference-pnas.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Reference style for PNAS</figcaption>
+<p><img src="assets/pictures/reference-pnas.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Reference style for PNAS</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </div>
@@ -844,14 +969,14 @@ Note
 </div>
 </section>
 </section>
-<section id="cross-referenced-tables" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="cross-referenced-tables"><span class="header-section-number">2.8</span> Cross-referenced Tables</h2>
+<section id="cross-ref-table-word" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="cross-ref-table-word"><span class="header-section-number">3.8</span> Cross-referenced Tables</h2>
 <ol type="1">
 <li><p>Create a table using the <code>flextable</code> package (this is not the only option, and will be discussed later)</p></li>
 <li><p>Add an R code chunk like this:</p></li>
 </ol>
 <div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, tab.id = "table-id", tab.cap = "table-name"}</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>table_ft</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="in">table_ft</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>table_ft</code> is a <code>flextable</code> object.</li>
@@ -871,7 +996,7 @@ Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You cannot use <code>_</code> in the table id (<code>-</code> is allowed). Cross-referencing would not work with if the table id includes <code>_</code>.</p>
+<p>You cannot use <code>_</code> in the table id (<code>-</code> is allowed). Cross-referencing would not work if the table id includes <code>_</code>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -890,8 +1015,8 @@ Note
 </ul>
 </div>
 </div>
-<section id="packages-to-create-tables" class="level3" data-number="2.8.1">
-<h3 data-number="2.8.1" class="anchored" data-anchor-id="packages-to-create-tables"><span class="header-section-number">2.8.1</span> Packages to create tables</h3>
+<section id="packages-to-create-tables" class="level3" data-number="3.8.1">
+<h3 data-number="3.8.1" class="anchored" data-anchor-id="packages-to-create-tables"><span class="header-section-number">3.8.1</span> Packages to create tables</h3>
 <p>One of the disadvantages of writing to a WORD file is that some table-making R packages are not compatible with it. The <code>flextable</code> package is written by the same author of the <code>officedown</code> package, which we are using to write to a WORD file. So, naturally, a table object created by the <code>flextable</code> package (a <code>flextable</code> object) can be knitted into the output WORD without (almost) any hiccups as we saw earlier. A notable R package that does NOT work well with the output class of <code>officedown::rdocx_document</code> (which we are using) is the <code>gt</code> package. Tables created by the package is an object of class <code>gt</code>. Unfortunately, there is no function that lets you convert an <code>gt</code> object to a <code>flextable</code> object as of now.</p>
 <p>One of the recommended packages is the <a href="https://vincentarelbundock.github.io/modelsummary/index.html"><code>modelsummary</code></a> package (especially for those who often include regression results tables and summary statistics tables). It lets you create regression results tables via the <code>modelsummary()</code> function and summary statistics tables via the <code>datasummary()</code> function<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Both functions has an option called <code>output</code> and you can use <code>output = "flextable"</code> to generate tables as <code>flextable</code> objects, which can then be included in the output file easily.</p>
 <p>Here are some example R codes of using the <code>modelsummary</code> package to create a regression results and summary statistics tables.</p>
@@ -935,10 +1060,10 @@ Note
 </div>
 </section>
 </section>
-<section id="cross-referenced-figures" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="cross-referenced-figures"><span class="header-section-number">2.9</span> Cross-referenced Figures</h2>
-<section id="figures-created-internally" class="level3" data-number="2.9.1">
-<h3 data-number="2.9.1" class="anchored" data-anchor-id="figures-created-internally"><span class="header-section-number">2.9.1</span> Figures created internally</h3>
+<section id="cross-referenced-figures" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="cross-referenced-figures"><span class="header-section-number">3.9</span> Cross-referenced Figures</h2>
+<section id="figures-created-internally" class="level3" data-number="3.9.1">
+<h3 data-number="3.9.1" class="anchored" data-anchor-id="figures-created-internally"><span class="header-section-number">3.9.1</span> Figures created internally</h3>
 <p>You can create plots within an rmarkdown file and display them in the output WORD file. Here are the steps.</p>
 <ol type="1">
 <li><p>Create a plot using R</p></li>
@@ -950,7 +1075,7 @@ Note
 <li><code>figure-id</code> is the figure id used for cross-referencing</li>
 </ul>
 <div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, fig.id = "figure-id", fig.cap = "caption"}</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>figure_g </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="in">figure_g </span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="3" type="1">
 <li>Use <code>\@ref(fig:figure-id)</code> in the Rmarkdown file to cross-reference the figure (figure numbering in the output WORD file is automatic)</li>
@@ -968,25 +1093,24 @@ Rmarkdown-WORD Comparison: Visual Example
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><br></p>
-<div class="cell quarto-layout-panel">
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><img src="assets/pictures/figure-rmd.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Rmarkdown</figcaption>
+<p><img src="assets/pictures/figure-rmd.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Rmarkdown</figcaption>
 </figure>
 </div>
 </div>
-</div>
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><img src="assets/pictures/figure-word.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">WORD</figcaption>
+<p><img src="assets/pictures/figure-word.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>WORD</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </div>
@@ -1005,7 +1129,7 @@ Important
 <div class="callout-body-container callout-body">
 <ul>
 <li>Please do not forget to have <code>fig.cap = "caption"</code> in the R code chunk option that output a plot. Otherwise, the plot will not be recognized as a plot in the output WORD file and cross-referencing will not work even though the plot will be displayed (check to confirm this by removing <code>fig.cap = "The Distribution of Yield by Zone"</code> from the R code chunk in the Figures secdion of the sample WORD file).</li>
-<li>You cannot use <code>_</code> in the figure id (<code>-</code> is allowed). Cross-referencing would not work with if the table id includes <code>_</code>.</li>
+<li>You cannot use <code>_</code> in the figure id (<code>-</code> is allowed). Cross-referencing would not work if the table id includes <code>_</code>.</li>
 </ul>
 </div>
 </div>
@@ -1028,8 +1152,8 @@ Try
 </div>
 </div>
 </section>
-<section id="importing-pre-made-figures" class="level3" data-number="2.9.2">
-<h3 data-number="2.9.2" class="anchored" data-anchor-id="importing-pre-made-figures"><span class="header-section-number">2.9.2</span> Importing pre-made figures</h3>
+<section id="importing-pre-made-figures" class="level3" data-number="3.9.2">
+<h3 data-number="3.9.2" class="anchored" data-anchor-id="importing-pre-made-figures"><span class="header-section-number">3.9.2</span> Importing pre-made figures</h3>
 <p>Instead of creating plots using R code inside an Rmarkdown, we often need to import figures that were made elsewhere. You may be importing your company/university logos. You may have created plots using the <code>ggplot2</code> package and saved them as pictures. In order to import a pre-made figure and cross-reference it, you can use <code>knitr::include_graphics()</code> as follows,</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>```{r  echo = F, fig.id = "figure-id", fig.cap = "figure caption"}</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>knitr::include_graphics("file name")</span>
@@ -1048,25 +1172,24 @@ Rmarkdown-WORD Comparison: Visual Example
 <div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><br></p>
-<div class="cell quarto-layout-panel">
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><img src="assets/pictures/figure-rmd-import.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Rmarkdown</figcaption>
+<p><img src="assets/pictures/figure-rmd-import.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Rmarkdown</figcaption>
 </figure>
 </div>
 </div>
-</div>
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><img src="assets/pictures/figure-word-import.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">WORD</figcaption>
+<p><img src="assets/pictures/figure-word-import.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>WORD</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </div>
@@ -1093,17 +1216,23 @@ Try!
 </div>
 </section>
 </section>
-<section id="mathematical-equations" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="mathematical-equations"><span class="header-section-number">2.10</span> Mathematical equations</h2>
+<section id="mathematical-equations" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="mathematical-equations"><span class="header-section-number">3.10</span> Mathematical equations</h2>
 <p>You can use Latex-like math syntax to write mathematical equations. For equation numbering and cross-referencing to work as discussed here, make sure that you use <code>bookdown::word_document2</code> for the <code>base_format</code> in the YAML header as below.</p>
 <div class="cell">
 <div class="cell-output-display">
-<p><img src="assets/pictures/yaml-math.png" class="img-fluid" style="width:100.0%"></p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-16" class="quarto-figure quarto-figure-center anchored" width="100%">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="assets/pictures/yaml-math.png" id="fig-539a35d47e664c97a50115a146a7f1bd-16" class="img-fluid figure-img" style="width:100.0%">
+</div>
+</figure>
 </div>
 </div>
-<section id="math-equation" class="level3" data-number="2.10.1">
-<h3 data-number="2.10.1" class="anchored" data-anchor-id="math-equation"><span class="header-section-number">2.10.1</span> Math equation</h3>
-<p>Math for WORD output is much limited compared to writing to a PDF file using Latex (when knitting to a PDF file, Rmarkdown uses Latex to render math equations). This is because Latex is <strong>NOT</strong> involved in converting Latex-like math syntax to math equations when knitted to WORD. Instead, pandoc is doing the conversion job. So, it is not surprising that not all the Latex math capabilities can be utilized when knitting to a WORD file. With that said, most of the syntaxes that you will need are the same between Rmd-to-WORD and Latex. You can use the equation (for single line of math) and align (more than equal to one equations) environments with successful cross-referencing.</p>
+</div>
+<section id="math-equation" class="level3" data-number="3.10.1">
+<h3 data-number="3.10.1" class="anchored" data-anchor-id="math-equation"><span class="header-section-number">3.10.1</span> Math equation</h3>
+<p>Math for WORD output is much more limited compared to writing to a PDF file using Latex (when knitting to a PDF file, Rmarkdown uses Latex to render math equations). This is because Latex is <strong>NOT</strong> involved in converting Latex-like math syntax to math equations when knitted to WORD. Instead, pandoc is doing the conversion job. So, it is not surprising that not all the Latex math capabilities can be utilized when knitting to a WORD file. With that said, most of the syntaxes that you will need are the same between Rmd-to-WORD and Latex. You can use the equation (for single line of math) and align (more than equal to one equations) environments with successful cross-referencing.</p>
 <hr>
 <p><strong>equation</strong> environment</p>
 <p>To use an equation environment, first write math and then put <code>(\#eq:equation-id)</code> at the end (but before <code>\end{equation}</code>) to give an equation id to the equation. You can use <code>\@ref(eq:equation-id)</code> to cross-reference the equation.</p>
@@ -1155,25 +1284,24 @@ Rmarkdown-WORD Comparison: Visual Example
 <div id="callout-23" class="callout-23-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><br></p>
-<div class="cell quarto-layout-panel">
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><img src="assets/pictures/math-env-rmd.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Rmarkdown</figcaption>
+<p><img src="assets/pictures/math-env-rmd.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Rmarkdown</figcaption>
 </figure>
 </div>
 </div>
-</div>
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><img src="assets/pictures/math-env-word.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">WORD</figcaption>
+<p><img src="assets/pictures/math-env-word.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>WORD</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </div>
@@ -1181,8 +1309,8 @@ Rmarkdown-WORD Comparison: Visual Example
 </div>
 </div>
 </section>
-<section id="in-line-math" class="level3" data-number="2.10.2">
-<h3 data-number="2.10.2" class="anchored" data-anchor-id="in-line-math"><span class="header-section-number">2.10.2</span> In-line math</h3>
+<section id="in-line-math" class="level3" data-number="3.10.2">
+<h3 data-number="3.10.2" class="anchored" data-anchor-id="in-line-math"><span class="header-section-number">3.10.2</span> In-line math</h3>
 <p>To write a mathematical expression in line, you can enclose math expressions by $ like below.</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>Our model is written as $Y_z = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z$.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This should appear like below in the output WORD file.</p>
@@ -1200,25 +1328,24 @@ Rmarkdown-WORD Comparison: Visual Example
 <div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><br></p>
-<div class="cell quarto-layout-panel">
+<div>
+
+</div>
+<div class="cell quarto-layout-panel" data-layout-ncol="1">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><img src="assets/pictures/math-inline-rmd.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Rmarkdown</figcaption>
+<p><img src="assets/pictures/math-inline-rmd.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>Rmarkdown</figcaption>
 </figure>
 </div>
 </div>
-</div>
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell-output-display quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
 <figure class="figure">
-<p><img src="assets/pictures/math-inline-word.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">WORD</figcaption>
+<p><img src="assets/pictures/math-inline-word.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<figcaption>WORD</figcaption>
 </figure>
-</div>
 </div>
 </div>
 </div>
@@ -1230,14 +1357,14 @@ Rmarkdown-WORD Comparison: Visual Example
 
 </section>
 </section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>The <a href="https://www.danieldsjoberg.com/gtsummary/index.html">gtsummary</a> package is also compatible. Use <code>as_flex_table()</code> to convert a <code>gtsummary</code> object to a <code>flextable</code> object.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>If you are using Rmarkdown-PDF, you can import pdf files<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>I am not aware of all the types of accepted file types.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section>
+</aside>
 
 
 </main> <!-- /main -->
@@ -1320,10 +1447,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1333,8 +1459,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1347,6 +1482,81 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1390,6 +1600,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1415,6 +1626,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        console.log("RESIZE");
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1476,17 +1714,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./01_intro.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction</span></span>
+      <a href="./0_IntroWriting.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./2_PDF-Rmarkdown.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">PDF using Rmarkdown via the <code>bookdown</code> package</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">PDF using Rmarkdown via the <code>bookdown</code> package</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

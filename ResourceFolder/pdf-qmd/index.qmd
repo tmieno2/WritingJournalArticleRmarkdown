@@ -9,48 +9,49 @@ format:
     keep-tex: true
     fontfamily: times
     fig-cap-location: bottom
+    fig-align: center
     tbl-cap-location: top
+    link-citations: true
+    citecolor: red
+    link-bibliography: true
+    reference-location: document
+    template-partials: 
+      - title.tex
     include-in-header:
-      - file: preamble.tex
+      - text: |
+          \usepackage[noblocks]{authblk}
+          \renewcommand*{\Authsep}{, }
+          \renewcommand*{\Authand}{, }
+          \renewcommand*{\Authands}{, }
+          \renewcommand\Affilfont{\small}
+      - preamble.tex
 author:
   - name: John Doe
-    orcid: 9999-9999-9999-9999
     corresponding: true
     email: johndoe@corps.com
-    roles:
-      - Investigation
-      - Project administration
-      - Software
-      - Visualization
     affiliations:
-      - Curvenote
+      - Deadliest University
   - name: Jeanne Doe
-    orcid: 1111-1111-1111-1111
     corresponding: false
-    roles:
-      - Analysis
     affiliations:
-      - Curvenote
-license: CC BY-SA 4.0
+      - Random University
 keywords:
   - Repoducible
   - R
-date: '2023-09-24'
+date: "`r Sys.Date()`"
 abstract: |
   Abstract: this research is so awesome that you cannot reject this paper.
 keypoints:
   - qmd to pdf is pretty straightforward
   - no more key points
-citation:
-  container-title: sample
-draft: false
 bibliography: bibliography.bib
-echo: false
-csl: qje.csl
+# csl: qje.csl
+csl: pnas.csl
 ---
 
 ```{r}
 #| include: false
+
 library(knitr)
 opts_chunk$set(
   fig.align = "center",
@@ -63,12 +64,13 @@ opts_chunk$set(
 
 library(tidyverse)
 library(data.table)
+library(gt)
 library(modelsummary)
 ```
 
-```{r }
+```{r}
 #| eval: false
-#|
+
 # This is for you to set working directory easily. This serves no purpose in knitting to a manuscript
 setwd("/Users/tmieno2/Dropbox/TeachingUNL/DataScience/LectureNotes/Chapter-9-WritingArticle")
 ```
@@ -84,6 +86,8 @@ reg_data <-
   filter(!is.na(Zone))
 ```
 
+\newpage
+
 # Introduction
 
 The issue this article addresses is **super** *important*!
@@ -95,7 +99,6 @@ The issue this article addresses is **super** *important*!
 -   **multiple citations in parentheses**: [@schlenker2009nonlinear; @mas1995microeconomic]
 
 -   **only year in parentheses**: [-@schlenker2009nonlinear]
-
 
 \newpage
 
@@ -120,18 +123,26 @@ Table @tbl-summary-statistics presents summary statistics by zone.
 
 ## Statistical Model
 
-See equation \ref{eq1} and \ref{eq2} for the statistical models we use.
+See equation \ref{eq-equation} and \ref{eq-align} for the statistical models we use.
 
+```{=tex}
 \begin{equation}
-y = \beta_0 + \beta_1 x + \varepsilon \label{eq1}
+y = \beta_0 + \beta_1 x + \varepsilon \label{eq-equation}
 \end{equation}
-
+```
+```{=tex}
 \begin{align}
 Y_z & = f_z(S) + g_z(N) + h_z(X,Y) + \varepsilon_z \notag \\
-& = \sum_{i=1}^k \phi_k(S) + g_z(N) + h_z(X,Y) + \varepsilon_z \label{eq2}
+& = \sum_{i=1}^k \phi_k(S) + g_z(N) + h_z(X,Y) + \varepsilon_z \label{eq-align}
 \end{align}
-
+```
 Our target coefficient is $\beta_1$ (in-line math).
+
+$$
+y = \beta_0 + \beta_1 x + \varepsilon 
+$$ {#eq-simple}
+
+Equation @eq-simple is correctly cross-referenced.
 
 # Results and Discussions
 
@@ -141,7 +152,11 @@ Figure @fig-yield-dist presents the distribution of yields by zone.
 
 # Conclusions
 
-bluh bluh^[This is a footnote], another bluh bluh^[This is the second footnote]
+bluh bluh[^index-1], another bluh bluh[^index-2]
+
+[^index-1]: This is a footnote
+
+[^index-2]: This is the second footnote
 
 # Figures
 
@@ -149,7 +164,7 @@ I like @fig-yield-dist a lot.
 
 ```{r}
 #| label: "fig-yield-dist"
-#| fig-cap: "The Distribution of Yield by Zone" 
+#| fig-cap: "The Distribution of Yield by Zone"
 #| out-width: 80%
 #| out-height: 80% # this does not have any effect
 g_plot <-
@@ -170,7 +185,7 @@ g_plot
 ggsave(filename = "g_plot_external.pdf", g_plot, width = 6, height = 3)
 ```
 
-Figure @fig-imported-plot was imported. 
+@fig-imported-plot was imported.
 
 When width or height is not specified, the original dimension of the saved figure is respected.
 
@@ -180,30 +195,55 @@ When width or height is not specified, the original dimension of the saved figur
 knitr::include_graphics("g_plot_external.pdf")
 ```
 
-
 # Tables
+
+```{r}
+library(huxtable)
+  head(iris, 10) %>%
+  # Create a huxtable
+  as_hux() %>%
+  # Add some basic styling
+  set_background_color(row = 1, value = "lightgray")
+```
 
 ## Use the `modelsummary` package to create regression results tables
 
 ```{r}
 #| label: tbl-reg-table
-#| tbl-cap: "Regression results table by the modelsummary function" 
+#| tbl-cap: "Regression results table by the modelsummary function"
 #--- regressions ---#
 lm_1 <- fixest::feols(mpg ~ hp + cyl, data = mtcars)
 lm_2 <- fixest::feols(mpg ~ hp + cyl + wt, data = mtcars)
-lm_3 <- fixest::feols(mpg ~ hp + cyl + wt, cluster = ~ vs, data = mtcars)
+lm_3 <- fixest::feols(mpg ~ hp + cyl + wt, cluster = ~vs, data = mtcars)
 
 #--- create a regression results table ---#
 modelsummary::modelsummary(
   list(lm_1, lm_2, lm_3),
-  output = "flextable",
   gof_omit = "IC|Log|Adj|F|Pseudo|Within"
 )
 ```
 
 Table @tbl-reg-table shows the regression results.
 
-```{r, }
+```{r}
+#| label: tbl-reg-table-mod-with-kE
+#| tbl-cap: Regression results table by the modelsummary function
+library(kableExtra)
+modelsummary(
+  list(lm_1, lm_2, lm_3),
+  output = "kableExtra",
+  gof_omit = "IC|Log|Adj|F|Pseudo|Within",
+  stars = TRUE
+) %>%
+  kableExtra::add_header_above(
+    c(" " = 1, "Model (se not clustered) " = 2, "Model (se clustered)" = 1)
+  )
+
+```
+
+@tbl-reg-table-mod-with-kE shows the regression results created by modelsummary(), which is then modified by the kableExtra package (additional row added at the top).
+
+```{r}
 #| label: tbl-summary-statistics
 #| tbl-cap: "Summary Statistics by Zone"
 #--- find observations ---#
@@ -217,13 +257,12 @@ summary_table <-
   reg_data %>%
   datasummary(
     Zone * (
-      (`Yield (kg/ha)` = Yield) +
-        (`Nitrogen Rate (kg/ha)` = aa_n) +
-        (`Seed Rate (1000/ha)` = aa_s)
+      (`Yield (kg/ha)` <- Yield) +
+        (`Nitrogen Rate (kg/ha)` <- aa_n) +
+        (`Seed Rate (1000/ha)` <- aa_s)
     ) ~
       Format(digits = 1) * get_N + Mean + SD + Min + Max,
-    data = .,
-    output = "flextable"
+    data = .
   )
 
 summary_table
@@ -231,53 +270,33 @@ summary_table
 
 Table @tbl-summary-statistics shows summary statistics.
 
-## The `gt` package works as well
-
-```{r}
-#| label: tbl-from-gt
-#| tbl-cap: "A table created by the gt package" 
-library(gt)
-(
-  tab_1 <-
-    exibble %>%
-    gt(
-      rowname_col = "row",
-      groupname_col = "group"
-    )
-)
-```
 
 \newpage
 
 # Appendix
 
-itemized list (this does not work)
-+ item 1
-+ item 2
-+ item 3
-
+itemized list (this does not work) + item 1 + item 2 + item 3
 
 itemized list
 
-+ item 1
-+ item 2
-+ item 3
+-   item 1
+-   item 2
+-   item 3
 
 nested list
 
-+ item 1
-  - item 1.1 
-  - item 1.2 
-+ item 2
-+ item 3
+-   item 1
+    -   item 1.1
+    -   item 1.2
+-   item 2
+-   item 3
 
 enumerated list
 
-1. item 1
-2. item 2
-3. item 3
+1.  item 1
+2.  item 2
+3.  item 3
 
 \newpage
 
-# References
-
+# References {.unnumbered}

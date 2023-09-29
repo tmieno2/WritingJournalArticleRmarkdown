@@ -42,7 +42,7 @@ Before diving in, please do the followings:
   + `tidyverse`
   + `modelsummary`
 
-## Baisc workflow until publication
+## Basic workflow until publication
 
 Here are the proposed steps to generate a fully publication-ready article:
 
@@ -397,7 +397,7 @@ The cited items are automatically added to the reference following the specified
 
 :::{.callout-note}
 + See the Introduction and Reference sections in the sample rmd and WORD files to confirm this rule.
-+ Comment out `bibliography: bibliography.bib` and uncomment `bibliography: bibliography.csl`, knit again, and check citations and references are still there. This is just an illustration of using a different bibliography file (CSL json file). 
++ Comment out `bibliography: bibliography.bib` and uncomment `bibliography: bibliography.json`, knit again, and check citations and references are still there. This is just an illustration of using a different bibliography file (CSL-json file). 
 :::
 
 ---
@@ -453,7 +453,7 @@ knitr::include_graphics("assets/pictures/reference-pnas.png")
 :::
 
 
-## Cross-referenced Tables
+## Cross-referenced Tables {#cross-ref-table-word}
 
 1. Create a table using the `flextable` package (this is not the only option, and will be discussed later) 
 
@@ -472,7 +472,7 @@ table_ft
 3. Use `\@ref(tab:table-id)` in the Rmarkdown file to cross-reference the table (table numbering in the output WORD file is automatic)
 
 :::{.callout-important}
-You cannot use `_` in the table id (`-` is allowed). Cross-referencing would not work with if the table id includes `_`.
+You cannot use `_` in the table id (`-` is allowed). Cross-referencing would not work if the table id includes `_`.
 :::
 
 :::{.callout-note}
@@ -559,7 +559,7 @@ knitr::include_graphics("assets/pictures/figure-word.png")
 
 :::{.callout-important}
 + Please do not forget to have `fig.cap = "caption"` in the R code chunk option that output a plot. Otherwise, the plot will not be recognized as a plot in the output WORD file and cross-referencing will not work even though the plot will be displayed (check to confirm this by removing `fig.cap = "The Distribution of Yield by Zone"` from the R code chunk in the Figures secdion of the sample WORD file). 
-+ You cannot use `_` in the figure id (`-` is allowed). Cross-referencing would not work with if the table id includes `_`.
++ You cannot use `_` in the figure id (`-` is allowed). Cross-referencing would not work if the table id includes `_`.
 :::
 
 You can control the size of the plots in the output WORD file, using the `fig.width` and `fig.height` options in the R code chunk. For example, `fig.width = 4` would mean that the width of the plot will be 4 inches. Use the `dpi` option to control the resolution of the plot. The higher the `dpi` value, the sharper the plot is.
@@ -622,7 +622,7 @@ knitr::include_graphics("assets/pictures/yaml-math.png")
 
 ### Math equation 
 
-Math for WORD output is much limited compared to writing to a PDF file using Latex (when knitting to a PDF file, Rmarkdown uses Latex to render math equations). This is because Latex is **NOT** involved in converting Latex-like math syntax to math equations when knitted to WORD. Instead, pandoc is doing the conversion job. So, it is not surprising that not all the Latex math capabilities can be utilized when knitting to a WORD file. With that said, most of the syntaxes that you will need are the same between Rmd-to-WORD and Latex. You can use the equation (for single line of math) and align (more than equal to one equations) environments with successful cross-referencing.
+Math for WORD output is much more limited compared to writing to a PDF file using Latex (when knitting to a PDF file, Rmarkdown uses Latex to render math equations). This is because Latex is **NOT** involved in converting Latex-like math syntax to math equations when knitted to WORD. Instead, pandoc is doing the conversion job. So, it is not surprising that not all the Latex math capabilities can be utilized when knitting to a WORD file. With that said, most of the syntaxes that you will need are the same between Rmd-to-WORD and Latex. You can use the equation (for single line of math) and align (more than equal to one equations) environments with successful cross-referencing.
 
 ---
 

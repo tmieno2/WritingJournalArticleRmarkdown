@@ -1,6 +1,6 @@
 ## Welcome {.unnumbered}
 
-This book covers how to write journal articles using Rmarkdown to either WORD or PDF. 
+This book covers how to write journal articles using Rmarkdown/Quarto to either WORD or PDF. 
 
 ## License {.unnumbered}
 

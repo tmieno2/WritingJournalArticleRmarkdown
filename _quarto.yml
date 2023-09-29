@@ -3,17 +3,24 @@ project:
   output-dir: docs
 
 book:
-  title: "Writing Reproducible Journal Articles using Rmarkdown"
+  title: "Reproducible Journal Articles using R with Rmarkdown/Quarto"
   author: "Taro Mieno"
   date: "`r Sys.Date()`"
   chapters:
     - index.qmd
-    - 01_intro.qmd
-    - 1_WORD.qmd
-    - 2_PDF-Rmarkdown.qmd
-    - 3_PDF-Quarto.qmd
-    - 4_PDF-KnitrLatex.qmd
-    - 99_references.qmd
+    - text: "---"
+    - part: "Project Setup"
+      chapters:
+        - 0_IntroProject.qmd
+    - text: "---"
+    - part: "Writing"
+      chapters:
+        - 0_IntroWriting.qmd
+        - 1_WORD.qmd
+        - 2_PDF-Rmarkdown.qmd
+        - 3_PDF-Quarto.qmd
+        - 4_PDF-KnitrLatex.qmd
+        - 99_references.qmd
 
 bibliography: references.bib
 
