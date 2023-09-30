@@ -9,11 +9,42 @@ library(modelsummary)
 library(gt)
 ```
 
+## Before you start
+
 [print author affiliation](https://stackoverflow.com/questions/75040607/why-do-affiliations-not-show-up-anywhere-in-the-pdf-output-of-quarto)
 + [pdf options](https://quarto.org/docs/reference/formats/pdf.html)
 + [pdf basics](https://quarto.org/docs/output-formats/pdf-basics.html#overview)
 
+## Preparation
+
+## Basic workflow until publication
+
+## Structure of the Quart markdown (qmd) file
+
 ## Control the style and format
+
+You can insert raw tex codes as a file or text to the tex file that would be later compiled to a pdf (see the official instruction [here]((https://quarto.org/docs/reference/formats/pdf.html#includes) )).
+
+For example, the sample qmd file includes "preamble.tex" in the header by having the following lines in the YAML.
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/include-tex.png")
+```
+
+"preamble.tex" has the following as its content.
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/preamble-contents.png")
+```
+
+For example, it adds line numbers to the output pdf file with 
+
+```{verbatim}
+\usepackage{lineno}
+\linenumbers
+```
+
+## Using existing journal templates
 
 
 
@@ -28,7 +59,7 @@ First, create a reference file. Then, add the following to the YAML header.
 bibliography: bibliography file name
 ```
 
-There are various bibliography systems that can be used including BibLaTeX/BibTex (.bib), CSL-JSON (.json), EndNote (.enl) among other. 
+There are various bibliography systems that can be used including BibLaTeX/BibTex (.bib), CSL-JSON (.json), EndNote (.enl) among others. 
 
 In our example, we use a **bib** file and the bibliography file is named **bibliography.bib** and specified in the YAML header as below
 
@@ -151,10 +182,7 @@ The table in the PDF will have `Sample table title` as the tabe title. `@tab-sam
 + You cannot use `_` in `label` (`-` is allowed). Cross-referencing would not work if `label` includes `_`.
 :::
 
-:::{.callout-note}
-+ See the Tables section of the sample qmd for the R codes to create a table and confirm that the table appears in the output PDF files
-+ See the bottom of the Data subsection under the Materials and Methods section to confirm that cross-referencing is working.
-:::
+
 
 ### Packages to create tables
 
@@ -173,7 +201,7 @@ library(huxtable)
   set_background_color(row = 1, value = "lightgray") # Background color for header
 ```
 
-The `gt` package does not work as well with Latex as it does with the html output^[e.g., if you use the `gt` package, some style changes would not be reflected on the PDF file (see [here](https://stackoverflow.com/questions/76636703/export-gt-table-to-latex-with-colors)). It works perfectly fine when the output is an html file.]. In academic journals, fancy looking tables are not necessary. `kableExtra` and `huxtable` are likely to be very much sufficient. Here is an example of a table created by `kableExtra`. 
+The `gt` package does not work as well with Latex as it does with the html output^[e.g., if you use the `gt` package, some style changes would not be reflected on the PDF file (see [here](https://stackoverflow.com/questions/76636703/export-gt-table-to-latex-with-colors)). It works perfectly fine when the output is an html file.]. In academic journals, fancy looking tables are not necessary. `kableExtra` and `huxtable` are likely to be very much sufficient.
 
 ---
 
@@ -262,6 +290,32 @@ modelsummary(list(lm_1, lm_2, lm_3),
   )
 ```
 
+### Avoid "Not in outer par mode" error 
+
+For some tables, you may encounter the following error while compiling the tex file created in the process (see [here](https://community.rstudio.com/t/how-do-i-specify-h-for-hold-position/25963)).
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/pictures/tex-error-table.png")
+```
+
+You can avoid this problem by adding the following tex codes in the preamble.
+
+```{verbatim}
+\usepackage{float}
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
+```
+
+In the sample qmd file, this is done by having the above lines in a file named "preamble.tex" and calling it in the YAML like below.
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/pictures/yaml-preamble.png")
+```
+
+Of cours, with these float options, tables and figures will appear exactly where they are created or called in the qmd file.
+
 ## Figures (Cross-referenced)
 
 ### Figures created internally
@@ -348,128 +402,6 @@ You can control the size of the plots in the output PDF file using the `out.widt
 + Remove the `fig.cap` option and see what happens to the output WORD file.
 + Change the `dpi` value to 100 see what happens to the output WORD file.
 :::
-
-## Citations and References
-
-### Set up
-
-First, create a reference file. Then, add the following to the YAML header (not under **output:**).
-
-```{r}
-#| eval: false
-bibliography: bibliography file name
-```
-
-There are various bibliography systems that can be used including BibLaTeX/BibTex (.bib), CSL-JSON (.json), EndNote (.enl) among other.
-
-<!-- ```{r echo = F}
-data.frame(
-  format = c("CSL-JSON", "MODS", "BibLaTeX/BibTex", "RIS", "EndNote", "EndNote XML", "ISI", "MEDLINE", "Copac"),
-  extension = c(".json", ".mods", ".bib", ".ris", ".enl", ".xml", ".wos", ".medline", ".copac")
-) %>%
-  flextable() %>%
-  fontsize(size = 18, part = "all") %>%
-  autofit()
-``` -->
-
-Then, add the following to the part of rmd where you want to put references. 
-
-````{verbatim}
-::: {#refs}
-:::
-````
-
-In our example, we use a **bib** file and the bibliography file is named **bibliography.bib** and specified in the YAML header as below
-
-```{r  echo = F, out.width = "100%"}
-knitr::include_graphics("assets/pictures/yaml-bib.png")
-```
-
-:::{.callout-note}
-+ See the sample rmd file to see how bibliography file is specified in the YAML header
-+ Confirm that `{#refs}` enclosed by `:::`is placed in the Reference section of the sample rmd file and confirm that references are indeed added in the Reference section of the output word file
-:::
-
----
-
-### Cite and create references
-
-To cite, use the following syntax:
-
-+ `@reference_name` to print "author names (year)" in the output WORD file
-+ `[@reference_name]` to print "(author names, year)" in the output WORD file 
-+ `[@reference_name_1; @reference_name_2]` to print "(author names, year; author names, year)" in the output WORD file 
-+ `[-@reference_name]` to print just year
-
-`reference_name` is the very first entry of a **.bib** file as in 
-
-```{r  echo = F, out.width = "100%"}
-knitr::include_graphics("assets/pictures/bib-example.png")
-```
-
-If you are using CSL json file, then it is the **id** of an entry as in 
-
-```{r  echo = F, out.width = "100%"}
-knitr::include_graphics("assets/pictures/bib-csl-example.png")
-```
-
-The cited items are automatically added to the reference following the specified style (see the next section).
-
-:::{.callout-note}
-+ See the Introduction and Reference sections in the sample rmd and WORD files to confirm this rule.
-+ Comment out `bibliography: bibliography.bib` and uncomment `bibliography: bibliography.csl`, knit again, and check citations and references are still there. This is just an illustration of using a different bibliography file (CSL json file). 
-:::
-
----
-
-### Citation and Reference Style
-
-You can change the citation and reference style using [Citation Style Language](https://citationstyles.org/). Citation style files have **.csl** extension.
-
-1. Obtain the csl file you would like to use from the [Zotero citation style repository](https://www.zotero.org/styles).
-
-2. Place the following in the YAML header (not under **output:**):
-
-```{r eval = F}
-csl: csl file name 
-```
-
-3. Then, when knitted, citations and references styles reflect the style specified by the csl file  
-
-Currently, the csl style should be set to **qje.csl** (citation style language for The Quarterly Journal of Economics) as below
-
-```{r  echo = F, out.width = "100%"}
-knitr::include_graphics("assets/pictures/yaml-csl.png")
-```
-
-Citation and references styles in the output WORD file follows the rules for the QJE.
-
-:::{.callout-note icon=false appearance="minimal"}
-```{r, echo = F, out.width = "100%"}
-#| layout-ncol: 1
-#| fig-cap:
-#|   - "Citation style for QJE"
-#|   - "Reference style for QJE"
-knitr::include_graphics("assets/pictures/citation-qje.png")
-knitr::include_graphics("assets/pictures/reference-qje.png")
-```
-:::
-
-Now, comment `csl: qje.csl` and uncomment `csl: pnas.csl` so that the CSL for the Proceedings of the National Academy of Sciences (PNAS) is used, and then knit the sample rmd file. 
-
-You can now see that the citation style no longer respects the rules I mentioned above and also the reference style follows that of PNAS. This is because PNAS uses only numbers, but not author names or years.
-
-:::{.callout-note icon=false appearance="minimal"}
-```{r, echo = F, out.width = "100%"}
-#| layout-ncol: 1
-#| fig-cap:
-#|   - "Citation style for PNAS"
-#|   - "Reference style for PNAS"
-knitr::include_graphics("assets/pictures/citation-pnas.png")
-knitr::include_graphics("assets/pictures/reference-pnas.png")
-```
-:::
-
 
 ## Mathematical equations
 

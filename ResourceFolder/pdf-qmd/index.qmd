@@ -15,16 +15,10 @@ format:
     citecolor: red
     link-bibliography: true
     reference-location: document
+    include-in-header:
+      - preamble.tex
     template-partials: 
       - title.tex
-    include-in-header:
-      - text: |
-          \usepackage[noblocks]{authblk}
-          \renewcommand*{\Authsep}{, }
-          \renewcommand*{\Authand}{, }
-          \renewcommand*{\Authands}{, }
-          \renewcommand\Affilfont{\small}
-      - preamble.tex
 author:
   - name: John Doe
     corresponding: true
@@ -198,12 +192,11 @@ knitr::include_graphics("g_plot_external.pdf")
 # Tables
 
 ```{r}
+#| eval: false
 library(huxtable)
-  head(iris, 10) %>%
+head(iris, 10) %>%
   # Create a huxtable
-  as_hux() %>%
-  # Add some basic styling
-  set_background_color(row = 1, value = "lightgray")
+  as_hux()
 ```
 
 ## Use the `modelsummary` package to create regression results tables
@@ -238,7 +231,6 @@ modelsummary(
   kableExtra::add_header_above(
     c(" " = 1, "Model (se not clustered) " = 2, "Model (se clustered)" = 1)
   )
-
 ```
 
 @tbl-reg-table-mod-with-kE shows the regression results created by modelsummary(), which is then modified by the kableExtra package (additional row added at the top).
@@ -269,7 +261,6 @@ summary_table
 ```
 
 Table @tbl-summary-statistics shows summary statistics.
-
 
 \newpage
 
