@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.376">
+<meta name="generator" content="quarto-1.4.382">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -261,6 +261,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 </header>
+
 
 <p>If you already know how to use Latex, this is probably the best option for you to create manuscripts for journal submission. Comapred to the Rmarkdown-pdf option, this approach is more direct because it basically allows you to put R code chunks directly to a .tex file. One of the key advantages of this approach is that you can take advantage of the existing collection of Latex templates for many journals (e.g., PNAS). If your target journal is one of those, then you can simply take its template, and then add R code chunks. This is not the case for the other two options introduced in sections <a href="C2_3_Rmarkdown_PDF.html" class="quarto-xref"><span>Chapter&nbsp;8</span></a> and <a href="C2_4_Quarto_PDF.html" class="quarto-xref"><span>Chapter&nbsp;9</span></a>. One of the disadvantages of this approach is that you cannot knit to WORD unlike the Rmarkdown-WORD and Quart-WORD approaches.</p>
 <section id="preparation" class="level2" data-number="10.1">
@@ -556,7 +557,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);

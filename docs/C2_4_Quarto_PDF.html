@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.376">
+<meta name="generator" content="quarto-1.4.382">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -328,6 +328,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header>
+
 
 <section id="before-you-start" class="level2" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="before-you-start"><span class="header-section-number">9.1</span> Before you start</h2>
@@ -838,10 +839,10 @@ Important
 <p>This is how the table would appear on the output PDF file.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center anchored" width="626">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/reg-table-qmd.png" id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="img-fluid figure-img" width="626">
+<img src="assets/pictures/reg-table-qmd.png" id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="img-fluid figure-img">
 </div>
 </figure>
 </div>
@@ -857,10 +858,10 @@ Important
 <p>This is how the table would appear on the output PDF file.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="quarto-figure quarto-figure-center anchored" width="652">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/sum-table-qmd.png" id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="img-fluid figure-img" width="652">
+<img src="assets/pictures/sum-table-qmd.png" id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="img-fluid figure-img">
 </div>
 </figure>
 </div>
@@ -906,10 +907,10 @@ Important
 <p>For some tables, you may encounter the following error while compiling the tex file created in the process (see <a href="https://community.rstudio.com/t/how-do-i-specify-h-for-hold-position/25963">here</a>).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="quarto-figure quarto-figure-center anchored" width="440">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/tex-error-table.png" id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="img-fluid figure-img" width="440">
+<img src="assets/pictures/tex-error-table.png" id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="img-fluid figure-img">
 </div>
 </figure>
 </div>
@@ -922,10 +923,10 @@ Important
 <p>In the sample qmd file, this is done by having the above lines in a file named “preamble.tex” and calling it in the YAML like below.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="quarto-figure quarto-figure-center anchored" width="480">
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/yaml-preamble.png" id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="img-fluid figure-img" width="480">
+<img src="assets/pictures/yaml-preamble.png" id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="img-fluid figure-img">
 </div>
 </figure>
 </div>
@@ -1148,7 +1149,7 @@ Y_{i} &amp;= c + \phi_i Y_{i-1} \dots
 </section>
 <section id="cross-reference-equations" class="level3" data-number="9.10.2">
 <h3 data-number="9.10.2" class="anchored" data-anchor-id="cross-reference-equations"><span class="header-section-number">9.10.2</span> Cross-reference equations</h3>
-<p>In <a href="https://quarto.org/docs/authoring/cross-references.html#equations">the official Quarto documentation</a>, they present an example of cross-referencing an equation for a math written between <span class="math inline">\(\$\$\)</span> and <span class="math inline">\(\$\$\)</span>, which is another way of writing an equation. However, the complexity of equations that can be written in this manner is rather limited. As of now (2023-10-05), if you try this way of cross-referencing for environments like <strong>align</strong>, it would not work.</p>
+<p>In <a href="https://quarto.org/docs/authoring/cross-references.html#equations">the official Quarto documentation</a>, they present an example of cross-referencing an equation for a math written between <span class="math inline">\(\$\$\)</span> and <span class="math inline">\(\$\$\)</span>, which is another way of writing an equation. However, the complexity of equations that can be written in this manner is rather limited. As of now (2023-10-18), if you try this way of cross-referencing for environments like <strong>align</strong>, it would not work.</p>
 <p>This one works.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{=tex}</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="in">$$</span></span>
@@ -1537,7 +1538,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
