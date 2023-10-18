@@ -38,11 +38,8 @@ format:
     theme: cosmo
     include-in-header:
       - analytics.html
-    include-before-body: 
-      - analytics.html
     callout-icon: false
-  pdf:
-    documentclass: scrreprt
+
 # filters:
 #   - quarto
 #   - line-highlight
