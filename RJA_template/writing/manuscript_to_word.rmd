@@ -1,0 +1,126 @@
+---
+title: "The Impact of Weather on Flight Delay"
+date: "`r Sys.Date()`"
+author:
+  - Forgot MyName, Random University
+  - No Name, Highest-ranked University
+abstract: "Abstract: this research is so awesome that you cannot reject this paper."
+output:
+  officedown::rdocx_document:
+    toc: false
+    number_sections: true
+    reference_docx: "word_template.docx"
+    base_format: "bookdown::word_document2" # for equation numbering
+    plots:
+      style: Normal
+      align: center
+      topcaption: true
+      caption:
+       style: Image Caption
+       pre: "Figure "
+       sep: ": "
+    tables:
+      style: Table
+      layout: autofit
+      topcaption: false
+      width: 1.0
+      caption:
+       style: Table Caption
+       pre: "Table "
+       sep: ": "
+    page_size:
+      width: 8.3
+      height: 11.7
+      orient: "portrait"
+    page_margins:
+      bottom: 1
+      top: 1
+      right: 0.5
+      left: 0.5
+      header: 0.5
+      footer: 0.5
+      gutter: 0.5
+bibliography: bibliography.bib
+# bibliography: bibliography.json
+csl: qje.csl
+# csl: pnas.csl
+---
+
+```{r, include = FALSE}
+#--- pacakges ---#
+library("flextable")
+library("officer")
+library("modelsummary")
+library("tidyverse")
+
+#--- chunk options ---#
+knitr::opts_chunk$set(
+  echo = FALSE,
+  error = TRUE,
+  messages = FALSE,
+  warnings = FALSE
+)
+```
+
+# Introduction
+
+Nothing is more frustrating than flight delays. The goal of this article is to understand what weather variables affect flights delays so that we can control weather when such time comes in the future[^1].
+
+[^1]: This is just for illustrating how to create a footnote
+
+# Method
+
+Regression analysis was used in this article. The econometric model writes as follows (equation \@ref(eq:econometric-model)):
+
+$$
+\begin{align}
+y_{i,t} = \beta_0 + \beta_1 temp_{i,t} + \beta_2 precip_{i,t} + \beta_3 wind_speed_{i,t} + v_{i,t}
+(\#eq:econometric-model)
+\end{align}
+$$
+
+## Code availability
+
+All computations (including creating tables and plots) were conducted using R software [@R], The @fixest package was used to run regressions.
+
+# Data
+
+We use publicly available datasets from the R `nycflights13` package [@nycflights13]. Table \@ref(sum-stat) presents the summary statistics.
+
+```{r, tab.id = "sum-stat", tab.cap = "Summary Statistics"}
+readRDS(here::here("data/processed/reg_data.rds")) %>%
+  modelsummary::datasummary(dep_delay + temp + precip + wind_speed ~ Mean + SD + Max, data = ., output = "flextable") %>%
+  autofit()
+```
+
+Figure \@ref(hist-delay) shows the histogram of departure delay by carrier for each of the airports.
+
+```{r, fig.id = "hist-delay", fig.cap = "Distribution of delay by carrier"}
+knitr::include_graphics(here::here("results/figures/delay_box.png"))
+```
+
+# Results and Discussions
+
+Table \@ref(tab:reg-results) presents the regression results.
+
+```{r, tab.id = "reg-results", tab.cap = "Regression Results"}
+reg_table <-
+  readRDS(here::here("results/reg_results.rds")) %>%
+  modelsummary(
+    stars = TRUE,
+    outpuy = "flextable",
+    gof_omit = "IC|Log|Adj|F|Pseudo|Within|RMSE"
+  ) %>%
+  autofit()
+
+reg_table
+```
+
+# Conclusion
+
+Weather matters.
+
+# References {.unnumbered}
+
+::: {#refs}
+:::

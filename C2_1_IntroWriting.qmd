@@ -1,0 +1,198 @@
+# Introduction
+
+This chapter of the book aims at learning how to use a certain set of R packages to generate (mostly) publication-ready articles in WORD and PDF in a fully automated manner.
+
+## Prerequisites for Engaging with This Chapter
+
+For a fruitful journey through this book, it is presumed that readers:
+
+1. **Understand Rmarkdown Fundamentals**: Familiarity with the basics of Rmarkdown is crucial. If you're new or need a refresher, consider diving into an [excellent introduction to Rmarkdown](https://bookdown.org/yihui/rmarkdown/basics.html) before proceeding.
+
+2. **Are Versed in LaTeX for Equations**: A comfort level with crafting mathematical equations using LaTeX (or a similar syntax) is essential. This skill is invaluable for presenting formulas and equations in a clear, professional manner.
+
+3. **Possess Proficiency with Citation Managers**: As a scholar, managing references efficiently is non-negotiable. For the scope of this book, knowledge of at least one citation manager is vital. Examples include:
+   * **Bibtex/Biblatex**: A popular tool for creating and managing bibliographies.
+   * **EndNote**: A widely-used reference management software that integrates with Word and other word processing software.
+
+With these prerequisites, you'll be optimally poised to extract the most value from the content, discussions, and examples provided in this book.
+
+## What can you do with Rmarkdown/Quarto?
+
+Within a single Rmarkdown file, you can seamlessly integrate numerous functionalities to produce a comprehensive document. Here's a rundown:
+
+1. **R Code Integration**:
+   + Execute R codes directly within your document to:
+     * Conduct statistical analyses or modeling.
+     * Generate figures, leveraging libraries like `ggplot2`.
+     * Craft tables using packages such as `modelsummary` and `flextable`.
+
+2. **Embedding R Objects**:
+   + Embed generated R objects like data sets, tables, or figures directly into the output document. This ensures your results are always up-to-date with the latest data and analyses.
+
+3. **Cross-referencing**:
+   + Utilize specific syntax to cross-reference figures and tables, ensuring readers can effortlessly locate related content.
+
+4. **Citations & References**:
+   + Incorporate citations directly into your text and automatically generate a reference list.
+   + Utilize the [Citation Style Language](https://citationstyles.org/) to format citations and the reference list according to a myriad of established academic and professional standards.
+
+5. **Equations with LaTeX Syntax**:
+   + Use LaTeX (or a similar syntax) to write intricate mathematical equations. Be mindful that the exact syntax can vary slightly depending on your output choice (PDF vs. WORD).
+
+6. **Document Structuring with Markdown**:
+   + Markdown syntax provides an intuitive way to structure your document. Features include:
+     * Defining various heading levels like sections, subsections, and subsubsections.
+     * Adding footnotes for additional context or explanations.
+
+7. **Complete Formatting**:
+   + If your target is a PDF, Rmarkdown/Quarto allows you to thoroughly format the output. This means once you knit your document, there's no additional formatting required on the output file. However, while WORD output is generally well-formatted, you might occasionally need minor adjustments due to the inherent differences between the two formats.
+
+## Why Rmarkdown/Quarto
+
+Rmarkdown/Quarto revolutionizes the way we handle data-driven documents by eliminating:
+
++ The drudgery of manually copying and pasting tables and figures.
+
++ The chore of manual formatting for tables and figures.
+
++ The hassle of updating data-driven numbers (like coefficient estimates or summary statistics) within the text.
+
+```{r}
+#| include: false
+year_since_grad <- lubridate::year(Sys.Date()) - 2007
+```
+
+Rewinding `r year_since_grad` years, during my graduate student days, Rmarkdown was yet to be born, although the `sweave` package was available. Being a greenhorn in academia, my workflow for generating reports for econometrics or drafting manuscripts – before mastering Latex – was incredibly tedious:
+
++ Execute R codes to produce tables (be it regression results, summary stats, etc.), then screenshot these tables.
+
++ Run R codes to craft plots in R and save them as images.
+
++ Manually import these tables and figures into a WORD document.
+
++ Manually format tables within WORD. 
+
+Any alteration in the underlying data or parameters necessitated redoing this entire process from scratch. If you have ever been part of a project aiming for a published paper, you'd know that such changes aren't rare but rather frequent.
+
+Enter the `knitr` and `Rmarkdown` packages, and the landscape transformed. These tools allow for a seamless blend of narratives and R code within a single document. When you knit (or compile) this file, everything required manifests in the output, be it in WORD, PDF, or HTML format.
+
+Today's Rmarkdown system has matured to the point where crafting an academic manuscript in both PDF and WORD is not just feasible but efficient. While the latter (WORD) might be a tad clunkier, it's certainly doable. This book guides you through the intricacies of this process.
+
+## WORD or PDF?
+
+When writing a paper, the choice between generating a PDF or a WORD document often hinges on various factors. 
+
+If I were the sole author and the target journal accepts LaTeX files post-acceptance, I'd gravitate towards producing a PDF. This is especially true if there's a readily available template to shape the output PDF in line with the journal's specifications.
+
+However, circumstances might arise that steer you towards WORD:
+
++ **Journal Specifications**: Numerous journals exclusively accept submissions in WORD format. Adhering to their submission guidelines is paramount.
+
++ **Collaborative Dynamics**: Even if your chosen journal is open to PDF submissions, coauthors might have a preference for WORD because this format can be more accessible and familiar, allowing for easier edits and revisions.
+
+In essence, while PDF might offer sleek formatting, especially with LaTeX, the practicalities of collaboration and specific journal requirements might necessitate a WORD document.
+
+## Markdown Basics {#sec-markdown-basics}
+
+This chapter introduces certain markdown syntaxes that will be particularly useful, or even necessary, when using the Rmarkdown and Quarto systems to create submission-ready journal manuscripts. A more comprehensive guide to markdown syntax can be found [here](https://www.markdownguide.org/). This chapter intentionally omits syntaxes that are more suited for HTML output.
+
+### Section, subsection, subsubsections, ...
+
+You can define sections, subsections, and subsubsections by using #, ##, and ### respectively at the beginning of a line.
+
+```{r eval = F}
+# This becomes section title
+
+## This becomes subsection title
+
+### This becomes subsubsection title
+```
+
+---
+
+### List
+
+You can create an unordered list by simply using either +, -, or * in front of each item. For example,
+
+````{verbatim}
++ item 1
++ item 2
++ item 3
+````
+
+would print as below in the output file.
+
++ item 1
++ item 2
++ item 3
+
+You can create a nested list like below
+
+````{verbatim}
++ item 1
+  - item 1.1
+  - item 1.2
++ item 2
++ item 3
+````
+
+would print as below in the output file.
+
++ item 1
+  - item 1.1
+  - item 1.2
++ item 2
++ item 3
+
+Here is an ordered list. 
+
+````{verbatim}
+1. item 1
+2. item 2
+3. item 3
+````
+
+1. item 1
+2. item 2
+3. item 3
+
+### Emphasis
+
++ bold font: `**this becomes bold**` (or `__this becomes bold__`)
++ italic font: `*this becomes italic*` 
+
+---
+
+### Footnote
+
+You can add a footnote using `^[]` like this:
+
+```{r eval = F}
+regular texts^[this is a footnote]
+```
+
+Footnotes are automatically numbered.
+
+---
+
+### Tables
+
+You can create a table like below.
+
+```{verbatim}
+| Header 1 | Header 2 |
+| -------- | -------- |
+| Cell 1A  | Cell 1B  |
+| Cell 2A  | Cell 2B  |
+```
+
+Creating tables using markdown syntax is generally not recommended. Unless the table is simple and unlikely to change in the future, it's recommended to use R packages for table creation whenever possible.
+
+### Escape Characters
+
+If you want to display a literal character that usually has a special meaning in Markdown, you can escape it with a backslash (`\`):
+
+```{verbatim}
+\* This is not italicized. \*
+```
+

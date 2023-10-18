@@ -9,18 +9,28 @@ book:
   chapters:
     - index.qmd
     - text: "---"
+    - part: "Reproducible Research"
+      chapters:
+        - C0_0_ReproducibleResearch.qmd
+    - text: "---"
     - part: "Project Setup"
       chapters:
-        - 0_IntroProject.qmd
+        - C1_0_IntroProject.qmd
+        - C1_1_ProjectOrganization.qmd
+        - C1_2_DevelopProject.qmd
+        - C1_3_VersionControl.qmd
     - text: "---"
-    - part: "Writing"
+    - part: "Manuscript Writing"
       chapters:
-        - 0_IntroWriting.qmd
-        - 1_WORD.qmd
-        - 2_PDF-Rmarkdown.qmd
-        - 3_PDF-Quarto.qmd
-        - 4_PDF-KnitrLatex.qmd
-        - 99_references.qmd
+        - C2_1_IntroWriting.qmd
+        - C2_2_Rmarkdown_WORD.qmd
+        - C2_3_Rmarkdown_PDF.qmd
+        - C2_4_Quarto_PDF.qmd
+        - C2_5_KnitrLatex_PDF.qmd
+    - text: "---"
+    - part: "References"
+      chapters:
+        - C_End_References.qmd
 
 bibliography: references.bib
 
