@@ -24,9 +24,9 @@ Before delving into this chapter, carefully consider the time and effort require
 
 While you can generate a PDF article without LaTeX expertise, it's strongly advised to familiarize yourself with LaTeX debugging. This not only aids in customizing the article format but also prepares you for potential compilation errors you might face.
 
-[print author affiliation](https://stackoverflow.com/questions/75040607/why-do-affiliations-not-show-up-anywhere-in-the-pdf-output-of-quarto)
+<!-- + [print author affiliation](https://stackoverflow.com/questions/75040607/why-do-affiliations-not-show-up-anywhere-in-the-pdf-output-of-quarto)
 
-+ [pdf basics](https://quarto.org/docs/output-formats/pdf-basics.html#overview)
++ [pdf basics](https://quarto.org/docs/output-formats/pdf-basics.html#overview) -->
 
 ## Preparation
 
