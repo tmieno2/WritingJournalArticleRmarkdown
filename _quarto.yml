@@ -15,7 +15,6 @@ book:
     - text: "---"
     - part: "Project Setup"
       chapters:
-        - C1_0_IntroProject.qmd
         - C1_1_ProjectOrganization.qmd
         - C1_2_DevelopProject.qmd
         - C1_3_VersionControl.qmd
@@ -37,6 +36,9 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
+    include-in-header:
+      - analytics.html
+    callout-icon: false
   pdf:
     documentclass: scrreprt
 # filters:

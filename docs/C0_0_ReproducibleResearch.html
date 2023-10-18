@@ -119,6 +119,17 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-VGJ94YJTQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-VGJ94YJTQ9');
+</script>
 
 
 </head>
@@ -193,26 +204,20 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./C1_0_IntroProject.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./C1_1_ProjectOrganization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Project Organization</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Project Organization</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./C1_2_DevelopProject.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Project Development</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Project Development</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./C1_3_VersionControl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Version Control (Recommended, but optional)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Recommended, but optional)</span></span></a>
   </div>
 </li>
       </ul>
@@ -230,31 +235,31 @@ div.csl-indent {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./C2_1_IntroWriting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./C2_2_Rmarkdown_WORD.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Rmarkdown-WORD</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rmarkdown-WORD</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./C2_3_Rmarkdown_PDF.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Rmarkdown-PDF</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Rmarkdown-PDF</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./C2_4_Quarto_PDF.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Quarto-PDF</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quarto-PDF</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./C2_5_KnitrLatex_PDF.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">PDF using <code>knitr</code> and Latex</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">PDF using <code>knitr</code> and Latex</span></span></a>
   </div>
 </li>
       </ul>
@@ -330,10 +335,10 @@ div.csl-indent {
 </ul>
 <p>This book focuses only on <span style="color: red;"> reproducibility</span> and do not deal with replicability.</p>
 <p>What makes a research project reproducible?</p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Minimum requirement of reproducible research
@@ -368,16 +373,16 @@ Minimum requirement of reproducible research
 <p><strong>Comprehensive Documentation</strong>: Robust documentation, encompassing data and reproduction guidance, ensures transparency, saving time on data interpretation and replication instructions.</p>
 <section id="organized-project-folder" class="level3" data-number="1.2.1">
 <h3 data-number="1.2.1" class="anchored" data-anchor-id="organized-project-folder"><span class="header-section-number">1.2.1</span> Organized project folder</h3>
-<p>A well-organized project folder can substantially decrease the cost of updating and reproducing the project, primarily due to the ease of locating files. This is particularly true for those outsider the author team. When you are new to research, figuring out how to structure an organized project folder can be daunting. I recall my early days as an MS student when all sorts of files were jumbled together in a single folder, lacking any organizational structure. Datasets, code, results, figures, journal articles—everything was mixed. This haphazard arrangement made finding the right file an arduous task, significantly increasing the cost and effort required for reproduction, not only for others but also for myself and my team. A structured approach to constructing an organized project folder is detailed in <a href="C1_1_ProjectOrganization.html" class="quarto-xref"><span>Chapter&nbsp;3</span></a>.</p>
+<p>A well-organized project folder can substantially decrease the cost of updating and reproducing the project, primarily due to the ease of locating files. This is particularly true for those outsider the author team. When you are new to research, figuring out how to structure an organized project folder can be daunting. I recall my early days as an MS student when all sorts of files were jumbled together in a single folder, lacking any organizational structure. Datasets, code, results, figures, journal articles—everything was mixed. This haphazard arrangement made finding the right file an arduous task, significantly increasing the cost and effort required for reproduction, not only for others but also for myself and my team. A structured approach to constructing an organized project folder is detailed in <a href="C1_1_ProjectOrganization.html" class="quarto-xref"><span>Chapter&nbsp;2</span></a>.</p>
 </section>
 <section id="streamlined-automation" class="level3" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="streamlined-automation"><span class="header-section-number">1.2.2</span> Streamlined Automation</h3>
 <hr>
 <p><strong>Automation</strong></p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Automated research
@@ -393,10 +398,10 @@ Automated research
 <p>When non-sharable confidential data is used, reproducibility of the project is severely compromised. However, all the codes should be made accessible at least. Sometimes coding error can be detected even without running them.</p>
 <hr>
 <p><strong>Streamlining</strong></p>
-<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Important
