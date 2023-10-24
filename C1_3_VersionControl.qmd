@@ -1,6 +1,8 @@
-# Version Control (Recommended, but optional)
+# Version Control (Optional, but recommended)
 
-## What is version control?
+This chapter serves as an introduction to version control. It begins by explaining the benefits of version control systems using an easy-to-understand analogy in @sec-vc-what. Subsequently, it guides you through the process of setting up Git and GitHub in @sec-git-github. Then, it explains how to establish an RStudio project with version control enabled via Git and its seamless integration with GitHub in @sec-use-vc. Finally, the chapter concludes with insights into collaborating effectively using version control in @sec-collab-vc.
+
+## What is version control? {#sec-vc-what}
 
 Version control is a system that records changes to files over time so that you can recall specific versions later. The entire history of changes you have made are recorded and you can go back to a previous version any time. 
 
@@ -11,7 +13,7 @@ Let's visualize a simplified, figurative explanation of version control. Picture
 + shelf A (in-house)
 + shelf B (outside house)
 
-At desk A, you actively work on your project, be it writing manuscripts, coding, etc. Once you have made significant progress and wish to archive your work, you walk to the second desk (desk B). Here, you select the pieces of your work to be stored as a collection in your library (akin to **staging**) and duplicate the collection. You affix a sticky note to the copy detailing the nature of this collection. Then, you place this collection on shelf A, effectively archiving it (**committing**). Wisely, you label this collection for easy retrieval in the future (yes, you are like a trained librarian). This particular shelf resides inside your house, meaning only you can access it. However, to safeguard your progress, you create a duplicate of the collection, make a quick trip, and store it on shelf B situated outside your home (**pushing to a remote repository**). This way, even if a disaster strikes, like a house fire, your work remains intact and recoverable. Additionally, this external shelf can be made not as exclusive as desk A inside your house. While others cannot take items from it, you can grant them access to replicate its contents if you wish (**public** v.s. **private** repository). You can even permit them to suggest modifications (**pull requests**). Upon receipt, you can evaluate these suggestions and, if suitable, integrate them into your collection on this shelf. Subsequently, you can copy (sync) these updates to your local shelf (**pulling**).
+At desk A, you actively work on your project, be it writing manuscripts, coding, etc. Once you have made significant progress and wish to archive your work, you walk to the second desk (desk B). Here, you select the pieces of your work to be stored as a collection in your library (akin to **staging**) and duplicate the collection. You affix a sticky note to the copy detailing the nature of this collection. Then, you place this collection on shelf A, effectively archiving it (**committing**). Wisely, you label this collection for easy retrieval in the future (yes, you are like a trained librarian). This particular shelf resides inside your house, meaning only you can access it. However, to safeguard your progress, you create a duplicate of the collection, make a quick trip, and store it on shelf B situated outside your home (**pushing to a remote repository**). This way, even if a disaster strikes, like a house fire, your work remains intact and recoverable. Additionally, this external shelf can be made not as exclusive as shelf A inside your house. While others cannot take items from it, you can grant them access to replicate its contents if you wish (**public** v.s. **private** repository). You can even permit them to suggest modifications (**pull requests**). Upon receipt, you can evaluate these suggestions and, if suitable, integrate them into your collection on this shelf as its different version. Subsequently, you can copy (sync) these updates to your local shelf (**pulling**).
 
 Fortunately for us, none of these actions are carried out physically. There is no need to "visit" Shelf B or "photocopy" your work. All these processes occur digitally, facilitated by your computer and online platforms.
 
@@ -21,11 +23,18 @@ In a more professional summary:
 
 + Version control provides an audit trail for code alterations. This allows for monitoring changes, identifying contributors, and understanding the rationale behind each modification. This functionality is crucial when collaborating in teams but remains beneficial even for solo projects.
 
-This chapter offers concise and introductory guidance on utilizing **git** and **GitHub** for version controlling your projects. Given RStudio's widespread popularity and comprehensive features as the IDE for R projects, we'll demonstrate how to manage version control using Git and GitHub on RStudio.
+Another notable advantage of version control is its ability to significantly declutter your project folder. Have you ever found yourself creating multiple versions of the same code or manuscript and naming them by appending the modification date and your initials (especially in collaborative scenarios)? For instance:
 
-**declutter**
++ manuscript_01_02_2023_TM.docx
++ manuscript_01_03_2023_TM_KS.docx
++ manuscript_01_07_2023_TM.docx
++ manuscript_02_01_2023_TM_NB.docx
++ manuscript_02_21_2023_TM_NB_KS.docx
++ manuscript_05_02_2023_TM.docx
 
-## Set Up Git and GitHub
+While this practice does make it clear who made modifications and when, version control automatically records this information when you archive (commit) to a version control system. Furthermore, it meticulously tracks changes between versions, making comparisons straightforward, as mentioned earlier. With version control, you can always work with a single file for a single purpose, such as manuscript.docx, simplifying file management.
+
+## Set Up Git and GitHub {#sec-git-github}
 
 ### Set Up Git
 
@@ -46,7 +55,7 @@ git config --global user.email "youremail@example.com"
 2. Sign up
 
 
-## Basic Git Workflow Illustration 
+## Basic Git Workflow Illustration {#sec-use-vc}
 
 ### Create a new repository on GitHub
 
@@ -83,7 +92,7 @@ knitr::include_graphics("assets/pictures/new-repo-top.png")
 
 You can see that **.gitignore** and **README.md** are in this repository.
 
-### Clone the repository and designate it as an RStudio Project on RStudio
+### Clone the repository and designate it as an RStudio Project on RStudio {#sec-vc-new-project}
 
 Now, open RStudio and click on the Project button (upper right corner), select **New Project** -> **Version Control** -> **Git**. Then, you will see a popup window like below:
 
@@ -175,12 +184,15 @@ Now, suppose you make further progress in your analysis in **simulate.R**. Speci
 knitr::include_graphics("assets/pictures/sim-norm.png")
 ```
 
-You then commited this change. But, you realized that you should not be using `rnorm()`. Unfortunatel, you do not remember what you used before. To see the previous version of the same file, you can click on the "History" button. 
+You then commited this change. But, you realized that you should not be using `rnorm()`. Unfortunately, you do not remember what you used before. To see the previous version of the same file, you can click on the "History" button. 
 
 ```{r  echo = F, out.width = "100%"}
 knitr::include_graphics("assets/pictures/git-history.png")
 ```
 
-## Collborations 
+By default, the most recent commit is selected and you can see below that what changes were made to what file. Here, it shows that `mean(runif(N))` was changed to `mean(rnorm(N))` in the last commit. If you want to recover that part of the code, then you can just copy what you had (`mean(runif(N))`) and paste it to the current version of **code/simulate.R** manually (this becomes unrealistic if you have too many changes that you need to revert.). Note that you can click on `View file @ce71acb71` at the right upper coner of the box for the commited version of **code/simulate.R**. 
+
+## Collborations {#sec-collab-vc}
 
 
+ 

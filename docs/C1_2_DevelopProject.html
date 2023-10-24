@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.382">
+<meta name="generator" content="quarto-1.4.376">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -163,7 +163,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./C1_3_VersionControl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Recommended, but optional)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Optional, but recommended)</span></span></a>
   </div>
 </li>
       </ul>
@@ -200,12 +200,6 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="./C2_4_Quarto_PDF.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quarto-PDF</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./C2_5_KnitrLatex_PDF.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">PDF using <code>knitr</code> and Latex</span></span></a>
   </div>
 </li>
       </ul>
@@ -271,12 +265,11 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-
 <p>In this section, we will outline the step-by-step workflow for completing a project, highlighting best practices and pinpointing potential pitfalls to be wary of throughout the process. In this illustration, we assume that we are working with real-world data generated or collected outside of your project. For simulation studies where data is generated, some parts of the flow is not necessary.</p>
 <p>The workflow presented here is unrealistically linear and streamlined for a real-world project. In reality, a research project is a long and winding process: you frequently go back and forth between different parts of the research. Consider the organization of files (codes, manuscripts, figures, tables, etc.) presented here as the ideal end state of the project. This organization ensures that the project is both shareable and readily reproducible by others.</p>
 <section id="collect-and-place-datasets" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="collect-and-place-datasets"><span class="header-section-number">3.1</span> Collect and place datasets</h2>
-<p>In this illustration, we pretend that we have collected the <code>flights</code> and <code>weather</code> datasets from the <code>nycflights</code> package and they are available as CSV files somewhere.</p>
+<p>In this illustration, we pretend that we have collected the <code>flights</code> and <code>weather</code> datasets from the <code>nycflights</code> package and they are available as CSV files.</p>
 <p>First thing you do is store these datasets in the <code>data/raw</code> folder. They should never be altered.</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -887,6 +880,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
+        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -976,7 +970,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
   <div class="nav-page nav-page-next">
       <a href="./C1_3_VersionControl.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Recommended, but optional)</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Optional, but recommended)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

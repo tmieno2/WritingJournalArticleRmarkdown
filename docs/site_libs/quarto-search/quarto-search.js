@@ -188,8 +188,8 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
                     title: isExpanded
                       ? language["search-hide-matches-text"]
                       : remainingCount === 1
-                        ? `${remainingCount} ${language["search-more-match-text"]}`
-                        : `${remainingCount} ${language["search-more-matches-text"]}`,
+                      ? `${remainingCount} ${language["search-more-match-text"]}`
+                      : `${remainingCount} ${language["search-more-matches-text"]}`,
                     type: kItemTypeMore,
                     href: kItemTypeMoreHref,
                   });
@@ -307,8 +307,9 @@ window.document.addEventListener("DOMContentLoaded", function (_event) {
               return createElement(
                 "div",
                 {
-                  class: `quarto-search-no-results${hasQuery ? "" : " no-query"
-                    }`,
+                  class: `quarto-search-no-results${
+                    hasQuery ? "" : " no-query"
+                  }`,
                 },
                 language["search-no-results-text"]
               );
@@ -1141,6 +1142,7 @@ function algoliaSearch(query, limit, algoliaOptions) {
     ],
     transformResponse: (response) => {
       if (!indexFields) {
+        console.log({ hits: response.hits });
         return response.hits.map((hit) => {
           return hit.map((item) => {
             return {
@@ -1170,6 +1172,7 @@ function algoliaSearch(query, limit, algoliaOptions) {
             return newItem;
           });
         });
+        console.log({ remap: remappedHits });
         return remappedHits;
       }
     },

@@ -1,6 +1,6 @@
 # Reproducible Research
 
-The goal of this book is to provide guidance on how to conduct research in a fully-automated reproducible manner.  
+The objective of this chapter is to offer guidance on conducting research in a reproducible manner. It begins by defining reproducible research in @sec-rep-research, discusses the elements of high-quality reproducible research in @sec-high-q-research, and concludes by highlighting the benefits associated with conducting research reproducibly in @sec-benefits.
 
 ## What is reproducible research {#sec-rep-research}
 
@@ -32,7 +32,7 @@ It is crucial to distinguish between the quality of data and methodology and the
 
 <!-- @alston2021 -->
 
-## High-quality and low-quality reproducible research
+## High-quality and low-quality reproducible research {#sec-high-q-research}
 
 A high-quality reproducible project exhibits the following characteristics:
 
@@ -171,7 +171,7 @@ Here is an example of well-organized and well-annotated R code file.
 knitr::include_graphics("assets/pictures/2-make-tables-inside.png")
 ```
 
-This R file is designed to generate a single figure and table. It is compartmentalized into two distinct sections within the file, each clearly labeled for its purpose. The first section is dedicated to 'Visual illustration of the data,' while the second section focuses on generating a 'Regression table.' These clear headings make it evident which part of the code serves what purpose. Additionally, you can find informative notes within each compartment, providing further context and clarifying the intent behind specific code chunks. While this example represents a straightforward R code file, it effectively illustrates the concept of organizing code for clarity and comprehension.
+This R script is designed to generate a single figure and table. It is compartmentalized into two distinct sections within the file, each clearly labeled for its purpose. The first section is dedicated to "Visual illustration of the data," while the second section focuses on generating a "Regression table." These clear headings make it evident which part of the code serves what purpose. Additionally, you can find informative notes within each compartment, providing further context and clarifying the intent behind specific code chunks. While this example represents a straightforward R code file, it effectively illustrates the concept of organizing code for clarity and comprehension.
 
 ### Comprehensive documentation
 
@@ -179,7 +179,7 @@ Comprehensive documentation of data is paramount. Any meaningful updates or atte
 
 When the entire research process is automated through well-annotated code, the code itself becomes an excellent form of documentation, capturing the procedures undertaken in the study. In such cases, providing a guideline on how to run the code can be beneficial and sufficient. However, if certain procedures are conducted manually, they should be meticulously documented to ensure that anyone can follow them with precision.
 
-## Why high-quality reproducible research?
+## Why high-quality reproducible research? {#sec-benefits}
 
 The main beneficiaries of reproducible research include:
 

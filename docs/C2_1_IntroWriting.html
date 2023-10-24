@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.382">
+<meta name="generator" content="quarto-1.4.376">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -196,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./C1_3_VersionControl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Recommended, but optional)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Optional, but recommended)</span></span></a>
   </div>
 </li>
       </ul>
@@ -235,12 +235,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quarto-PDF</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./C2_5_KnitrLatex_PDF.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">PDF using <code>knitr</code> and Latex</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -275,14 +269,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#what-can-you-do-with-rmarkdownquarto" id="toc-what-can-you-do-with-rmarkdownquarto" class="nav-link" data-scroll-target="#what-can-you-do-with-rmarkdownquarto"><span class="header-section-number">5.2</span> What can you do with Rmarkdown/Quarto?</a></li>
   <li><a href="#why-rmarkdownquarto" id="toc-why-rmarkdownquarto" class="nav-link" data-scroll-target="#why-rmarkdownquarto"><span class="header-section-number">5.3</span> Why Rmarkdown/Quarto</a></li>
   <li><a href="#word-or-pdf" id="toc-word-or-pdf" class="nav-link" data-scroll-target="#word-or-pdf"><span class="header-section-number">5.4</span> WORD or PDF?</a></li>
-  <li><a href="#sec-markdown-basics" id="toc-sec-markdown-basics" class="nav-link" data-scroll-target="#sec-markdown-basics"><span class="header-section-number">5.5</span> Markdown Basics</a>
+  <li><a href="#sec-what-if-latex" id="toc-sec-what-if-latex" class="nav-link" data-scroll-target="#sec-what-if-latex"><span class="header-section-number">5.5</span> What if you are proficient in Latex?</a></li>
+  <li><a href="#sec-markdown-basics" id="toc-sec-markdown-basics" class="nav-link" data-scroll-target="#sec-markdown-basics"><span class="header-section-number">5.6</span> Markdown Basics</a>
   <ul class="collapse">
-  <li><a href="#section-subsection-subsubsections" id="toc-section-subsection-subsubsections" class="nav-link" data-scroll-target="#section-subsection-subsubsections"><span class="header-section-number">5.5.1</span> Section, subsection, subsubsections, …</a></li>
-  <li><a href="#list" id="toc-list" class="nav-link" data-scroll-target="#list"><span class="header-section-number">5.5.2</span> List</a></li>
-  <li><a href="#emphasis" id="toc-emphasis" class="nav-link" data-scroll-target="#emphasis"><span class="header-section-number">5.5.3</span> Emphasis</a></li>
-  <li><a href="#footnote" id="toc-footnote" class="nav-link" data-scroll-target="#footnote"><span class="header-section-number">5.5.4</span> Footnote</a></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">5.5.5</span> Tables</a></li>
-  <li><a href="#escape-characters" id="toc-escape-characters" class="nav-link" data-scroll-target="#escape-characters"><span class="header-section-number">5.5.6</span> Escape Characters</a></li>
+  <li><a href="#section-subsection-subsubsections" id="toc-section-subsection-subsubsections" class="nav-link" data-scroll-target="#section-subsection-subsubsections"><span class="header-section-number">5.6.1</span> Section, subsection, subsubsections, …</a></li>
+  <li><a href="#list" id="toc-list" class="nav-link" data-scroll-target="#list"><span class="header-section-number">5.6.2</span> List</a></li>
+  <li><a href="#emphasis" id="toc-emphasis" class="nav-link" data-scroll-target="#emphasis"><span class="header-section-number">5.6.3</span> Emphasis</a></li>
+  <li><a href="#footnote" id="toc-footnote" class="nav-link" data-scroll-target="#footnote"><span class="header-section-number">5.6.4</span> Footnote</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">5.6.5</span> Tables</a></li>
+  <li><a href="#escape-characters" id="toc-escape-characters" class="nav-link" data-scroll-target="#escape-characters"><span class="header-section-number">5.6.6</span> Escape Characters</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -308,8 +303,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-
-<p>This chapter of the book aims at learning how to use a certain set of R packages to generate (mostly) publication-ready articles in WORD and PDF in a fully automated manner.</p>
+<p>This chapter of the book aims at learning how to use a certain set of R packages to generate (mostly) publication-ready articles in WORD and PDF in an automated manner (except for typing narratives of course).</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Attention
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For those who are proficient in Latex for manuscript writing, I strongly advise that you read <a href="#sec-what-if-latex" class="quarto-xref"><span>Section&nbsp;5.5</span></a> first, which describes how the benefit of using Rmarkdown or Quarto over Latex may be much smaller than you may think for manuscript writing if your intended file format is PDF. It may be wise to not invest your time in learning how to use Rmarkdown and Quarto for manuscript writing. However, they become immensely valuable when you <strong>must</strong> produce content in WORD.</p>
+</div>
+</div>
 <section id="prerequisites-for-engaging-with-this-chapter" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="prerequisites-for-engaging-with-this-chapter"><span class="header-section-number">5.1</span> Prerequisites for Engaging with This Chapter</h2>
 <p>For a fruitful journey through this book, it is presumed that readers:</p>
@@ -389,20 +396,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="word-or-pdf" class="level2" data-number="5.4">
 <h2 data-number="5.4" class="anchored" data-anchor-id="word-or-pdf"><span class="header-section-number">5.4</span> WORD or PDF?</h2>
-<p>When writing a paper, the choice between generating a PDF or a WORD document often hinges on various factors.</p>
-<p>If I were the sole author and the target journal accepts LaTeX files post-acceptance, I’d gravitate towards producing a PDF. This is especially true if there’s a readily available template to shape the output PDF in line with the journal’s specifications.</p>
+<p>When writing a paper, the choice between generating a PDF or a WORD document often hinges on various factors (I really hope that journals start accepting html file).</p>
+<p>If I were the sole author and the target journal accepts LaTeX files post-acceptance, I would gravitate towards producing a PDF. This is especially true if there is a readily available template to shape the output PDF in line with the journal’s specifications.</p>
 <p>However, circumstances might arise that steer you towards WORD:</p>
 <ul>
 <li><p><strong>Journal Specifications</strong>: Numerous journals exclusively accept submissions in WORD format. Adhering to their submission guidelines is paramount.</p></li>
 <li><p><strong>Collaborative Dynamics</strong>: Even if your chosen journal is open to PDF submissions, coauthors might have a preference for WORD because this format can be more accessible and familiar, allowing for easier edits and revisions.</p></li>
 </ul>
 <p>In essence, while PDF might offer sleek formatting, especially with LaTeX, the practicalities of collaboration and specific journal requirements might necessitate a WORD document.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aside
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A common scenario where opting for Word as the output file format proves beneficial is when you are writing a grant proposal. In my experience, grant proposal development typically does not involve the use of Latex (except for instances like a small grant proposal I essentially authored independently). This preference is largely due to the ease of providing feedback and collaborative editing in Word, especially when multiple collaborators are involved. If you are the PI and would not like to write in Word but find the need to generate content in Word for others, you can explore the Rmarkdown-Word option, as discussed in <a href="C2_2_Rmarkdown_WORD.html" class="quarto-xref"><span>Chapter&nbsp;6</span></a>.</p>
+</div>
+</div>
 </section>
-<section id="sec-markdown-basics" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="sec-markdown-basics"><span class="header-section-number">5.5</span> Markdown Basics</h2>
-<p>This chapter introduces certain markdown syntaxes that will be particularly useful, or even necessary, when using the Rmarkdown and Quarto systems to create submission-ready journal manuscripts. A more comprehensive guide to markdown syntax can be found <a href="https://www.markdownguide.org/">here</a>. This chapter intentionally omits syntaxes that are more suited for HTML output.</p>
-<section id="section-subsection-subsubsections" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="section-subsection-subsubsections"><span class="header-section-number">5.5.1</span> Section, subsection, subsubsections, …</h3>
+<section id="sec-what-if-latex" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="sec-what-if-latex"><span class="header-section-number">5.5</span> What if you are proficient in Latex?</h2>
+<p>The advantage of using Rmarkdown or Quarto over LaTeX is not large if you <strong>are already proficient in LaTeX</strong> and your output file type is <strong>PDF</strong> (If it is WORD, than that is an entirely different story. See below for this discussion). LaTeX itself is capable of inserting externally created tables (written in a .tex file) and figures (in various formats). This means that you can generate a table and save it as a .tex file using R, or create a figure and save it as an image using R, which can then be imported into your LaTeX manuscript. This is a perfectly valid approach for producing a reproducible manuscript.</p>
+<p>While Rmarkdown and Quarto enable the creation of figures and tables directly within the main manuscript file using R scripts, this does not inherently make it more reproducible than creating tables and figures externally with R and importing them later. Both approaches can be equally streamlined.</p>
+<p>One of the differences between the two approaches lies in the ability to reference R objects within the manuscript file. For instance, you might want to discuss your regression results by referring to a coefficient of a variable of interest. With Rmarkdown and Quarto, you can programmatically reference this coefficient, eliminating the need to manually type the number. This can be highly advantageous, especially since research results often evolve during a project. As long as you refer to the number programmatically, you will not need to manually update it whenever there are changes. Think carefully if this advantage is important enough to learn a new way of compiling a manuscript using Rmarkdown or Quarto.</p>
+<p>However, if your intended file format is Word, as required by some journals, then Rmarkdown and Quarto become immensely valuable. They allow you to compose content in a Latex-like style while generating a Word document. Unlike Latex, where programmatically inserting tables or figures into Word is challenging, Rmarkdown and Quarto resolve this limitation seamlessly. They function as pseudo-Latex in this context.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Aside
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Moreover, Rmarkdown and Quarto truly shine, especially when creating educational materials involving coding. Their ability to effortlessly present code and its outcomes is of exceptional value. However, in cases like ours, where the manuscript does not include code display, this particular advantage may not be as relevant.</p>
+</div>
+</div>
+</section>
+<section id="sec-markdown-basics" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="sec-markdown-basics"><span class="header-section-number">5.6</span> Markdown Basics</h2>
+<p>This section introduces certain markdown syntaxes that will be particularly useful, or even necessary, when using the Rmarkdown and Quarto systems to create submission-ready journal manuscripts. A more comprehensive guide to markdown syntax can be found <a href="https://www.markdownguide.org/">here</a>. This chapter intentionally omits syntaxes that are more suited for HTML output.</p>
+<section id="section-subsection-subsubsections" class="level3" data-number="5.6.1">
+<h3 data-number="5.6.1" class="anchored" data-anchor-id="section-subsection-subsubsections"><span class="header-section-number">5.6.1</span> Section, subsection, subsubsections, …</h3>
 <p>You can define sections, subsections, and subsubsections by using #, ##, and ### respectively at the beginning of a line.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This becomes section title</span></span>
@@ -413,8 +453,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <hr>
 </section>
-<section id="list" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="list"><span class="header-section-number">5.5.2</span> List</h3>
+<section id="list" class="level3" data-number="5.6.2">
+<h3 data-number="5.6.2" class="anchored" data-anchor-id="list"><span class="header-section-number">5.6.2</span> List</h3>
 <p>You can create an unordered list by simply using either +, -, or * in front of each item. For example,</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>+ item 1</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>+ item 2</span>
@@ -451,16 +491,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>item 3</li>
 </ol>
 </section>
-<section id="emphasis" class="level3" data-number="5.5.3">
-<h3 data-number="5.5.3" class="anchored" data-anchor-id="emphasis"><span class="header-section-number">5.5.3</span> Emphasis</h3>
+<section id="emphasis" class="level3" data-number="5.6.3">
+<h3 data-number="5.6.3" class="anchored" data-anchor-id="emphasis"><span class="header-section-number">5.6.3</span> Emphasis</h3>
 <ul>
 <li>bold font: <code>**this becomes bold**</code> (or <code>__this becomes bold__</code>)</li>
 <li>italic font: <code>*this becomes italic*</code></li>
 </ul>
 <hr>
 </section>
-<section id="footnote" class="level3" data-number="5.5.4">
-<h3 data-number="5.5.4" class="anchored" data-anchor-id="footnote"><span class="header-section-number">5.5.4</span> Footnote</h3>
+<section id="footnote" class="level3" data-number="5.6.4">
+<h3 data-number="5.6.4" class="anchored" data-anchor-id="footnote"><span class="header-section-number">5.6.4</span> Footnote</h3>
 <p>You can add a footnote using <code>^[]</code> like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>regular texts<span class="sc">^</span>[this is a footnote]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -468,8 +508,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Footnotes are automatically numbered.</p>
 <hr>
 </section>
-<section id="tables" class="level3" data-number="5.5.5">
-<h3 data-number="5.5.5" class="anchored" data-anchor-id="tables"><span class="header-section-number">5.5.5</span> Tables</h3>
+<section id="tables" class="level3" data-number="5.6.5">
+<h3 data-number="5.6.5" class="anchored" data-anchor-id="tables"><span class="header-section-number">5.6.5</span> Tables</h3>
 <p>You can create a table like below.</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>| Header 1 | Header 2 |</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>| -------- | -------- |</span>
@@ -477,8 +517,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>| Cell 2A  | Cell 2B  |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Creating tables using markdown syntax is generally not recommended. Unless the table is simple and unlikely to change in the future, it’s recommended to use R packages for table creation whenever possible.</p>
 </section>
-<section id="escape-characters" class="level3" data-number="5.5.6">
-<h3 data-number="5.5.6" class="anchored" data-anchor-id="escape-characters"><span class="header-section-number">5.5.6</span> Escape Characters</h3>
+<section id="escape-characters" class="level3" data-number="5.6.6">
+<h3 data-number="5.6.6" class="anchored" data-anchor-id="escape-characters"><span class="header-section-number">5.6.6</span> Escape Characters</h3>
 <p>If you want to display a literal character that usually has a special meaning in Markdown, you can escape it with a backslash (<code>\</code>):</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>\* This is not italicized. \*</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
@@ -749,6 +789,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
+        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);

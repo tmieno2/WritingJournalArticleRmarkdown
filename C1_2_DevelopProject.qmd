@@ -6,7 +6,7 @@ The workflow presented here is unrealistically linear and streamlined for a real
 
 ## Collect and place datasets
 
-In this illustration, we pretend that we have collected the `flights` and `weather` datasets from the `nycflights` package and they are available as CSV files somewhere.
+In this illustration, we pretend that we have collected the `flights` and `weather` datasets from the `nycflights` package and they are available as CSV files.
 
 First thing you do is store these datasets in the `data/raw` folder. They should never be altered. 
 

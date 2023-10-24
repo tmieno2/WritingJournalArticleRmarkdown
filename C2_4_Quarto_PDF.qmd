@@ -15,9 +15,9 @@ To author a full journal article using Quarto, you'll need to acquire or have fa
 
 :::{.callout-important}
 + Basic knowledge of how Quarto works ([Official Website](https://quarto.org/)).
-+ How to write in Latex 
-+ Create figures using R (any R pacakge, like `ggplot2`)
-+ Create talbes using R with select R pacakges that are compatible with Latex-PDF output (e.g., `huxtable`, `kableExtra`, `modelsummary`, `gtsummary`)
++ Create figures using R (any R package, like `ggplot2`)
++ Create tables using R with select R packages that are compatible with Latex-PDF output (e.g., `huxtable`, `kableExtra`, `modelsummary`, `gtsummary`)
++ Familiarity with basic debugging of Latex codes (highly preferable).
 :::
 
 Before delving into this chapter, carefully consider the time and effort required to master these skills. Ensure the investment aligns with your goals and priorities.
@@ -47,18 +47,9 @@ Before diving in, please do the followings:
   + `huxtable`
   + `kableExtra`
 
-## Basic workflow until publication
+## YAML header
 
-## Structure of the Quart markdown (qmd) file
-
-A Quarto file consits mainly of two components.
-
-+ YAML header
-+ Main body
-
-### YAML header
-
-YAML header comes at the very top of the Rmarkdown file and it lets you specify things like
+A Quarto file starts with a YAML header, which lets you specify things like
 
 + paper title
 + authors (with affiliations and other subsidiary information)
@@ -72,7 +63,7 @@ It also lets you specify various aspects of the output PDF file including
 + whether to number sections or not (`number_sections`)
 + how to display plots and tables
   + size
-  + alignemnt 
+  + alignment 
 
 This is also where you specify what files you use as bibliography, citation style, among other things. Important ones will be introduced later. 
 
@@ -83,10 +74,6 @@ knitr::include_graphics("assets/pictures/example-yaml-quarto.png")
 ```
 
 Full list of options can be found [here](https://quarto.org/docs/reference/formats/pdf.html). More detailed explanation of some of the output options will be provided later individually when the relevant topics are discussed.
-
-### Main body
-
-This is everything that is below the YAML header, where narratives and R codes are written.
 
 ## Control the style and format
 
@@ -410,13 +397,13 @@ In the sample qmd file, this is done by having the above lines in a file named "
 knitr::include_graphics("assets/pictures/yaml-preamble.png")
 ```
 
-Of cours, with these float options, tables and figures will appear exactly where they are created or called in the qmd file.
+Of course, with these float options, tables and figures will appear exactly where they are created or called in the qmd file.
 
 ## Figures (Cross-referenced)
 
 ### Figures created internally
 
-You can create plots within an rmarkdown file and display them in the output PDF file. Here are the steps.
+You can create plots within a Quarto file and display them in the output PDF file. Here are the steps.
 
 1. Create a plot using R
 
@@ -461,7 +448,7 @@ knitr::include_graphics("assets/pictures/figure-word.png")
 
 ### Importing pre-made figures
 
-To incorporate pre-made images or figures into your Rmarkdown document, especially when they are not generated within the Rmarkdown itself, you can use the `knitr::include_graphics()` function. This is common for situations like embedding company logos, university emblems, or graphs generated using tools outside of Rmarkdown.
+To incorporate pre-made images or figures into your Quarto document, especially when they are not generated within the  itself, you can use the `knitr::include_graphics()` function. 
 
 You can use the knitr::include_graphics() function to insert your desired image.
 

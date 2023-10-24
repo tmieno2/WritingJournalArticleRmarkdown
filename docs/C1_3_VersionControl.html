@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.382">
+<meta name="generator" content="quarto-1.4.376">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproducible Journal Articles using R with Rmarkdown/Quarto - 4&nbsp; Version Control (Recommended, but optional)</title>
+<title>Reproducible Journal Articles using R with Rmarkdown/Quarto - 4&nbsp; Version Control (Optional, but recommended)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./C1_1_ProjectOrganization.html">Project Setup</a></li><li class="breadcrumb-item"><a href="./C1_3_VersionControl.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Recommended, but optional)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./C1_1_ProjectOrganization.html">Project Setup</a></li><li class="breadcrumb-item"><a href="./C1_3_VersionControl.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Optional, but recommended)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -196,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./C1_3_VersionControl.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Recommended, but optional)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Optional, but recommended)</span></span></a>
   </div>
 </li>
       </ul>
@@ -235,12 +235,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quarto-PDF</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./C2_5_KnitrLatex_PDF.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">PDF using <code>knitr</code> and Latex</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -271,27 +265,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#what-is-version-control" id="toc-what-is-version-control" class="nav-link active" data-scroll-target="#what-is-version-control"><span class="header-section-number">4.1</span> What is version control?</a></li>
-  <li><a href="#set-up-git-and-github" id="toc-set-up-git-and-github" class="nav-link" data-scroll-target="#set-up-git-and-github"><span class="header-section-number">4.2</span> Set Up Git and GitHub</a>
+  <li><a href="#sec-vc-what" id="toc-sec-vc-what" class="nav-link active" data-scroll-target="#sec-vc-what"><span class="header-section-number">4.1</span> What is version control?</a></li>
+  <li><a href="#sec-git-github" id="toc-sec-git-github" class="nav-link" data-scroll-target="#sec-git-github"><span class="header-section-number">4.2</span> Set Up Git and GitHub</a>
   <ul class="collapse">
   <li><a href="#set-up-git" id="toc-set-up-git" class="nav-link" data-scroll-target="#set-up-git"><span class="header-section-number">4.2.1</span> Set Up Git</a></li>
   <li><a href="#sign-up-on-github" id="toc-sign-up-on-github" class="nav-link" data-scroll-target="#sign-up-on-github"><span class="header-section-number">4.2.2</span> Sign up on GitHub:</a></li>
   </ul></li>
-  <li><a href="#basic-git-workflow-illustration" id="toc-basic-git-workflow-illustration" class="nav-link" data-scroll-target="#basic-git-workflow-illustration"><span class="header-section-number">4.3</span> Basic Git Workflow Illustration</a>
+  <li><a href="#sec-use-vc" id="toc-sec-use-vc" class="nav-link" data-scroll-target="#sec-use-vc"><span class="header-section-number">4.3</span> Basic Git Workflow Illustration</a>
   <ul class="collapse">
   <li><a href="#create-a-new-repository-on-github" id="toc-create-a-new-repository-on-github" class="nav-link" data-scroll-target="#create-a-new-repository-on-github"><span class="header-section-number">4.3.1</span> Create a new repository on GitHub</a></li>
-  <li><a href="#clone-the-repository-and-designate-it-as-an-rstudio-project-on-rstudio" id="toc-clone-the-repository-and-designate-it-as-an-rstudio-project-on-rstudio" class="nav-link" data-scroll-target="#clone-the-repository-and-designate-it-as-an-rstudio-project-on-rstudio"><span class="header-section-number">4.3.2</span> Clone the repository and designate it as an RStudio Project on RStudio</a></li>
+  <li><a href="#sec-vc-new-project" id="toc-sec-vc-new-project" class="nav-link" data-scroll-target="#sec-vc-new-project"><span class="header-section-number">4.3.2</span> Clone the repository and designate it as an RStudio Project on RStudio</a></li>
   </ul></li>
-  <li><a href="#collborations" id="toc-collborations" class="nav-link" data-scroll-target="#collborations"><span class="header-section-number">4.4</span> Collborations</a></li>
+  <li><a href="#sec-collab-vc" id="toc-sec-collab-vc" class="nav-link" data-scroll-target="#sec-collab-vc"><span class="header-section-number">4.4</span> Collborations</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./C1_1_ProjectOrganization.html">Project Setup</a></li><li class="breadcrumb-item"><a href="./C1_3_VersionControl.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Recommended, but optional)</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./C1_1_ProjectOrganization.html">Project Setup</a></li><li class="breadcrumb-item"><a href="./C1_3_VersionControl.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Optional, but recommended)</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Recommended, but optional)</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Optional, but recommended)</span></h1>
 </div>
 
 
@@ -307,9 +301,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-
-<section id="what-is-version-control" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="what-is-version-control"><span class="header-section-number">4.1</span> What is version control?</h2>
+<p>This chapter serves as an introduction to version control. It begins by explaining the benefits of version control systems using an easy-to-understand analogy in <a href="#sec-vc-what" class="quarto-xref"><span>Section&nbsp;4.1</span></a>. Subsequently, it guides you through the process of setting up Git and GitHub in <a href="#sec-git-github" class="quarto-xref"><span>Section&nbsp;4.2</span></a>. Then, it explains how to establish an RStudio project with version control enabled via Git and its seamless integration with GitHub in <a href="#sec-use-vc" class="quarto-xref"><span>Section&nbsp;4.3</span></a>. Finally, the chapter concludes with insights into collaborating effectively using version control in <a href="#sec-collab-vc" class="quarto-xref"><span>Section&nbsp;4.4</span></a>.</p>
+<section id="sec-vc-what" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="sec-vc-what"><span class="header-section-number">4.1</span> What is version control?</h2>
 <p>Version control is a system that records changes to files over time so that you can recall specific versions later. The entire history of changes you have made are recorded and you can go back to a previous version any time.</p>
 <p>Let’s visualize a simplified, figurative explanation of version control. Picture the olden days when tasks in an office were carried out manually: writing with pencils, using typewriters, and such. In this setting, you work with four main pieces of infrastructure for version control: <span style="color: blue;"> two desks and two shelves</span>.</p>
 <ul>
@@ -318,18 +312,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>shelf A (in-house)</li>
 <li>shelf B (outside house)</li>
 </ul>
-<p>At desk A, you actively work on your project, be it writing manuscripts, coding, etc. Once you have made significant progress and wish to archive your work, you walk to the second desk (desk B). Here, you select the pieces of your work to be stored as a collection in your library (akin to <strong>staging</strong>) and duplicate the collection. You affix a sticky note to the copy detailing the nature of this collection. Then, you place this collection on shelf A, effectively archiving it (<strong>committing</strong>). Wisely, you label this collection for easy retrieval in the future (yes, you are like a trained librarian). This particular shelf resides inside your house, meaning only you can access it. However, to safeguard your progress, you create a duplicate of the collection, make a quick trip, and store it on shelf B situated outside your home (<strong>pushing to a remote repository</strong>). This way, even if a disaster strikes, like a house fire, your work remains intact and recoverable. Additionally, this external shelf can be made not as exclusive as desk A inside your house. While others cannot take items from it, you can grant them access to replicate its contents if you wish (<strong>public</strong> v.s. <strong>private</strong> repository). You can even permit them to suggest modifications (<strong>pull requests</strong>). Upon receipt, you can evaluate these suggestions and, if suitable, integrate them into your collection on this shelf. Subsequently, you can copy (sync) these updates to your local shelf (<strong>pulling</strong>).</p>
+<p>At desk A, you actively work on your project, be it writing manuscripts, coding, etc. Once you have made significant progress and wish to archive your work, you walk to the second desk (desk B). Here, you select the pieces of your work to be stored as a collection in your library (akin to <strong>staging</strong>) and duplicate the collection. You affix a sticky note to the copy detailing the nature of this collection. Then, you place this collection on shelf A, effectively archiving it (<strong>committing</strong>). Wisely, you label this collection for easy retrieval in the future (yes, you are like a trained librarian). This particular shelf resides inside your house, meaning only you can access it. However, to safeguard your progress, you create a duplicate of the collection, make a quick trip, and store it on shelf B situated outside your home (<strong>pushing to a remote repository</strong>). This way, even if a disaster strikes, like a house fire, your work remains intact and recoverable. Additionally, this external shelf can be made not as exclusive as shelf A inside your house. While others cannot take items from it, you can grant them access to replicate its contents if you wish (<strong>public</strong> v.s. <strong>private</strong> repository). You can even permit them to suggest modifications (<strong>pull requests</strong>). Upon receipt, you can evaluate these suggestions and, if suitable, integrate them into your collection on this shelf as its different version. Subsequently, you can copy (sync) these updates to your local shelf (<strong>pulling</strong>).</p>
 <p>Fortunately for us, none of these actions are carried out physically. There is no need to “visit” Shelf B or “photocopy” your work. All these processes occur digitally, facilitated by your computer and online platforms.</p>
 <p>In a more professional summary:</p>
 <ul>
 <li><p>Version control systems serve as a reliable backup. If errors occur or work is lost, it’s possible to revert to a prior version.</p></li>
 <li><p>Version control provides an audit trail for code alterations. This allows for monitoring changes, identifying contributors, and understanding the rationale behind each modification. This functionality is crucial when collaborating in teams but remains beneficial even for solo projects.</p></li>
 </ul>
-<p>This chapter offers concise and introductory guidance on utilizing <strong>git</strong> and <strong>GitHub</strong> for version controlling your projects. Given RStudio’s widespread popularity and comprehensive features as the IDE for R projects, we’ll demonstrate how to manage version control using Git and GitHub on RStudio.</p>
-<p><strong>declutter</strong></p>
+<p>Another notable advantage of version control is its ability to significantly declutter your project folder. Have you ever found yourself creating multiple versions of the same code or manuscript and naming them by appending the modification date and your initials (especially in collaborative scenarios)? For instance:</p>
+<ul>
+<li>manuscript_01_02_2023_TM.docx</li>
+<li>manuscript_01_03_2023_TM_KS.docx</li>
+<li>manuscript_01_07_2023_TM.docx</li>
+<li>manuscript_02_01_2023_TM_NB.docx</li>
+<li>manuscript_02_21_2023_TM_NB_KS.docx</li>
+<li>manuscript_05_02_2023_TM.docx</li>
+</ul>
+<p>While this practice does make it clear who made modifications and when, version control automatically records this information when you archive (commit) to a version control system. Furthermore, it meticulously tracks changes between versions, making comparisons straightforward, as mentioned earlier. With version control, you can always work with a single file for a single purpose, such as manuscript.docx, simplifying file management.</p>
 </section>
-<section id="set-up-git-and-github" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="set-up-git-and-github"><span class="header-section-number">4.2</span> Set Up Git and GitHub</h2>
+<section id="sec-git-github" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="sec-git-github"><span class="header-section-number">4.2</span> Set Up Git and GitHub</h2>
 <section id="set-up-git" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="set-up-git"><span class="header-section-number">4.2.1</span> Set Up Git</h3>
 <ol type="1">
@@ -351,8 +353,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ol>
 </section>
 </section>
-<section id="basic-git-workflow-illustration" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="basic-git-workflow-illustration"><span class="header-section-number">4.3</span> Basic Git Workflow Illustration</h2>
+<section id="sec-use-vc" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sec-use-vc"><span class="header-section-number">4.3</span> Basic Git Workflow Illustration</h2>
 <section id="create-a-new-repository-on-github" class="level3" data-number="4.3.1">
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="create-a-new-repository-on-github"><span class="header-section-number">4.3.1</span> Create a new repository on GitHub</h3>
 <p>We first start with create a project repository (directory, folder) at Github. After signing into GitHub, you will see tabs like below at the left upper corner of the website.</p>
@@ -413,8 +415,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>You can see that <strong>.gitignore</strong> and <strong>README.md</strong> are in this repository.</p>
 </section>
-<section id="clone-the-repository-and-designate-it-as-an-rstudio-project-on-rstudio" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="clone-the-repository-and-designate-it-as-an-rstudio-project-on-rstudio"><span class="header-section-number">4.3.2</span> Clone the repository and designate it as an RStudio Project on RStudio</h3>
+<section id="sec-vc-new-project" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="sec-vc-new-project"><span class="header-section-number">4.3.2</span> Clone the repository and designate it as an RStudio Project on RStudio</h3>
 <p>Now, open RStudio and click on the Project button (upper right corner), select <strong>New Project</strong> -&gt; <strong>Version Control</strong> -&gt; <strong>Git</strong>. Then, you will see a popup window like below:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -586,7 +588,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>You then commited this change. But, you realized that you should not be using <code>rnorm()</code>. Unfortunatel, you do not remember what you used before. To see the previous version of the same file, you can click on the “History” button.</p>
+<p>You then commited this change. But, you realized that you should not be using <code>rnorm()</code>. Unfortunately, you do not remember what you used before. To see the previous version of the same file, you can click on the “History” button.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-539a35d47e664c97a50115a146a7f1bd-19" class="quarto-figure quarto-figure-center anchored" width="100%">
@@ -598,10 +600,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>By default, the most recent commit is selected and you can see below that what changes were made to what file. Here, it shows that <code>mean(runif(N))</code> was changed to <code>mean(rnorm(N))</code> in the last commit. If you want to recover that part of the code, then you can just copy what you had (<code>mean(runif(N))</code>) and paste it to the current version of <strong>code/simulate.R</strong> manually (this becomes unrealistic if you have too many changes that you need to revert.). Note that you can click on <code>View file @ce71acb71</code> at the right upper coner of the box for the commited version of <strong>code/simulate.R</strong>.</p>
 </section>
 </section>
-<section id="collborations" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="collborations"><span class="header-section-number">4.4</span> Collborations</h2>
+<section id="sec-collab-vc" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="sec-collab-vc"><span class="header-section-number">4.4</span> Collborations</h2>
 
 
 </section>
@@ -875,6 +878,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
+        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);

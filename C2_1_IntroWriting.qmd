@@ -1,6 +1,11 @@
 # Introduction
 
-This chapter of the book aims at learning how to use a certain set of R packages to generate (mostly) publication-ready articles in WORD and PDF in a fully automated manner.
+This chapter of the book aims at learning how to use a certain set of R packages to generate (mostly) publication-ready articles in WORD and PDF in an automated manner (except for typing narratives of course). 
+
+:::{.callout-important}
+## Attention
+For those who are proficient in Latex for manuscript writing, I strongly advise that you read @sec-what-if-latex first, which describes how the benefit of using Rmarkdown or Quarto over Latex may be much smaller than you may think for manuscript writing if your intended file format is PDF. It may be wise to not invest your time in learning how to use Rmarkdown and Quarto for manuscript writing. However, they become immensely valuable when you **must** produce content in WORD. 
+:::
 
 ## Prerequisites for Engaging with This Chapter
 
@@ -80,9 +85,9 @@ Today's Rmarkdown system has matured to the point where crafting an academic man
 
 ## WORD or PDF?
 
-When writing a paper, the choice between generating a PDF or a WORD document often hinges on various factors. 
+When writing a paper, the choice between generating a PDF or a WORD document often hinges on various factors (I really hope that journals start accepting html file). 
 
-If I were the sole author and the target journal accepts LaTeX files post-acceptance, I'd gravitate towards producing a PDF. This is especially true if there's a readily available template to shape the output PDF in line with the journal's specifications.
+If I were the sole author and the target journal accepts LaTeX files post-acceptance, I would gravitate towards producing a PDF. This is especially true if there is a readily available template to shape the output PDF in line with the journal's specifications.
 
 However, circumstances might arise that steer you towards WORD:
 
@@ -92,9 +97,29 @@ However, circumstances might arise that steer you towards WORD:
 
 In essence, while PDF might offer sleek formatting, especially with LaTeX, the practicalities of collaboration and specific journal requirements might necessitate a WORD document.
 
+:::{.callout-note}
+## Aside
+A common scenario where opting for Word as the output file format proves beneficial is when you are writing a grant proposal. In my experience, grant proposal development typically does not involve the use of Latex (except for instances like a small grant proposal I essentially authored independently). This preference is largely due to the ease of providing feedback and collaborative editing in Word, especially when multiple collaborators are involved. If you are the PI and would not like to write in Word but find the need to generate content in Word for others, you can explore the Rmarkdown-Word option, as discussed in @sec-word.
+:::
+
+## What if you are proficient in Latex? {#sec-what-if-latex}
+
+The advantage of using Rmarkdown or Quarto over LaTeX is not large if you **are already proficient in LaTeX** and your output file type is **PDF** (If it is WORD, than that is an entirely different story. See below for this discussion). LaTeX itself is capable of inserting externally created tables (written in a .tex file) and figures (in various formats). This means that you can generate a table and save it as a .tex file using R, or create a figure and save it as an image using R, which can then be imported into your LaTeX manuscript. This is a perfectly valid approach for producing a reproducible manuscript.
+
+While Rmarkdown and Quarto enable the creation of figures and tables directly within the main manuscript file using R scripts, this does not inherently make it more reproducible than creating tables and figures externally with R and importing them later. Both approaches can be equally streamlined. 
+
+One of the differences between the two approaches lies in the ability to reference R objects within the manuscript file. For instance, you might want to discuss your regression results by referring to a coefficient of a variable of interest. With Rmarkdown and Quarto, you can programmatically reference this coefficient, eliminating the need to manually type the number. This can be highly advantageous, especially since research results often evolve during a project. As long as you refer to the number programmatically, you will not need to manually update it whenever there are changes. Think carefully if this advantage is important enough to learn a new way of compiling a manuscript using Rmarkdown or Quarto. 
+
+However, if your intended file format is Word, as required by some journals, then Rmarkdown and Quarto become immensely valuable. They allow you to compose content in a Latex-like style while generating a Word document. Unlike Latex, where programmatically inserting tables or figures into Word is challenging, Rmarkdown and Quarto resolve this limitation seamlessly. They function as pseudo-Latex in this context. 
+
+:::{.callout-note}
+## Aside
+Moreover, Rmarkdown and Quarto truly shine, especially when creating educational materials involving coding. Their ability to effortlessly present code and its outcomes is of exceptional value. However, in cases like ours, where the manuscript does not include code display, this particular advantage may not be as relevant.
+:::
+
 ## Markdown Basics {#sec-markdown-basics}
 
-This chapter introduces certain markdown syntaxes that will be particularly useful, or even necessary, when using the Rmarkdown and Quarto systems to create submission-ready journal manuscripts. A more comprehensive guide to markdown syntax can be found [here](https://www.markdownguide.org/). This chapter intentionally omits syntaxes that are more suited for HTML output.
+This section introduces certain markdown syntaxes that will be particularly useful, or even necessary, when using the Rmarkdown and Quarto systems to create submission-ready journal manuscripts. A more comprehensive guide to markdown syntax can be found [here](https://www.markdownguide.org/). This chapter intentionally omits syntaxes that are more suited for HTML output.
 
 ### Section, subsection, subsubsections, ...
 

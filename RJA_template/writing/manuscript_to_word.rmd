@@ -47,7 +47,7 @@ csl: qje.csl
 ---
 
 ```{r, include = FALSE}
-#--- pacakges ---#
+#--- packages ---#
 library("flextable")
 library("officer")
 library("modelsummary")

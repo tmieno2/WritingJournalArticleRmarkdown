@@ -1,34 +1,441 @@
 # Rmarkdown-PDF {#sec-rmarkdown-pdf}
 
+```{r}
+#| include: false 
+library(tidyverse) 
+library(huxtable)
+```
+
+## Before you start
+
+To author a full journal article in PDF using Rmarkdown, you will need to acquire or have familiarity with the following skills:
+
+:::{.callout-important}
++ Basic knowledge of how Rmarkdown works ([This](https://rmarkdown.rstudio.com/lesson-1.html) or [This](https://bookdown.org/yihui/rmarkdown/basics.html) is a good place to start) 
++ Create figures using R (any R package, like `ggplot2`)
++ Create tables using R with select R packages that are compatible with Latex-PDF output (e.g., `huxtable`, `kableExtra`, `modelsummary`, `gtsummary`)
++ Familiarity with basic debugging of Latex codes (highly preferable).
+:::
+
+Before delving into this chapter, carefully consider the time and effort required to master these skills. Ensure the investment aligns with your goals and priorities.
+
+While you can generate a PDF article without LaTeX expertise, it's strongly advised to familiarize yourself with LaTeX debugging. This not only aids in customizing the article format but also prepares you for potential compilation errors you might face.
+
 ## Preparation
 
 Before diving in, please do the followings:
 
-+ Go [here](https://www.dropbox.com/sh/l95j7vk8sxl2nnu/AAAwWMl8yO6Vbj0u_9zd_fv6a?dl=0) and download all the files including **sample_to_word.rmd**, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this [Github repository](https://github.com/tmieno2/WritingJournalArticleRmarkdown).
++ Go [here](https://www.dropbox.com/sh/l95j7vk8sxl2nnu/AAAwWMl8yO6Vbj0u_9zd_fv6a?dl=0) and download all the files including **sample_to_pdf.rmd**, which we refer to as the sample rmd file throughout this chapter. Alternatively, you can clone this [Github repository](https://github.com/tmieno2/WritingJournalArticleRmarkdown).
 
-+ Knit **sample_to_word.Rmd** to produce **sample_to_word.docx**, which we refer to as the sample WORD file.
++ Knit **sample_to_pdf.rmd** to produce **sample_to_pdf.pdf**, which we refer to as the sample PDF file.
 
 + Install the following packages if you have not
-  + `officedown`
-  + `flextable`
-  + `officer`
   + `knitr`
-  + `rmarkdown`
+  + `Rmarkdown`
   + `tidyverse`
   + `modelsummary`
+  + `gtsummary`
+  + `huxtable`
+  + `kableExtra`
 
-## Tables
+## YAML header
 
-`tab.cap` does not work
+An Rmarkdown file starts with a YAML header, which lets you specify things like
 
-:::{.callout-tips}
-+ Create the title of the table using R because you cannot add a title using `tab.cap` unlike adding a title to a figure using `fig.cap`. 
-+ 
++ paper title
++ authors (with affiliations and other subsidiary information)
++ date
++ abstract
+
+It also lets you specify various aspects of the output PDF file including
+
++ whether to include table of contents (`toc`)
++ the depth of table of contents (`toc_depth`)
++ whether to number sections or not (`number_sections`)
++ how to display plots
+  + size
+  + alignment 
+
+This is also where you specify what files you use as bibliography, citation style, among other things. Important ones will be introduced later. 
+
+Here is an example YAML header, which you can see in `sample_to_pdf.rmd` file.
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/example-yaml-rmd-pdf.png")
+```
+
+Full list of options can be found [here](https://quarto.org/docs/reference/formats/pdf.html). More detailed explanation of some of the output options will be provided later individually when the relevant topics are discussed.
+
+Note that we are using `bookdown::pdf_document2` from the `bookdown` package instead of using `pdf_document` from the `Rmarkdown` package. The use of `bookdown::pdf_document2` enables cross-referencing of tables. 
+
+## Using existing journal templates
+
+Before anything, you should first check if the collection of templates provided by the `rticles` package has the template for your target journal. 
+
+Here are the currently available templates offered by the package (You can also see a more informative version of the list on the [package GitHub site](https://github.com/rstudio/rticles).).
+
+```{r}
+rticles::journals()
+```
+
+To start a template, click on the button with green plus on a white sheet of paper at the left upper corner of the RStudio IDE and select **R Markdown** as shown below:
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/pictures/create-rticles-template.png")
+```
+
+You can then select **From Template**, pick the template you would like to use, give the new directory a name, and hit **OK**.
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/pictures/pick-template.png")
+```
+
+You will see a folder and a **.Rproj**. In the folder, you will find a template Rmarkdown file and other assets that are necessary for compiling the Rmarkdown file into the journal format.
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/pictures/files-rmd-template.png")
+```
+
+## Problems
+https://stackoverflow.com/questions/77290665/did-i-break-r-markdown-every-file-i-try-gives-the-error-undefined-control-se
+
+## Citations and References
+
+### Set up
+
+Begin by preparing a file that contains all your references. In your document's YAML header, specify the bibliography file:
+
+```{r eval = F}
+bibliography: bibliography file name
+```
+
+There are multiple formats and systems available for bibliographies, such as BibLaTeX/BibTex (.bib), CSL-JSON (.json), and EndNote (.enl). among others. 
+
+In this illustration, we are employing a **.bib** file. If our bibliography file is titled `bibliography.bib`, the YAML header would look like:
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/yaml-bib-quarto.png")
+```
+
+When knitting to PDF, the references will be positioned at the conclusion of the document, as documented (see [here](https://quarto.org/docs/authoring/footnotes-and-citations.html#bibliography-generation)). Append `# References {-}` to the tail end of your `.qmd` file. This creates a "References" section heading where all the citations will be listed. Including `{-}` adjacent to the section header ensures the `References` section remains unnumbered. This is particularly useful if you have activated section numbering in the YAML header with `number-sections: true`. Without `{-}`, the "References" section would be automatically numbered, which is often not desired in academic and professional documents.
+
+:::{.callout-note}
++ See the sample qmd file to see how bibliography file is specified in the YAML header
++ Confirm that the Reference section of the sample qmd and PDF files
+:::
+
+---
+
+### Cite and create references
+
+To cite, use the following syntax:
+
++ `@reference_name` to print "author names (year)" in the output WORD file
++ `[@reference_name]` to print "(author names, year)" in the output WORD file 
++ `[@reference_name_1; @reference_name_2]` to print "(author names, year; author names, year)" in the output WORD file 
++ `[-@reference_name]` to print just year
+
+`reference_name` is the very first entry of a **.bib** file as in 
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/bib-example.png")
+```
+
+If you are using CSL json file, then it is the **id** of an entry as in 
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/bib-csl-example.png")
+```
+
+The cited items are automatically added to the reference following the specified style (see the next section).
+
+:::{.callout-note}
++ See the Introduction and Reference sections in the sample qmd and PDF files to confirm this rule.
++ Comment out `bibliography: bibliography.bib` and uncomment `bibliography: bibliography.json`, knit again, and check citations and references are still there. This is just an illustration of using a different bibliography file (CSL-json file). 
+:::
+
+---
+
+### Citation and Reference Style
+
+You can change the citation and reference style using [Citation Style Language](https://citationstyles.org/). Citation style files have **.csl** extension.
+
+1. Obtain the csl file you would like to use from the [Zotero citation style repository](https://www.zotero.org/styles).
+
+2. Place the following in the YAML header:
+
+```{r eval = F}
+csl: csl file name 
+```
+
+3. Then, when knitted, citations and references styles reflect the style specified by the csl file
+
+Currently, the csl style is set to **qje.csl** (citation style language for The Quarterly Journal of Economics) as below
+
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/yaml-bib-quarto.png")
+```
+
+Citation and references styles in the output PDF file follows the rules for the QJE.
+
+:::{.callout-note icon=false appearance="minimal"}
+```{r, echo = F, out.width = "100%"}
+#| layout-ncol: 1
+#| fig-cap:
+#|   - "Citation style for QJE"
+#|   - "Reference style for QJE"
+knitr::include_graphics("assets/pictures/citation-qje-pdf.png")
+knitr::include_graphics("assets/pictures/reference-qje-pdf.png")
+```
 :::
 
 
-## Figures
+Now, comment `csl: qje.csl` and uncomment `csl: pnas.csl` so that the CSL for the Proceedings of the National Academy of Sciences (PNAS) is used, and then knit the sample qmd file. 
 
+You can now see that the citation style no longer respects the rules I mentioned above and also the reference style follows that of PNAS. This is because PNAS uses only numbers, but not author names or years.
+
+:::{.callout-note icon=false appearance="minimal"}
+```{r, echo = F, out.width = "100%"}
+#| layout-ncol: 1
+#| fig-cap:
+#|   - "Citation style for PNAS"
+#|   - "Reference style for PNAS"
+knitr::include_graphics("assets/pictures/citation-pnas-pdf.png")
+knitr::include_graphics("assets/pictures/reference-pnas-pdf.png")
+```
+:::
+
+## Tables (Cross-referenced)
+
+1. Create a table using any R package that can produce latex tables. 
+
+2. Add an R code chunk like this:
+
+````markdown
+`r ''````{r tbl-id}
+table_sample
+```
+````
+
+* `table_sample` is the name of the table created on R.
+* `tbl-id` is the R chunk label you can use to cross-reference the table
+
+3. Use `\@ref(tab:tbl-id)` in the Rmarkdown file to cross-reference the table (table numbering in the output PDF file is automatic).
+
+:::{.callout-important}
+## Caveat!!
++ You cannot add a title using `tab.cap` unlike adding a title to a figure using `fig.cap`. So, add a table title when you create it using R.
++ The R chunk label cannot include `_` (`-` is allowed). Cross-referencing would not work if `label` includes `_`.
+:::
+
+:::{.callout-important}
+## Cross-referencing tables with an `rticles` template
+To cross-reference tables using the Rmarkdown method described above, replace the following YAML header in your `rtricles` template:
+
+````markdown
+output:
+  rticles::your_template
+````
+
+with
+
+````markdown
+output:
+  bookdown::pdf_book:
+    base_format: rticles::your_template
+````
+
+in the YAML header.
+
+This adjustment enables you to cross-reference tables in the desired Rmarkdown format. However, please note that you can still cross-reference tables using the traditional Latex method without making this change.
+:::
+
+### Packages to create tables
+
+---
+
+#### Simple table from a `data.frame`
+
+There are many R packages that let you create tables that are compatible with Latex. For example, you can use the `kableExtra` and `huxtable` package to create tables from a `data.frame`-like R objects from scratch. Here is an example code using the `huxtable` package.
+
+```{r}
+#| eval: false
+library(huxtable)
+
+head(iris, 10) %>%
+# Create a huxtable
+as_hux() %>%
+# Add some basic styling
+set_background_color(row = 1, value = "lightgray") %>% # Background color for header
+set_caption("This is how you add the caption")
+```
+
+The `gt` package does not work as well with Latex as it does with the html output^[e.g., if you use the `gt` package, some style changes would not be reflected on the PDF file (see [here](https://stackoverflow.com/questions/76636703/export-gt-table-to-latex-with-colors)). It works perfectly fine when the output is an html file.]. In academic journals, fancy looking tables are not necessary. `kableExtra` and `huxtable` are likely to be very much sufficient.
+
+---
+
+#### Regressions results and summary tables
+
+For regression results and summary statics, the [`modelsummary`](https://modelsummary.com/index.html) and [`gtsummary`](https://www.danieldsjoberg.com/gtsummary/index.html)^[You can also use the `stargazer` package.] packages are particularly convenient and useful. For example, the `modelsummary` package lets you create regression results and summary statistics tables via the `modelsummary()` function and summary statistics tables via the `datasummary()` function^[The `modelsummary` package is more economist-friendly (or social scientists) than `gtsummary`.]. For the `gtsummary` package, their respective corresponding functions are `tbl_regression` and `tbl_summary`. For regression results tables, the `stargazer` package is also a viable option. It is less capable in creating summary statistics tables than `modelsummary` and `gtsummary`.
+
+Here are example R codes that use the `modelsummary` package to create regression results and summary statistics tables.
+
+**Regression** table
+
+```{r}
+#| results: hide
+
+#--- regressions ---#
+lm_1 <- fixest::feols(mpg ~ hp + cyl, data = mtcars)
+lm_2 <- fixest::feols(mpg ~ hp + cyl + wt, data = mtcars)
+lm_3 <- fixest::feols(mpg ~ hp + cyl + wt, cluster = ~ vs, data = mtcars)
+
+#--- create a regression results table ---#
+library(modelsummary)
+
+modelsummary(
+  list(lm_1, lm_2, lm_3),
+  gof_omit = "IC|Log|Adj|F|Pseudo|Within",
+  #--- add the title (caption) here ---#
+  title = "Reression Results"
+)
+```
+
+This is how the table would appear on the output PDF file.
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/pictures/reg-table-qmd.png")
+```
+
+**Summary statistics** table
+
+```{r, eval = F}
+datasummary(
+  mpg + hp + cyl ~ Mean + SD,
+  data = mtcars,
+  #--- add the title (caption) here ---#
+  title = "Summary Statistics"
+)
+```
+
+This is how the table would appear on the output PDF file.
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/pictures/sum-table-qmd.png")
+```
+
+#### Further modifying regression and summary statistics tables
+
+You can modify (fine-tune) the output of `modelsummary` or `gtsummary` using the `huxtable` package if you are not satisfied. For the `modelsummary` package, this can be done by using `output = "huxtable"` and then use `huxtable` functions for modifications. Here is an example code.
+
+```{r}
+#| results: hide
+
+modelsummary(list(lm_1, lm_2, lm_3),
+ output = "huxtable",
+ gof_omit = "IC|Log|Adj|F|Pseudo|Within",
+ title = "Regression Results",
+ stars = TRUE
+) %>%
+# Bold the header row
+# set_bold(row = 1) %>%
+# Border at the bottom of the table
+set_bottom_border(row = nrow(.), value = 0.4) %>%
+# Center-align the header
+set_align(1, everywhere, value = "center") %>%
+# Set font size to 10
+set_font_size(value = 10) 
+```
+
+For the `gtsummary` package, you can apply `as_hux_table()` and then modify the table.
+
+Here is an example code for using the `kableExtra` package.
+
+```{r}
+#| results: hide  
+ 
+modelsummary(list(lm_1, lm_2, lm_3),
+  output = "kableExtra",
+  gof_omit = "IC|Log|Adj|F|Pseudo|Within",
+  title = "Regression Results",
+  stars = TRUE
+) %>%
+  kableExtra::add_header_above(
+    c(" " = 1, "Model (se not clustered) " = 2, "Model (se clustered)" = 1)
+  )
+```
+
+## Figures (Cross-referenced)
+
+### Figures created internally
+
+You can create plots within an Rmarkdown file and display them in the output PDF file. Here are the steps.
+
+1. Create a plot using R
+
+2. Add an R code chunk like this:
+
+````markdown
+`r ''````{r fig-sample, fig.cap = "Sample figure title"}
+figure_sample 
+```
+````
+
++ `figure_sample` is a plot (R object).
++ `fig.cap: "Sample figure title"` adds `Sample figure title` as the caption of the figure 
++ `fig-sample` is the R chunk label and also the figure id used for cross-referencing
+
+3. Use `\@ref(fig:fig-sample)` (`fig:` appended by the R chunk label) in the rmd file to cross-reference the figure (figure numbering in the output PDF file is automatic).
+
+The figure in the PDF will have `Sample figure title` as the figure title. 
+
+:::{.callout-important}
++ You cannot use `_` in the chunk label (`-` is allowed). Cross-referencing would not work if the label includes `_`.
+:::
+
+:::{.callout-note icon=false appearance="minimal" collapse="true"}
+## Rmarkdown-PDF Comparison: Visual Example
+<br>
+
+```{r, echo = F, out.width = "100%"}
+#| layout-ncol: 1
+#| fig-cap:
+#|   - "Rmarkdown"
+#|   - "PDF"
+knitr::include_graphics("assets/pictures/figure-rmd-pdf-in-rmd.png")
+knitr::include_graphics("assets/pictures/figure-rmd-pdf-in-pdf.png")
+```
+:::
+
+
+### Importing pre-made figures
+
+To incorporate pre-made images or figures into your Rmarkdown document, especially when they are not generated within the Rmarkdown itself, you can use the `knitr::include_graphics()` function. 
+
+You can use the knitr::include_graphics() function to insert your desired image.
+
+````{verbatim}
+```{r fig-your-label, fig.cap = "Your Figure Caption"}
+knitr::include_graphics("path_to_your_image.png")
+```
+````
+
+Imported figures can be cross-referenced just like figures generated within R, as demonstrated previously.
+
+### Figure placement and size
+
+You can control the size of the plots in the output PDF file using the `fig.width` or `fig.height` option in the R code chunk. You can control the alignment of a figure using the `fig.align`. See an example below:
+
+````markdown
+`r ''````{r fig-lable, fig.cap = "Title", fig.width = 6, fig.height = 4}
+figure_sample 
+```
+````
 
 ## Mathematical Equations
 
@@ -129,8 +536,8 @@ y = \beta_0 + \beta_1 x + \varepsilon \label{eq-tex}
 
 ```{r, echo = F, out.width = "100%"}
 
-knitr::include_graphics("assets/pictures/math-bookdown-latex-way-2.png")
-knitr::include_graphics("assets/pictures/math-bookdown-latex-way-1.png")
+knitr::include_graphics("assets/pictures/math-rmd-pdf-in-rmd-texway.png")
+knitr::include_graphics("assets/pictures/math-rmd-pdf-in-pdf-texway.png")
 ```
 :::
 
@@ -155,3 +562,61 @@ knitr::include_graphics("assets/pictures/math-bookdown-notag-2.png")
 knitr::include_graphics("assets/pictures/math-bookdown-notag-1.png")
 ```
 :::
+
+## Misccelaneous
+
+### Section number
+
+Sometimes, you would like to have no section number for some of the sections. You can suppress section numbers by adding either `{-}` or `{.unnumbered}` at the end of the section title like below.
+
+````markdown
+# Tables {-}
+````
+
+### Appendix
+
+In order to have Appendix separate from the main narrative, you can start it by adding `# (APPENDIX) Appendix {-}` in the rmd file. Then the rest of the paper is considered a part of the Appendix section of the paper. By default, when you start a new section using `#`, then capitalized alphabets are used as the section indicator.
+
+For example, 
+
+````markdown
+# (APPENDIX) Appendix {-}
+
+# Additional Analysis
+````
+
+would translate into the following in the output pdf file.
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/pictures/appendix-section.png")
+```
+
+Note that **Appendix** is not printed. 
+
+:::{.callout-tips}
+Confirm this by comparing `sample_to_pdf.rmd` and `sample_to_pdf.pdf`.
+:::
+
+### Figure numbering for Appendix
+
+Since you can include Latex code to an Rmarkdown file, you can include Latex codes to achieve figure numbering that is separate from the main narrative. For example, the following code will add A. before figure number.
+
+````markdown
+```{=Tex}
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{A.\arabic{figure}}
+```
+````
+
+
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/pictures/figure-numbering-appendix-rmd.png")
+```
+
+```{r}
+#| echo: false
+knitr::include_graphics("assets/pictures/figure-numbering-appendix-pdf.png")
+```

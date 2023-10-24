@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.382">
+<meta name="generator" content="quarto-1.4.376">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -196,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./C1_3_VersionControl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Recommended, but optional)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Optional, but recommended)</span></span></a>
   </div>
 </li>
       </ul>
@@ -235,12 +235,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Quarto-PDF</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./C2_5_KnitrLatex_PDF.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">PDF using <code>knitr</code> and Latex</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
@@ -271,12 +265,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#rstudio-project" id="toc-rstudio-project" class="nav-link active" data-scroll-target="#rstudio-project"><span class="header-section-number">2.1</span> RStudio Project</a>
+  <li><a href="#sec-rstudio-project" id="toc-sec-rstudio-project" class="nav-link active" data-scroll-target="#sec-rstudio-project"><span class="header-section-number">2.1</span> RStudio Project</a>
   <ul class="collapse">
   <li><a href="#why-rstudio-project" id="toc-why-rstudio-project" class="nav-link" data-scroll-target="#why-rstudio-project"><span class="header-section-number">2.1.1</span> Why RStudio Project</a></li>
   <li><a href="#starting-an-rstudio-project" id="toc-starting-an-rstudio-project" class="nav-link" data-scroll-target="#starting-an-rstudio-project"><span class="header-section-number">2.1.2</span> Starting an RStudio project</a></li>
   </ul></li>
-  <li><a href="#folder-structure" id="toc-folder-structure" class="nav-link" data-scroll-target="#folder-structure"><span class="header-section-number">2.2</span> Folder structure</a></li>
+  <li><a href="#sec-folder-structure" id="toc-sec-folder-structure" class="nav-link" data-scroll-target="#sec-folder-structure"><span class="header-section-number">2.2</span> Folder structure</a></li>
   <li><a href="#sec-renv" id="toc-sec-renv" class="nav-link" data-scroll-target="#sec-renv"><span class="header-section-number">2.3</span> <code>renv</code>: Project-Specific Package Management in R (Recommended, but optional)</a>
   <ul class="collapse">
   <li><a href="#why-use-renv" id="toc-why-use-renv" class="nav-link" data-scroll-target="#why-use-renv"><span class="header-section-number">2.3.1</span> Why use <code>renv</code>?</a></li>
@@ -309,10 +303,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-
-<section id="rstudio-project" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="rstudio-project"><span class="header-section-number">2.1</span> RStudio Project</h2>
-<p>While it is not required, it is highly recommended that the root project directory is designated as an RStudio Project. Here, minimal guidance on RStudio Project is provided. See an <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">introduction to RStudio Project by Posit</a> for more information.</p>
+<p>This chapter discusses how to set up a project before actively engaging in a project. It begins by presenting how to initiate an RStudio project in <a href="#sec-rstudio-project" class="quarto-xref"><span>Section&nbsp;2.1</span></a>, offers recommendations for creating a project-specific folder structure in <a href="#sec-folder-structure" class="quarto-xref"><span>Section&nbsp;2.2</span></a>, and wraps up by exploring the utilization of the <code>renv</code> package to facilitate the reproduction of a consistent R environment, encompassing both R version and package versions, as discussed in <a href="#sec-renv" class="quarto-xref"><span>Section&nbsp;2.3</span></a>.</p>
+<section id="sec-rstudio-project" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-rstudio-project"><span class="header-section-number">2.1</span> RStudio Project</h2>
+<p>While it is not required, it is recommended that the root project directory is designated as an RStudio Project. Here, minimal guidance on RStudio Project is provided. See an <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">introduction to RStudio Project by Posit</a> for more information.</p>
 <section id="why-rstudio-project" class="level3" data-number="2.1.1">
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="why-rstudio-project"><span class="header-section-number">2.1.1</span> Why RStudio Project</h3>
 <p>There are number of benefits to using an RStudio Project. Here are some of them.</p>
@@ -352,13 +346,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p><strong>New Directory</strong>: As its name suggests, you will create a new directory and it will be designated as an RStudio project automatically.</p></li>
 <li><p><strong>Existing Directory</strong>: If you already have a directory for your project, then you can use option to designate it as an RStudio project.</p></li>
-<li><p><strong>Version Control</strong>: You can clone a repository as a directory to your local machine and designate it as an RStudio project.</p></li>
+<li><p><strong>Version Control</strong>: You can clone a repository as a directory to your local machine and designate it as an RStudio project (This option is discussed in <a href="C1_3_VersionControl.html#sec-vc-new-project" class="quarto-xref"><span>Section&nbsp;4.3.2</span></a>).</p></li>
 </ul>
 <p>After completing the process, you will find <strong>project_name.Rproj</strong> in the root directory. This file is a simple text document that stores important metadata and preferences specific to the project. You can determine if a directory is an RStudio project by checking for the presence of this file.</p>
 </section>
 </section>
-<section id="folder-structure" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="folder-structure"><span class="header-section-number">2.2</span> Folder structure</h2>
+<section id="sec-folder-structure" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-folder-structure"><span class="header-section-number">2.2</span> Folder structure</h2>
 <p>Having a well-organized project folder system is essential, not just for reproducibility, but also for your productivity. Below is <span style="color: red;"> a </span> suggested structure:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -388,20 +382,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><strong>code</strong>:
 <ul>
-<li>main: Contains all the R (or other program) codes necessary for reproducing the project results.</li>
-<li>sandbox: Includes any R codes used to test or explore.</li>
+<li><em>main</em>: Contains all the R (or other program) codes necessary for reproducing the project results.</li>
+<li><em>sandbox</em>: Includes any R codes used to test or explore.</li>
 </ul></li>
 <li><strong>data</strong>
 <ul>
-<li>processed: Stores datasets that are derivatives of the raw datasets. These are generated by codes stored in the code folder.</li>
-<li>raw: Houses all the raw datasets, which should never be altered.</li>
+<li><em>processed</em>: Stores datasets that are derivatives of the raw datasets. These are generated by codes stored in the code folder.</li>
+<li><em>raw</em>: Houses all the raw datasets, which should never be altered.</li>
 </ul></li>
 <li><strong>docs</strong>: Contains any relevant documents (journal articles, data documentation, etc)</li>
 <li><strong>renv</strong> (optional): This will be discussed later in <a href="#sec-renv" class="quarto-xref"><span>Section&nbsp;2.3</span></a>.</li>
 <li><strong>results</strong>: Contains all generated results, including tables, figures, regression outcomes, etc.</li>
 <li><strong>writing</strong>: The manuscript and related files, such as bibliography, citation style language file, and others.</li>
 </ul>
-<p>Organizing project files in this way simplifies navigation through the directory, making it easier to locate specific files for both you and others.</p>
+<p>Organizing project files in this manner streamlines directory navigation, simplifying the process of finding specific files for both you and others. As mentioned earlier, this is just a suggested structure. The ideal folder structure may vary depending on the nature of the research project. The crucial aspect is that the project folder structure should prioritize easy file retrieval for you, your future self, your team, and others.</p>
 </section>
 <section id="sec-renv" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="sec-renv"><span class="header-section-number">2.3</span> <code>renv</code>: Project-Specific Package Management in R (Recommended, but optional)</h2>
@@ -768,6 +762,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
+        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
