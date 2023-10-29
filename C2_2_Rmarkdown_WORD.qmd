@@ -78,16 +78,9 @@ knitr::include_graphics("assets/pictures/git-illustrate.png")
 :::
 
 
-## Structure of the Rmarkdown file
+## Setting up an Rmarkdown file for WORD output
 
-An Ramrkdown file consists mainly of two components.
-
-+ YAML header
-+ Main body
-
-### YAML header
-
-YAML header comes at the very top of the Rmarkdown file and it lets you specify things like
+An Rmarkdown file starts with a YAML header, which lets you specify things like
 
 + paper title
 + authors (with affiliations and other subsidiary information)
@@ -111,11 +104,7 @@ Here is an example YAML header, which you can see in `sample_to_word.rmd` file.
 knitr::include_graphics("assets/pictures/yaml-example.png")
 ```
 
-More detailed explanation of output options will be provided later individually when the relevant topics are discussed.
-
-### Main body
-
-This is everything that is below the YAML header, where narratives and R codes are written.
+Note that we are using `officedown::rdocx_document` from the `officedown` package with the base format being `word_document2` from the `bookdown` package as a way to compile to WORD. Other alternatives include `word_document` from the `Rmarkdown` package or `word_document2` from the `bookdown` package. After some experimentations with these three options, I found that this option is the most complete. See [the `officedown` chapter](https://ardata-fr.github.io/officeverse/officedown-for-word.html) of the officeverse book written by the author of the `officedown` package. 
 
 ## Essential markdown syntaxes for WORD
 

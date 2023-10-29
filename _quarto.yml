@@ -26,10 +26,6 @@ book:
         - C2_3_Rmarkdown_PDF.qmd
         - C2_4_Quarto_PDF.qmd
         # - C2_5_KnitrLatex_PDF.qmd
-    - text: "---"
-    - part: "References"
-      chapters:
-        - C_End_References.qmd
 
 bibliography: references.bib
 

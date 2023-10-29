@@ -32,7 +32,7 @@ It is crucial to distinguish between the quality of data and methodology and the
 
 <!-- @alston2021 -->
 
-## High-quality and low-quality reproducible research {#sec-high-q-research}
+## High-quality reproducible research {#sec-high-q-research}
 
 A high-quality reproducible project exhibits the following characteristics:
 

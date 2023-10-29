@@ -195,4 +195,6 @@ By default, the most recent commit is selected and you can see below that what c
 ## Collborations {#sec-collab-vc}
 
 
- 
+```{r  echo = F, out.width = "100%"}
+knitr::include_graphics("assets/pictures/branch-protection-rule.png")
+```

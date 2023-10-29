@@ -38,7 +38,7 @@ Before diving in, please do the followings:
   + `huxtable`
   + `kableExtra`
 
-## YAML header
+## Setting up a Quarto file with YAML
 
 An Rmarkdown file starts with a YAML header, which lets you specify things like
 
