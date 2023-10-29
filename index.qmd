@@ -1,6 +1,6 @@
 ## Welcome {.unnumbered}
 
-This book covers how to write journal articles using Rmarkdown/Quarto to either WORD or PDF. 
+This book offers an introductory guide to constructing research projects in a reproducible fashion using R. The first section explains the concept of reproducible research and its advantages. The second section covers the setup and organization of a research project. The third section demonstrates how to utilize Rmarkdown/Quarto to create journal articles with R integration in both WORD and PDF formats.
 
 ## License {.unnumbered}
 

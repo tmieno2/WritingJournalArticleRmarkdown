@@ -2,9 +2,9 @@
   {
     "objectID": "index.html#welcome",
     "href": "index.html#welcome",
-    "title": "Reproducible Journal Articles using R with Rmarkdown/Quarto",
+    "title": "Reproducible Research Projects and Journal Articles with R",
     "section": "Welcome",
-    "text": "Welcome\nThis book covers how to write journal articles using Rmarkdown/Quarto to either WORD or PDF.",
+    "text": "Welcome\nThis book offers an introductory guide to constructing research projects in a reproducible fashion using R. The first section explains the concept of reproducible research and its advantages. The second section covers the setup and organization of a research project. The third section demonstrates how to utilize Rmarkdown/Quarto to create journal articles with R integration in both WORD and PDF formats.",
     "crumbs": [
       "Welcome"
     ]
@@ -12,7 +12,7 @@
   {
     "objectID": "index.html#license",
     "href": "index.html#license",
-    "title": "Reproducible Journal Articles using R with Rmarkdown/Quarto",
+    "title": "Reproducible Research Projects and Journal Articles with R",
     "section": "License",
     "text": "License\nThis book is (and will always be) free to use, and is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 4.0 License.",
     "crumbs": [
@@ -387,7 +387,7 @@
     "href": "C2_3_Rmarkdown_PDF.html#using-existing-journal-templates",
     "title": "7  Rmarkdown-PDF",
     "section": "7.4 Using existing journal templates",
-    "text": "7.4 Using existing journal templates\nBefore anything, you should first check if the collection of templates provided by the rticles package has the template for your target journal.\nHere are the currently available templates offered by the package (You can also see a more informative version of the list on the package GitHub site.).\n\nrticles::journals()\n\n [1] \"acm\"            \"acs\"            \"aea\"            \"agu\"           \n [5] \"ajs\"            \"amq\"            \"ams\"            \"arxiv\"         \n [9] \"asa\"            \"bioinformatics\" \"biometrics\"     \"copernicus\"    \n[13] \"ctex\"           \"elsevier\"       \"frontiers\"      \"glossa\"        \n[17] \"ieee\"           \"ims\"            \"informs\"        \"iop\"           \n[21] \"isba\"           \"jasa\"           \"jedm\"           \"joss\"          \n[25] \"jss\"            \"lipics\"         \"mdpi\"           \"mnras\"         \n[29] \"oup_v0\"         \"oup_v1\"         \"peerj\"          \"pihph\"         \n[33] \"plos\"           \"pnas\"           \"rjournal\"       \"rsos\"          \n[37] \"rss\"            \"sage\"           \"sim\"            \"springer\"      \n[41] \"tf\"             \"trb\"            \"wellcomeor\"    \n\n\nTo start a template, click on the button with green plus on a white sheet of paper at the left upper corner of the RStudio IDE and select R Markdown as shown below:\n\n\n\n\n\n\n\n\n\n\n\nYou can then select From Template, pick the template you would like to use, give the new directory a name, and hit OK.\n\n\n\n\n\n\n\n\n\n\n\nYou will see a folder and a .Rproj. In the folder, you will find a template Rmarkdown file and other assets that are necessary for compiling the Rmarkdown file into the journal format.",
+    "text": "7.4 Using existing journal templates\nBefore anything, you should first check if the collection of templates provided by the rticles package has the template for your target journal.\nHere are the currently available templates offered by the package (You can also see a more informative version of the list on the package GitHub site.).\n\nrticles::journals()\n\n [1] \"acm\"            \"acs\"            \"aea\"            \"agu\"           \n [5] \"ajs\"            \"amq\"            \"ams\"            \"arxiv\"         \n [9] \"asa\"            \"bioinformatics\" \"biometrics\"     \"copernicus\"    \n[13] \"ctex\"           \"elsevier\"       \"frontiers\"      \"glossa\"        \n[17] \"ieee\"           \"ims\"            \"informs\"        \"iop\"           \n[21] \"isba\"           \"jasa\"           \"jedm\"           \"joss\"          \n[25] \"jss\"            \"lipics\"         \"lncs\"           \"mdpi\"          \n[29] \"mnras\"          \"oup_v0\"         \"oup_v1\"         \"peerj\"         \n[33] \"pihph\"          \"plos\"           \"pnas\"           \"rjournal\"      \n[37] \"rsos\"           \"rss\"            \"sage\"           \"sim\"           \n[41] \"springer\"       \"tf\"             \"trb\"            \"wellcomeor\"    \n\n\nTo start a template, click on the button with green plus on a white sheet of paper at the left upper corner of the RStudio IDE and select R Markdown as shown below:\n\n\n\n\n\n\n\n\n\n\n\nYou can then select From Template, pick the template you would like to use, give the new directory a name, and hit OK.\n\n\n\n\n\n\n\n\n\n\n\nYou will see a folder and a .Rproj. In the folder, you will find a template Rmarkdown file and other assets that are necessary for compiling the Rmarkdown file into the journal format.",
     "crumbs": [
       "Manuscript Writing",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Rmarkdown-PDF</span>"

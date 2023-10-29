@@ -3,9 +3,9 @@ project:
   output-dir: docs
 
 book:
-  title: "Reproducible Journal Articles using R with Rmarkdown/Quarto"
+  title: "Reproducible Research Projects and Journal Articles with R"
   author: "Taro Mieno"
-  date: "`r Sys.Date()`"
+  date: today
   chapters:
     - index.qmd
     - text: "---"
