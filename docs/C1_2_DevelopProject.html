@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.376">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproducible Research Projects and Journal Articles with R - 3&nbsp; Project Development</title>
+<title>3&nbsp; Project Development – Reproducible Research Projects and Journal Articles with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
@@ -62,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -86,13 +87,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./C1_1_ProjectOrganization.html">Project Setup</a></li><li class="breadcrumb-item"><a href="./C1_2_DevelopProject.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Project Development</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -101,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Reproducible Research Projects and Journal Articles with R</a> 
@@ -123,9 +124,9 @@ ul.task-list li input[type="checkbox"] {
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Reproducible Research</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -141,9 +142,9 @@ ul.task-list li input[type="checkbox"] {
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Project Setup</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -171,9 +172,9 @@ ul.task-list li input[type="checkbox"] {
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Manuscript Writing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -247,6 +248,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+
 <p>In this section, we will outline the step-by-step workflow for completing a project, highlighting best practices and pinpointing potential pitfalls to be wary of throughout the process. In this illustration, we assume that we are working with real-world data generated or collected outside of your project. For simulation studies where data is generated, some parts of the flow is not necessary.</p>
 <p>The workflow presented here is unrealistically linear and streamlined for a real-world project. In reality, a research project is a long and winding process: you frequently go back and forth between different parts of the research. Consider the organization of files (codes, manuscripts, figures, tables, etc.) presented here as the ideal end state of the project. This organization ensures that the project is both shareable and readily reproducible by others.</p>
 <section id="collect-and-place-datasets" class="level2" data-number="3.1">
@@ -255,11 +257,9 @@ ul.task-list li input[type="checkbox"] {
 <p>First thing you do is store these datasets in the <code>data/raw</code> folder. They should never be altered.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/data-raw.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/data-raw.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -280,11 +280,9 @@ Important
 <p>Now, it is time to create a metadata file and position it alongside the raw data files inside the <strong>data</strong> folder. Here is an example of metadata written in a Markdown file format. You have flexibility in choosing the file format, but it should be easily readable. CSV is also a suitable option for a metadata file format.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/metadata.png" id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/metadata.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -337,11 +335,9 @@ Important
 <p>In order to run the intended regression analysis, we need to transform them and combine them to have a regression-compatible dataset. To make this happen, we now create an R file called <strong>0_process_data.R</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/0_process_data.png" id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/0_process_data.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -349,11 +345,9 @@ Important
 <p>Here is what is inside of <strong>0_process_data.R</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/inside-0-process.png" id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/inside-0-process.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -361,11 +355,9 @@ Important
 <p>In this code, the two datasets are loaded from the <strong>data/raw</strong> folder (Note that they were loaded, but were not altered in any way in their original files.). They are transformed and then merged. The merged object named <code>reg_data</code> is then saved into <span style="color: blue;"> <strong>data/processed</strong></span> as an RDS (R data set) file.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/data-after-process.png" id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/data-after-process.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -403,11 +395,9 @@ Important
 <p>Now that we have an analysis-ready dataset, we will run regression analysis using the dataset. This analysis is written in <strong>1_reg_analysis.R</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/reg-analysis.png" id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/reg-analysis.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -430,11 +420,9 @@ Note
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/reg-analysis-inside.png" id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/reg-analysis-inside.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -442,11 +430,9 @@ Note
 <p>This code reads <strong>reg_data.rds</strong> (created in <strong>0_process_data.R</strong>) run three regressions and then combine them into a list called <code>reg_list</code>, which is then saved as an RDS file (named <strong>reg_results.rds</strong>) in the <span style="color: blue;"><strong>results</strong></span> folder.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/reg-results-saved.png" id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/reg-results-saved.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -457,22 +443,18 @@ Note
 <p>Once the analysis is done, you typically communicate them using either tables or figures. For this purpose, <strong>2_make_tables_figures.R</strong> was created inside the <strong>code/main</strong> folder.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/2-make-tables-figures.png" id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/2-make-tables-figures.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/2-make-tables-inside.png" id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/2-make-tables-inside.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -482,11 +464,9 @@ Note
 <p>After running the code, the <strong>results</strong> folder looks like this.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/results-inside-after-tables.png" id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/results-inside-after-tables.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -495,17 +475,15 @@ Note
 </section>
 <section id="manuscript-writing" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="manuscript-writing"><span class="header-section-number">3.3</span> Manuscript writing</h2>
-<p>We now have enough to start writing a manuscript. We intend to submit this to a journal that accepts WORD as the only format. So, we will use the Rmarkdown-WORD system (See section <a href="C2_2_Rmarkdown_WORD.html" class="quarto-xref"><span>Chapter&nbsp;6</span></a> for the detailed treatment of this subject. Section <a href="C2_4_Quarto_PDF.html" class="quarto-xref"><span>Chapter&nbsp;8</span></a> presents how to use Quarto to produce a manuscript in PDF.). In the <span style="color: blue;"><strong>writing</strong></span> folder, <strong>manuscript_to_word.rmd</strong> was created.</p>
+<p>We now have enough to start writing a manuscript. We intend to submit this to a journal that accepts WORD as the only format. So, we will use the Rmarkdown-WORD system (See section <a href="C2_2_Rmarkdown_WORD.html" class="quarto-xref"><span>Chapter 6</span></a> for the detailed treatment of this subject. Section <a href="C2_4_Quarto_PDF.html" class="quarto-xref"><span>Chapter 8</span></a> presents how to use Quarto to produce a manuscript in PDF.). In the <span style="color: blue;"><strong>writing</strong></span> folder, <strong>manuscript_to_word.rmd</strong> was created.</p>
 <p>Inside the <strong>manuscript_to_word.rmd</strong> file, you write narratives just like you would on WORD. But, you can include the figure and table we just created.</p>
 <p><strong>Figure</strong></p>
 <p>The portion of the rmd file below imports the figure created in <strong>2_make_tables_figures.R</strong> using the <code>knitr::include_graphics()</code> (a function to include external figures).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/figure-included-rmd.png" id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/figure-included-rmd.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -513,11 +491,9 @@ Note
 <p>In the output WORD file, this would look like this:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/boxplot-rmd-word-workflow.png" id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/boxplot-rmd-word-workflow.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -526,11 +502,9 @@ Note
 <p>The following code first read <code>reg_data</code> and then create a summary statistics table using <code>modelsummary::datasummary()</code>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-14" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/create-sum-table-code.png" id="fig-539a35d47e664c97a50115a146a7f1bd-14" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/create-sum-table-code.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -538,11 +512,9 @@ Note
 <p>The resulting table looks like below in the output WORD document.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-15" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/sum-table-included-rmd-word.png" id="fig-539a35d47e664c97a50115a146a7f1bd-15" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/sum-table-included-rmd-word.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -550,11 +522,9 @@ Note
 <p>The following code block was also included in the Rmarkdown file to create a regression results table.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-16" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/table-included-rmd.png" id="fig-539a35d47e664c97a50115a146a7f1bd-16" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/table-included-rmd.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -563,11 +533,9 @@ Note
 <p>Its output is printed in the output WORD document like below:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-17" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/reg-table-rmd-word-workflow.png" id="fig-539a35d47e664c97a50115a146a7f1bd-17" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/reg-table-rmd-word-workflow.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -579,11 +547,9 @@ Note
 <p>This manuscript is completely reproducible in a fully automated manner (of course including all the results, tables, and figures) given the raw datasets. Here is the R code in an R file (named <code>reproduce.R</code>) that runs everything: from data processing to producing the manuscript.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-18" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/reproduce-R.png" id="fig-539a35d47e664c97a50115a146a7f1bd-18" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/reproduce-R.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -592,12 +558,12 @@ Note
 
 
 </section>
-<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>It is important to note that when dealing with large datasets, <code>dplyr</code> may not be the most efficient in terms of computation time. In such cases, the <code>data.table</code> package is a superior alternative, even though it might be slightly more challenging for others to grasp, particularly if they are not familiar with the <code>data.table</code> syntax.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</aside>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -635,18 +601,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -678,7 +633,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -713,7 +708,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -728,15 +727,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
         }
         return container.innerHTML
       } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -745,7 +757,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -787,6 +807,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -862,7 +905,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -946,12 +988,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./C1_1_ProjectOrganization.html" class="pagination-link">
+      <a href="./C1_1_ProjectOrganization.html" class="pagination-link" aria-label="Project Organization">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Project Organization</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./C1_3_VersionControl.html" class="pagination-link">
+      <a href="./C1_3_VersionControl.html" class="pagination-link" aria-label="Version Control (Optional, but recommended)">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Optional, but recommended)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

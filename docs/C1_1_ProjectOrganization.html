@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.382">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproducible Research Projects and Journal Articles with R - 2&nbsp; Project Organization</title>
+<title>2&nbsp; Project Organization – Reproducible Research Projects and Journal Articles with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -80,7 +80,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
@@ -95,6 +95,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -119,13 +120,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./C1_1_ProjectOrganization.html">Project Setup</a></li><li class="breadcrumb-item"><a href="./C1_1_ProjectOrganization.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Project Organization</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -134,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Reproducible Research Projects and Journal Articles with R</a> 
@@ -156,9 +157,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Reproducible Research</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -174,9 +175,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Project Setup</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -204,9 +205,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Manuscript Writing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -240,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -286,7 +287,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This chapter discusses how to set up a project before actively engaging in a project. It begins by presenting how to initiate an RStudio project in <a href="#sec-rstudio-project" class="quarto-xref"><span>Section&nbsp;2.1</span></a>, offers recommendations for creating a project-specific folder structure in <a href="#sec-folder-structure" class="quarto-xref"><span>Section&nbsp;2.2</span></a>, and wraps up by exploring the utilization of the <code>renv</code> package to facilitate the reproduction of a consistent R environment, encompassing both R version and package versions, as discussed in <a href="#sec-renv" class="quarto-xref"><span>Section&nbsp;2.3</span></a>.</p>
+<p>This chapter discusses how to set up a project before actively engaging in a project. It begins by presenting how to initiate an RStudio project in <a href="#sec-rstudio-project" class="quarto-xref"><span>Section 2.1</span></a>, offers recommendations for creating a project-specific folder structure in <a href="#sec-folder-structure" class="quarto-xref"><span>Section 2.2</span></a>, and wraps up by exploring the utilization of the <code>renv</code> package to facilitate the reproduction of a consistent R environment, encompassing both R version and package versions, as discussed in <a href="#sec-renv" class="quarto-xref"><span>Section 2.3</span></a>.</p>
 <section id="sec-rstudio-project" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="sec-rstudio-project"><span class="header-section-number">2.1</span> RStudio Project</h2>
 <p>While it is not required, it is recommended that the root project directory is designated as an RStudio Project. Here, minimal guidance on RStudio Project is provided. See an <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">introduction to RStudio Project by Posit</a> for more information.</p>
@@ -295,7 +296,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>There are number of benefits to using an RStudio Project. Here are some of them.</p>
 <ol type="1">
 <li><p><strong>Isolated Working Directory</strong>: Each RStudio project operates in its own directory, which means you can keep datasets, scripts, and other files organized. When you open a project, RStudio automatically sets the working directory to the project’s directory.</p></li>
-<li><p><strong>Integration with <code>renv</code></strong>: Projects can be integrated with the <code>renv</code> package to manage project-specific libraries. This ensures reproducibility by having consistent package versions (see <a href="#sec-renv" class="quarto-xref"><span>Section&nbsp;2.3</span></a> for more details).</p></li>
+<li><p><strong>Integration with <code>renv</code></strong>: Projects can be integrated with the <code>renv</code> package to manage project-specific libraries. This ensures reproducibility by having consistent package versions (see <a href="#sec-renv" class="quarto-xref"><span>Section 2.3</span></a> for more details).</p></li>
 <li><p><strong>Independent R Sessions</strong>: Each project can have its own separate R session, reducing the risk of variables or functions from one project interfering with another. Further, since each project maintains its own environment, it’s easier to keep track of variables, loaded packages, and function definitions.</p></li>
 <li><p><strong>Easy Navigation of the File System</strong>: The Files pane in RStudio will automatically be rooted at the project directory, making it easier to navigate and manage project files.</p></li>
 </ol>
@@ -305,11 +306,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To create (designate as) an RStudio project, first click on the <strong>Project</strong> icon at the right upper corner of RStudio IDE. You will then see menus like below:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/rproject-start.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/rproject-start.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -317,11 +316,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You can then select the <strong>New Project…</strong> option, which will then give you the following popup window.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/rproject-options.png" id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/rproject-options.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -329,7 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p><strong>New Directory</strong>: As its name suggests, you will create a new directory and it will be designated as an RStudio project automatically.</p></li>
 <li><p><strong>Existing Directory</strong>: If you already have a directory for your project, then you can use option to designate it as an RStudio project.</p></li>
-<li><p><strong>Version Control</strong>: You can clone a repository as a directory to your local machine and designate it as an RStudio project (This option is discussed in <a href="C1_3_VersionControl.html#sec-vc-new-project" class="quarto-xref"><span>Section&nbsp;4.3.2</span></a>).</p></li>
+<li><p><strong>Version Control</strong>: You can clone a repository as a directory to your local machine and designate it as an RStudio project (This option is discussed in <a href="C1_3_VersionControl.html#sec-vc-new-project" class="quarto-xref"><span>Section 4.3.2</span></a>).</p></li>
 </ul>
 <p>After completing the process, you will find <strong>project_name.Rproj</strong> in the root directory. This file is a simple text document that stores important metadata and preferences specific to the project. You can determine if a directory is an RStudio project by checking for the presence of this file.</p>
 </section>
@@ -374,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><em>raw</em>: Houses all the raw datasets, which should never be altered.</li>
 </ul></li>
 <li><strong>docs</strong>: Contains any relevant documents (journal articles, data documentation, etc)</li>
-<li><strong>renv</strong> (optional): This will be discussed later in <a href="#sec-renv" class="quarto-xref"><span>Section&nbsp;2.3</span></a>.</li>
+<li><strong>renv</strong> (optional): This will be discussed later in <a href="#sec-renv" class="quarto-xref"><span>Section 2.3</span></a>.</li>
 <li><strong>results</strong>: Contains all generated results, including tables, figures, regression outcomes, etc.</li>
 <li><strong>writing</strong>: The manuscript and related files, such as bibliography, citation style language file, and others.</li>
 </ul>
@@ -405,11 +402,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This will create a directory named <strong>renv</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/renv-folder.png" id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/renv-folder.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -417,11 +412,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Inside the directory, you can see a directory called <strong>library</strong>. This is where the packages for the project is stored. These packages are independent of the packages that are available universally for R. The information about the packages are stored in the file called <strong>renv.lock</strong> along with the version of R as you can see below.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/renvlock.png" id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/renvlock.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -518,18 +511,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -561,7 +543,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -596,7 +618,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -611,15 +637,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
         }
         return container.innerHTML
       } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -628,7 +667,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -670,6 +717,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -830,7 +900,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./C1_2_DevelopProject.html" class="pagination-link">
+      <a href="./C1_2_DevelopProject.html" class="pagination-link" aria-label="Project Development">
         <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Project Development</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
