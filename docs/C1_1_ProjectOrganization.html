@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.376">
+<meta name="generator" content="quarto-1.4.382">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -284,6 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </header>
+
 
 <p>This chapter discusses how to set up a project before actively engaging in a project. It begins by presenting how to initiate an RStudio project in <a href="#sec-rstudio-project" class="quarto-xref"><span>Section&nbsp;2.1</span></a>, offers recommendations for creating a project-specific folder structure in <a href="#sec-folder-structure" class="quarto-xref"><span>Section&nbsp;2.2</span></a>, and wraps up by exploring the utilization of the <code>renv</code> package to facilitate the reproduction of a consistent R environment, encompassing both R version and package versions, as discussed in <a href="#sec-renv" class="quarto-xref"><span>Section&nbsp;2.3</span></a>.</p>
 <section id="sec-rstudio-project" class="level2" data-number="2.1">
@@ -744,7 +745,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.376">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproducible Research Projects and Journal Articles with R - 6&nbsp; Rmarkdown-WORD</title>
+<title>6&nbsp; Rmarkdown-WORD – Reproducible Research Projects and Journal Articles with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -81,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
@@ -96,6 +96,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -111,8 +112,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   gtag('config', 'G-VGJ94YJTQ9');
 </script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -122,13 +150,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./C2_1_IntroWriting.html">Manuscript Writing</a></li><li class="breadcrumb-item"><a href="./C2_2_Rmarkdown_WORD.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Rmarkdown-WORD</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -137,7 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Reproducible Research Projects and Journal Articles with R</a> 
@@ -159,9 +187,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Reproducible Research</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -177,9 +205,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Project Setup</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -207,9 +235,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Manuscript Writing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -243,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -305,6 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+
 <section id="before-you-start" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="before-you-start"><span class="header-section-number">6.1</span> Before you start</h2>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
@@ -358,7 +387,7 @@ What you need to know/learn
 <li>Repeat steps 2, 3, and 4 until accepted (terminate the process if rejected)</li>
 <li>Finally, format your manuscript to the specific requirements by the journal
 <ul>
-<li>create a style reference WORD file and refer to it (see Section <a href="#sec-word-specify-style" class="quarto-xref"><span>Section&nbsp;6.6</span></a>).</li>
+<li>create a style reference WORD file and refer to it (see Section <a href="#sec-word-specify-style" class="quarto-xref"><span>Section 6.6</span></a>).</li>
 <li>modify the format manually on WORD if that is faster</li>
 </ul></li>
 </ol>
@@ -392,11 +421,9 @@ Case 2: every single one of the authors knows how to use Rmarkdown and git
 <p>In this case, things are just so much easier. You never have to get out of Rmarkdown. Just let them edit the Rmarkdown file and keep track of changes using git. Any IDE should give you a side-by-side comparison of the previous and current versions like below (<a href="https://www.sublimemerge.com/">Sublime Merge</a> is used here).</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/git-illustrate.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/git-illustrate.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -428,11 +455,9 @@ Case 2: every single one of the authors knows how to use Rmarkdown and git
 <p>Here is an example YAML header, which you can see in <code>sample_to_word.rmd</code> file.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/yaml-example.png" id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/yaml-example.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -441,7 +466,7 @@ Case 2: every single one of the authors knows how to use Rmarkdown and git
 </section>
 <section id="essential-markdown-syntaxes-for-word" class="level2" data-number="6.5">
 <h2 data-number="6.5" class="anchored" data-anchor-id="essential-markdown-syntaxes-for-word"><span class="header-section-number">6.5</span> Essential markdown syntaxes for WORD</h2>
-<p>Here are the essential markdown syntaxes you should know. For other syntaxes such as creating a list, please refer to section <a href="C2_1_IntroWriting.html#sec-markdown-basics" class="quarto-xref"><span>Section&nbsp;5.6</span></a>.</p>
+<p>Here are the essential markdown syntaxes you should know. For other syntaxes such as creating a list, please refer to section <a href="C2_1_IntroWriting.html#sec-markdown-basics" class="quarto-xref"><span>Section 5.6</span></a>.</p>
 <p><strong>Section, subsection, subsubsections, …</strong></p>
 <p>You can define sections, subsections, and subsubsections by using #, ##, and ### respectively at the beginning of a line.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a># This becomes section title</span>
@@ -514,8 +539,8 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>You first change styles directly using the options made available by the <code>officedown</code> package in the YAML header <a href="#sec-change-style-yaml" class="quarto-xref"><span>Section&nbsp;6.6.1</span></a></li>
-<li>If the above is not sufficient, use reference WORD file to apply its style (not content) to the output WORD file <a href="#sec-change-style-reference" class="quarto-xref"><span>Section&nbsp;6.6.2</span></a></li>
+<li>You first change styles directly using the options made available by the <code>officedown</code> package in the YAML header <a href="#sec-change-style-yaml" class="quarto-xref"><span>Section 6.6.1</span></a></li>
+<li>If the above is not sufficient, use reference WORD file to apply its style (not content) to the output WORD file <a href="#sec-change-style-reference" class="quarto-xref"><span>Section 6.6.2</span></a></li>
 </ul>
 </div>
 </div>
@@ -524,11 +549,9 @@ Tip
 <p>You can control the style of the output WORD file somewhat in the YAML header. For example, you can determine the page size and margins using <code>page_size</code> and <code>page_margins</code> (see the YAML header in the sample rmd file). You also have some controls on how tables and figures appear. For example, the <code>align</code> option lets you determine the horizontal position of tables and figures. <code>topcaption</code> lets you determine whether you have the caption at the top of bottom.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/style-change-yaml.png" id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/style-change-yaml.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -563,11 +586,9 @@ Tip
 <p>In our example project, <strong>word_template.docx</strong> is the reference file.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/yaml-reference-docx.png" id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/yaml-reference-docx.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -609,11 +630,9 @@ Tip
 <p>This section gives you a quick look at what it may look to be changing the style of a reference WORD file. We use <strong>word_template.docx</strong> for this demonstration. First, open the document on WORD and open the Styles Pane (If you are using Mac, it should be at the right upper corner of the document). Then you should see something like below.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/style-change-1.png" id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/style-change-1.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -621,11 +640,9 @@ Tip
 <p>Then, put your cursor on anywhere in line 2 as below and you should see that the current style is changed to “1 Heading 1”, which is the name of the class (style type) the texts in line 2 belong to.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/style-change-2.png" id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/style-change-2.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -633,11 +650,9 @@ Tip
 <p>Now, put your cursor at the black triangle and you should see available options including “Modify Style…”</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/style-change-3.png" id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/style-change-3.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -645,11 +660,9 @@ Tip
 <p>Once you click on it, you should see a pop-up window like below.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/style-change-4.png" id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/style-change-4.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -657,11 +670,9 @@ Tip
 <p>Here, you can change font family, font size, among other things. In this demonstration, let’s get rid of automatic section number. To do so, click on the “Format” button at the lower left corner of the window. Then, you should see this.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/style-change-5.png" id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/style-change-5.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -669,11 +680,9 @@ Tip
 <p>Pick “Numbering,” click on “None,” and hit “OK.”</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/style-change-6.png" id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/style-change-6.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -681,11 +690,9 @@ Tip
 <p>Hit “OK” again in the previous pop-up window, then you should see this.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/style-change-7.png" id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/style-change-7.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -717,11 +724,9 @@ data.frame(
 <p>In our example, we use a <strong>bib</strong> file and the bibliography file is named <strong>bibliography.bib</strong> and specified in the YAML header as below</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/yaml-bib.png" id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/yaml-bib.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -756,11 +761,9 @@ Note
 <p><code>reference_name</code> is the very first entry of a <strong>.bib</strong> file as in</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/bib-example.png" id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/bib-example.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -768,11 +771,9 @@ Note
 <p>If you are using CSL json file, then it is the <strong>id</strong> of an entry as in</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-14" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/bib-csl-example.png" id="fig-539a35d47e664c97a50115a146a7f1bd-14" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/bib-csl-example.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -812,11 +813,9 @@ Note
 <p>Currently, the csl style should be set to <strong>qje.csl</strong> (citation style language for The Quarterly Journal of Economics) as below</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-15" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/yaml-csl.png" id="fig-539a35d47e664c97a50115a146a7f1bd-15" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/yaml-csl.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -832,20 +831,24 @@ Note
 
 </div>
 <div class="cell quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pictures/citation-qje.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Citation style for QJE</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pictures/reference-qje.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Reference style for QJE</figcaption>
 </figure>
+</div>
 </div>
 </div>
 </div>
@@ -864,20 +867,24 @@ Note
 
 </div>
 <div class="cell quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pictures/citation-pnas.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Citation style for PNAS</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pictures/reference-pnas.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Reference style for PNAS</figcaption>
 </figure>
+</div>
 </div>
 </div>
 </div>
@@ -1014,20 +1021,24 @@ Rmarkdown-WORD Comparison: Visual Example
 
 </div>
 <div class="cell quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pictures/figure-rmd.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Rmarkdown</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pictures/figure-word.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>WORD</figcaption>
 </figure>
+</div>
 </div>
 </div>
 </div>
@@ -1093,20 +1104,24 @@ Rmarkdown-WORD Comparison: Visual Example
 
 </div>
 <div class="cell quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pictures/figure-rmd-import.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Rmarkdown</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pictures/figure-word-import.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>WORD</figcaption>
 </figure>
+</div>
 </div>
 </div>
 </div>
@@ -1138,11 +1153,9 @@ Try!
 <p>You can use Latex-like math syntax to write mathematical equations. For equation numbering and cross-referencing to work as discussed here, make sure that you use <code>bookdown::word_document2</code> for the <code>base_format</code> in the YAML header as below.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-16" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/yaml-math.png" id="fig-539a35d47e664c97a50115a146a7f1bd-16" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/yaml-math.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -1205,20 +1218,24 @@ Rmarkdown-WORD Comparison: Visual Example
 
 </div>
 <div class="cell quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pictures/math-env-rmd.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Rmarkdown</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pictures/math-env-word.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>WORD</figcaption>
 </figure>
+</div>
 </div>
 </div>
 </div>
@@ -1249,16 +1266,19 @@ Rmarkdown-WORD Comparison: Visual Example
 
 </div>
 <div class="cell quarto-layout-panel" data-layout-ncol="1">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pictures/math-inline-rmd.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>Rmarkdown</figcaption>
 </figure>
 </div>
 </div>
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-figure quarto-figure-center quarto-layout-cell" style="flex-basis: 100.0%;justify-content: center;">
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="assets/pictures/math-inline-word.png" class="img-fluid figure-img" style="width:100.0%"></p>
 <figcaption>WORD</figcaption>
@@ -1269,18 +1289,19 @@ Rmarkdown-WORD Comparison: Visual Example
 </div>
 </div>
 </div>
+</div>
 
 
 </section>
 </section>
-<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>The <a href="https://www.danieldsjoberg.com/gtsummary/index.html">gtsummary</a> package is also compatible. Use <code>as_flex_table()</code> to convert a <code>gtsummary</code> object to a <code>flextable</code> object.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>If you are using Rmarkdown-PDF, you can import pdf files<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>I am not aware of all the types of accepted file types.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</aside>
+</section>
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
 <div id="ref-cacioppo2015social" class="csl-entry" role="listitem">
@@ -1327,18 +1348,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1370,7 +1380,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1405,7 +1455,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1420,15 +1474,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
         }
         return container.innerHTML
       } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -1437,7 +1504,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -1479,6 +1554,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -1554,7 +1652,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -1638,12 +1735,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./C2_1_IntroWriting.html" class="pagination-link">
+      <a href="./C2_1_IntroWriting.html" class="pagination-link" aria-label="Introduction">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Introduction</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./C2_3_Rmarkdown_PDF.html" class="pagination-link">
+      <a href="./C2_3_Rmarkdown_PDF.html" class="pagination-link" aria-label="Rmarkdown-PDF">
         <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Rmarkdown-PDF</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>

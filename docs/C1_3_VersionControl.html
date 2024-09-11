@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.376">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproducible Research Projects and Journal Articles with R - 4&nbsp; Version Control (Optional, but recommended)</title>
+<title>4&nbsp; Version Control (Optional, but recommended) – Reproducible Research Projects and Journal Articles with R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -80,7 +80,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
   "keyboard-shortcut": [
     "f",
     "/",
@@ -95,6 +95,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -119,13 +120,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./C1_1_ProjectOrganization.html">Project Setup</a></li><li class="breadcrumb-item"><a href="./C1_3_VersionControl.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Version Control (Optional, but recommended)</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -134,7 +135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Reproducible Research Projects and Journal Articles with R</a> 
@@ -156,9 +157,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Reproducible Research</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -174,9 +175,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Project Setup</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -204,9 +205,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="px-0"><hr class="sidebar-divider hi "></li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Manuscript Writing</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -240,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -258,7 +259,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#create-a-new-repository-on-github" id="toc-create-a-new-repository-on-github" class="nav-link" data-scroll-target="#create-a-new-repository-on-github"><span class="header-section-number">4.3.1</span> Create a new repository on GitHub</a></li>
   <li><a href="#sec-vc-new-project" id="toc-sec-vc-new-project" class="nav-link" data-scroll-target="#sec-vc-new-project"><span class="header-section-number">4.3.2</span> Clone the repository and designate it as an RStudio Project on RStudio</a></li>
   </ul></li>
-  <li><a href="#sec-collab-vc" id="toc-sec-collab-vc" class="nav-link" data-scroll-target="#sec-collab-vc"><span class="header-section-number">4.4</span> Collborations</a></li>
   </ul>
 </nav>
     </div>
@@ -283,7 +283,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>This chapter serves as an introduction to version control. It begins by explaining the benefits of version control systems using an easy-to-understand analogy in <a href="#sec-vc-what" class="quarto-xref"><span>Section&nbsp;4.1</span></a>. Subsequently, it guides you through the process of setting up Git and GitHub in <a href="#sec-git-github" class="quarto-xref"><span>Section&nbsp;4.2</span></a>. Then, it explains how to establish an RStudio project with version control enabled via Git and its seamless integration with GitHub in <a href="#sec-use-vc" class="quarto-xref"><span>Section&nbsp;4.3</span></a>. Finally, the chapter concludes with insights into collaborating effectively using version control in <a href="#sec-collab-vc" class="quarto-xref"><span>Section&nbsp;4.4</span></a>.</p>
+
+<p>This chapter serves as an introduction to version control. It begins by explaining the benefits of version control systems using an easy-to-understand analogy in <a href="#sec-vc-what" class="quarto-xref"><span>Section 4.1</span></a>. Subsequently, it guides you through the process of setting up Git and GitHub in <a href="#sec-git-github" class="quarto-xref"><span>Section 4.2</span></a>. Then, it explains how to establish an RStudio project with version control enabled via Git and its seamless integration with GitHub in <a href="#sec-use-vc" class="quarto-xref"><span>Section 4.3</span></a>. Finally, the chapter concludes with insights into collaborating effectively using version control in <span class="quarto-unresolved-ref">?sec-collab-vc</span>.</p>
 <section id="sec-vc-what" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="sec-vc-what"><span class="header-section-number">4.1</span> What is version control?</h2>
 <p>Version control is a system that records changes to files over time so that you can recall specific versions later. The entire history of changes you have made are recorded and you can go back to a previous version any time.</p>
@@ -342,11 +343,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>We first start with create a project repository (directory, folder) at Github. After signing into GitHub, you will see tabs like below at the left upper corner of the website.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/git-top.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/git-top.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -354,11 +353,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Clic on <strong>Repositories</strong> and you will see this:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/new-repo.png" id="fig-539a35d47e664c97a50115a146a7f1bd-2" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/new-repo.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -366,11 +363,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Then, you will be directed to a page like this.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/create-new-repo.png" id="fig-539a35d47e664c97a50115a146a7f1bd-3" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/create-new-repo.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -386,11 +381,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Once you input information, a new repository created and you will be directed to a page like this.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/new-repo-top.png" id="fig-539a35d47e664c97a50115a146a7f1bd-4" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/new-repo-top.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -402,11 +395,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now, open RStudio and click on the Project button (upper right corner), select <strong>New Project</strong> -&gt; <strong>Version Control</strong> -&gt; <strong>Git</strong>. Then, you will see a popup window like below:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/git-new-project.png" id="fig-539a35d47e664c97a50115a146a7f1bd-5" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/git-new-project.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -414,11 +405,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now, go back to the repository page and click on the green Code button:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/repo-url.png" id="fig-539a35d47e664c97a50115a146a7f1bd-6" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/repo-url.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -426,11 +415,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You can then click on the button with two hollow squares stacked (right to the url with your repository name in it). This copies the url.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/repo-get-url.png" id="fig-539a35d47e664c97a50115a146a7f1bd-7" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/repo-get-url.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -438,11 +425,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now go back to the RStudio and paste the url to the <strong>Repository URL:</strong> box. Also specify where you want to clone (make a copy of) this repository in the <strong>Create as subdirectory of:</strong> box. Here, my Desktop was chosen.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/github-project-compl.png" id="fig-539a35d47e664c97a50115a146a7f1bd-8" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/github-project-compl.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -451,11 +436,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>At the file tab (leftmost tab of the bottom right panel), you see that <strong>RJM-Test.Rproj</strong> file is added, indicating that this directory is recognized as an RStudio Project.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/rstudio-file-tab.png" id="fig-539a35d47e664c97a50115a146a7f1bd-9" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/rstudio-file-tab.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -463,11 +446,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s go back to the original GitHub repository and see what it looks like now.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/new-repo-top.png" id="fig-539a35d47e664c97a50115a146a7f1bd-10" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/new-repo-top.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -476,11 +457,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s now add a folder called <strong>code</strong> and create <strong>simulate.R</strong> inside it. We also add <strong>test.R</strong> to that folder. Pretend that <strong>simulate.R</strong> is your main analysis code. You would like to have it archived before you make significant changes to the code. On the other hand, <strong>test.R</strong> is where you experimented things and you do not wish to put it in the archive<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Before you archive <strong>simulate.R</strong> to shelf A, you bring that to another desk (desk B). This is called <strong>staging</strong>. You can do that by checking the box left to <strong>code/</strong> on the Git tab of the right upper pane.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/git-tab-rstudio.png" id="fig-539a35d47e664c97a50115a146a7f1bd-11" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/git-tab-rstudio.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -488,11 +467,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Well both <strong>simulate.R</strong> and <strong>test.R</strong> were staged even though we only want to archive <strong>simulate.R</strong>. You can uncheck <strong>test.R</strong>. But, let’s make Git stop keeping track of this file entirely so that we do not have to do this again. This is where <strong>.gitignore</strong> file comes in. If you look into the file, you can see something like this because I picked R-default for the initial .gitignore file when I created this repository on GitHub.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/gitignore-r.png" id="fig-539a35d47e664c97a50115a146a7f1bd-12" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/gitignore-r.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -500,11 +477,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>This is a list of files (or the pattern of file names using <a href="https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference">regular expression</a>) that will be ignored by Git. To have Git ignore <strong>test.R</strong>, you can add the path to the file relative to the working direcotry, which is automatically set to the root RStudio project directory. So, add “code/test.R” like below:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/test-r-added.png" id="fig-539a35d47e664c97a50115a146a7f1bd-13" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/test-r-added.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -512,11 +487,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>After you save this change, you should not see “code/test.R” on the Git tab any more.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-14" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/after-test-removed.png" id="fig-539a35d47e664c97a50115a146a7f1bd-14" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/after-test-removed.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -524,11 +497,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Let’s also check <strong>RJM-Test.Rpoj</strong> as well. We now have a collection of files. The act of putting a collection to a shelf is called <strong>committing</strong>. You can do this by hitting the Commit button. When you click on the button, you should see a screen like below:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-15" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/commit-page.png" id="fig-539a35d47e664c97a50115a146a7f1bd-15" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/commit-page.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -536,11 +507,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Every time you commit, you are require do make a comment (sticky note on what you did in this collection). Make this comment informative, so that when you (or others) look back, you know what this particular commit is about.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-16" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/commit-message.png" id="fig-539a35d47e664c97a50115a146a7f1bd-16" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/commit-message.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -549,11 +518,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now, we would like to put this collection in the GitHub repository (<strong>Shelf B</strong>) online so that we are sure that we have a backup that we can rely on just in case something horrible happen to your computer. Bringing the collection to shelf B is called <strong>pushing</strong>. This can be done by hitting the “Push” button. Once you push the collection, no we see it on the GitHub repository like below:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-17" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/github-updated.png" id="fig-539a35d47e664c97a50115a146a7f1bd-17" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/github-updated.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -561,11 +528,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Now, suppose you make further progress in your analysis in <strong>simulate.R</strong>. Specifically, you decided to use <code>rnorm()</code> instead of <code>runif()</code>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-18" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/sim-norm.png" id="fig-539a35d47e664c97a50115a146a7f1bd-18" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/sim-norm.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
@@ -573,40 +538,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>You then commited this change. But, you realized that you should not be using <code>rnorm()</code>. Unfortunately, you do not remember what you used before. To see the previous version of the same file, you can click on the “History” button.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-19" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
 <div>
-<img src="assets/pictures/git-history.png" id="fig-539a35d47e664c97a50115a146a7f1bd-19" class="img-fluid figure-img" style="width:100.0%">
-</div>
+<figure class="figure">
+<p><img src="assets/pictures/git-history.png" class="img-fluid figure-img" style="width:100.0%"></p>
 </figure>
 </div>
 </div>
 </div>
 <p>By default, the most recent commit is selected and you can see below that what changes were made to what file. Here, it shows that <code>mean(runif(N))</code> was changed to <code>mean(rnorm(N))</code> in the last commit. If you want to recover that part of the code, then you can just copy what you had (<code>mean(runif(N))</code>) and paste it to the current version of <strong>code/simulate.R</strong> manually (this becomes unrealistic if you have too many changes that you need to revert.). Note that you can click on <code>View file @ce71acb71</code> at the right upper coner of the box for the commited version of <strong>code/simulate.R</strong>.</p>
-</section>
-</section>
-<section id="sec-collab-vc" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="sec-collab-vc"><span class="header-section-number">4.4</span> Collborations</h2>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-539a35d47e664c97a50115a146a7f1bd-20" class="quarto-figure quarto-figure-center anchored" width="100%">
-<figure class="quarto-float quarto-float-fig figure">
-<div>
-<img src="assets/pictures/branch-protection-rule.png" id="fig-539a35d47e664c97a50115a146a7f1bd-20" class="img-fluid figure-img" style="width:100.0%">
-</div>
-</figure>
-</div>
-</div>
-</div>
+<!-- ## Collborations {#sec-collab-vc}
+
+
+
+knitr::include_graphics("assets/pictures/branch-protection-rule.png")
+``` -->
 
 
 </section>
-<aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn1"><p>There is nothing wrong with uploading test codes. It is not uploaded here to demonstrate how to use .gitignore file.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</aside>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -644,18 +599,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -687,7 +631,47 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -722,7 +706,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -737,15 +725,28 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       }
     }
     stripColumnClz(note)
-    if (id.startsWith('sec-')) {
+    if (id === null || id.startsWith('sec-')) {
       // Special case sections, only their first couple elements
       const container = document.createElement("div");
       if (note.children && note.children.length > 2) {
-        for (let i = 0; i < 2; i++) {
-          container.appendChild(note.children[i].cloneNode(true));
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
         }
         return container.innerHTML
       } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
         return note.innerHTML;
       }
     } else {
@@ -754,7 +755,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (anchorLink) {
         anchorLink.remove();
       }
-      return note.innerHTML;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
@@ -796,6 +805,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
       }
     }, function(instance) {
     });
@@ -871,7 +903,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     window.addEventListener(
       "resize",
       throttle(() => {
-        console.log("RESIZE");
         elRect = undefined;
         if (selectedAnnoteEl) {
           selectCodeLines(selectedAnnoteEl);
@@ -955,7 +986,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./C1_2_DevelopProject.html" class="pagination-link">
+      <a href="./C1_2_DevelopProject.html" class="pagination-link" aria-label="Project Development">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Project Development</span></span>
       </a>          
   </div>
